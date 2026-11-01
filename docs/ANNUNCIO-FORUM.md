@@ -1,70 +1,118 @@
-# AlphanoGdr V1.0 — un motore open source per creare il proprio GDR play by chat
+**AlphanoGdr V1.0 — un motore open source per creare e gestire il proprio GDR play by chat**
 
-Ciao a tutti, sono **Alfano Gaetano** e presento **AlphanoGdr V1.0**, un progetto nato con uno scopo preciso: mettere a disposizione un sistema di GDR play by chat completo e personalizzabile, pensato per funzionare anche su un normale hosting condiviso come AlterVista.
+Ciao a tutti, sono **Alfano Gaetano, Aikanairo su GitHub**, e vorrei presentare alla community **AlphanoGdr V1.0**.
 
-L’obiettivo è permettere di costruire e gestire il proprio gioco **senza scrivere codice**. Occorre saper caricare i file via FTP, avere i dati del database e leggere la documentazione, che attualmente si trova nella repository GitHub. Il codice rimane disponibile a chi vuole estenderlo.
+AlphanoGdr nasce a partire dalla **prima versione di Gothik.it, nata nel 2004 e programmata da Nappa (Dracula)**. Questa base è stata **completamente riscritta, aggiornata ed estesa nelle funzionalità da Alfano Gaetano (aik)**, dando origine al progetto attuale.
 
-**Repository e documentazione:** https://github.com/Aikanairo/AlphanoGdr
+Il progetto nasce per offrire una struttura di GDR play by chat completa e personalizzabile, utilizzabile anche su un normale hosting condiviso come AlterVista. L’obiettivo è permettere a chi ha un’ambientazione in mente di concentrarsi sul gioco e sulla sua comunità, configurando i sistemi principali da un pannello di gestione, senza dover programmare per iniziare.
 
-**Demo online:** https://alfanew.altervista.org/?preview=1
+Non è un’ambientazione pronta da adottare: è il motore con cui costruire la propria. Regolamento, descrizioni, razze, abilità, oggetti e organizzazione del mondo si possono adattare alle proprie esigenze. Il codice è disponibile anche per chi desidera intervenire più a fondo.
 
-**Accessi della demo:**
+**Repository e documentazione**
+https://github.com/Aikanairo/AlphanoGdr
 
-- Giocatore: **test** — password **test**.
-- Gestione completa: **admin** — password **admin**.
+**Pacchetto completo V1.0**
+https://github.com/Aikanairo/AlphanoGdr/releases/tag/V1.0
 
-La demo è un ambiente pubblico condiviso: l’account admin può modificare realmente le impostazioni. Non inserite dati personali o credenziali reali. Questi account non sono presenti nelle nuove installazioni: ogni gestore sceglie il proprio amministratore.
+**Demo online**
+https://alfanew.altervista.org/?preview=1
 
-![Homepage di alfanew, palette Blu notte](../assets/showcase/home-blue.jpg)
+**Dall’hosting al primo accesso**
 
-**Come si installa**
+L’installazione è pensata per essere eseguita dal browser. Si scarica il **pacchetto hosting completo**, si scompatta e si caricano tutti i file nella radice del proprio dominio o sottodominio tramite FTP, comprese le cartelle delle dipendenze e i file nascosti come .htaccess. Aprendo il sito, se non risulta ancora installato, parte automaticamente la procedura guidata.
 
-Si scarica il pacchetto completo, lo si scompatta e si caricano tutti i file sul proprio hosting. Aprendo il dominio o `index.php`, se il gioco non è ancora installato, parte la procedura guidata. Dal browser si inseriscono connessione MySQL, nome del gioco, account amministratore ed eventuali impostazioni email.
+Il primo passaggio raccoglie i dati del database, il nome e la descrizione del gioco, le credenziali del proprio amministratore e le eventuali impostazioni email. Le tabelle vengono create dall’installatore: non occorre importare manualmente un database. Al termine viene mostrato il riepilogo dell’installazione e si può raggiungere la homepage.
 
-Le dipendenze PHP sono già incluse: sull’hosting non servono Composer, SSH, Docker, Node.js o competenze di programmazione. Sono richiesti **PHP 8.4 o successivo** e un database MySQL/MariaDB dedicato e vuoto, con le estensioni elencate nella documentazione. L’installazione va nella radice del dominio o sottodominio. La compatibilità è stata provata anche su AlterVista; capacità e prestazioni dipendono comunque dalle risorse del piano e dagli utenti collegati.
+Le fasi successive aiutano a configurare chat, razze, etnie, città e gruppi. Si possono saltare e riprendere dalla gestione: un riepilogo indica quali passaggi sono stati completati o lasciati per un secondo momento. Le impostazioni restano modificabili anche dopo l’avvio del gioco.
 
-**Cosa comprende**
+**Sull’hosting non servono Composer, SSH, Docker o Node.js**: le dipendenze PHP sono incluse nel pacchetto completo. Servono invece PHP 8.4 o successivo, le estensioni indicate nella guida e un database dedicato e vuoto MySQL 8.0+ oppure MariaDB 10.6+. L’installazione va nella radice del dominio, non in una sottocartella.
 
-- Chat di gioco con dialoghi, azioni, messaggi riservati, dadi e strumenti dello staff; gestione delle sessioni, turni e registrazioni delle giocate.
-- Schede dei personaggi, statistiche, abilità, esperienza, inventario, equipaggiamento, ferite e condizioni.
-- Razze ordinarie e speciali, etnie facoltative e trasformazioni con statistiche e messaggi configurabili.
-- Città, cariche, cittadinanza ed elezioni facoltative; organizzazioni e corporazioni con gerarchie e strumenti dedicati.
-- Economia, tesorerie, trasferimenti, lavori, raccolta, materie prime e strumenti per produzione e commercio. Anche il nome della valuta è personalizzabile.
-- Bacheche, manuali, messaggistica, strumenti Master, gestione degli utenti e checklist per completare la configurazione.
-- Impostazioni email, recupero password, testi di privacy e cookie, homepage e manuali fissati in evidenza.
+Non è necessario conoscere un linguaggio di programmazione per il percorso iniziale, ma occorre saper usare il pannello dell’hosting, caricare i file via FTP e seguire la documentazione. La compatibilità è stata provata su AlterVista; le risorse disponibili e il numero di utenti collegati incidono comunque sulle prestazioni.
 
-I sistemi e i cataloghi si configurano dalla gestione: i moduli facoltativi si possono attivare secondo le esigenze della propria ambientazione. Il supporto IA è **disabilitato inizialmente**; il gioco base funziona senza modelli o servizi di intelligenza artificiale. Un eventuale servizio esterno si configura separatamente.
+**Un mondo dimostrativo per capire subito come funziona**
 
-![Pannello di gestione completo](../assets/showcase/admin.jpg)
+Durante l’installazione si può mantenere selezionato il **pacchetto di dati di esempio**. Include City Alphano, una mappa generale e una sottomappa cittadina, con quattro chat già collegate: Piazza, Locanda, Giardino e Biblioteca.
 
-**La mappa interattiva**
+Sono presenti anche la razza Umano, l’etnia Italiano, le cariche Cittadino e Sindaco e un catalogo di 23 materie prime con immagini ed esempi di raccolta. Questi contenuti servono a mostrare i collegamenti fra i sistemi: possono essere modificati o sostituiti. Deselezionando il pacchetto si può partire senza i dati dimostrativi.
 
-Si può scegliere tra la navigazione a card e una mappa visiva. Il gestore carica lo sfondo del mondo, posiziona le città e sceglie se mostrarne il solo nome oppure un’immagine cerchiata con il nome. Ogni città può avere una propria sottomappa con le chat posizionate.
+**La mappa: dal mondo alla città, dalla città alla chat**
 
-Zoom, trascinamento e coordinate proporzionali mantengono i segnaposti ancorati al disegno. L’immagine copre il riquadro disponibile e le posizioni si modificano dalla gestione, senza intervenire sul codice.
+La navigazione può avvenire tramite card oppure attraverso una **mappa interattiva**, già attiva nel percorso dimostrativo.
 
-Il pacchetto di esempio è già selezionato nell’installazione: include **City Alphano**, entrambe le immagini e **Piazza, Locanda, Giardino e Biblioteca** già collegate. Include inoltre Umano, Italiano, cariche Cittadino e Sindaco e 23 materie prime. Si può deselezionare per partire senza dati dimostrativi.
+Il gestore carica l’immagine del mondo e vi posiziona le città esistenti. Ogni segnaposto può mostrare il solo nome oppure un’immagine circolare accompagnata dal nome. Entrando in una città si apre la sua sottomappa, sulla quale vengono posizionati i luoghi delle chat: il giocatore può quindi passare dal mondo alla città e infine al luogo in cui desidera giocare.
 
-![Mappa generale della demo](../assets/showcase/map-world.jpg)
+La mappa si esplora trascinandola e usando lo zoom. La barra dei comandi permette di tornare indietro, ingrandire o ridurre, riempire lo spazio disponibile, aprire la vista a schermo intero e trovare una destinazione. I segnaposti restano ancorati all’immagine quando cambiano dimensioni e ingrandimento. Sfondo e posizioni si modificano dalla gestione, senza intervenire sull’HTML.
 
-![City Alphano con le quattro chat](../assets/showcase/map-city.jpg)
+*Mappa generale della demo e accesso a City Alphano.*
+![Screenshot della demo AlphanoGdr](https://alfanew.altervista.org/assets/showcase/map-world.jpg)
 
-**Cinque palette e layout personalizzabile**
+*Sottomappa di City Alphano con i quattro luoghi di gioco.*
+![Screenshot della demo AlphanoGdr](https://alfanew.altervista.org/assets/showcase/map-city.jpg)
 
-Sono disponibili **Blu notte, Nero e argento, Marrone e rame, Rosso rubino e Viola ametista**. Si possono personalizzare disposizione dei menu, colonna laterale, icone, sfondi e intestazioni delle pagine, oltre a logo, banner e contenuti della homepage. Nella demo i pulsanti in homepage permettono di confrontare i colori senza cambiare il tema globale.
+**Giocare e condurre una sessione**
 
-![Nero e argento](../assets/showcase/home-black.jpg)
+Il centro del gioco è la chat: dialoghi, azioni, messaggi riservati, dadi e interventi dello staff permettono di sviluppare le scene fra personaggi. Il Master dispone di strumenti per aprire e chiudere sessioni, gestire i turni e intervenire nella narrazione. Sono disponibili l’archivio delle sessioni e la registrazione personale delle giocate, con esportazione e reimportazione nel formato previsto dal motore.
 
-![Marrone e rame](../assets/showcase/home-brown.jpg)
+La scheda raccoglie ritratto, descrizioni, caratteristiche, abilità, esperienza, inventario ed equipaggiamento. Lo staff può gestire salute, ferite e condizioni secondo le regole impostate. Le otto caratteristiche sono configurabili: nomi e valori possono essere adattati al proprio sistema.
 
-![Rosso rubino](../assets/showcase/home-red.jpg)
+Si possono definire razze ordinarie e speciali, etnie facoltative e trasformazioni con messaggi e statistiche differenti. Il gestore costruisce quindi il regolamento del proprio mondo, anziché dover adottare necessariamente quello dell’ambientazione da cui deriva il motore.
 
-![Viola ametista](../assets/showcase/home-purple.jpg)
+**La gestione del gioco**
 
-**Codice e documentazione**
+I pannelli amministrativi sono organizzati con una navigazione laterale, ricerca degli strumenti e area di lavoro dedicata. Gli incarichi e i permessi stabiliscono quali operazioni può effettuare ciascun membro dello staff.
 
-AlphanoGdr V1.0 è distribuito con **licenza GNU AGPL-3.0**. Nella repository trovate sorgenti, dipendenze, immagini dimostrative, istruzioni FTP per AlterVista, descrizione dei sistemi e test automatici. Non vengono distribuiti account, conversazioni o database del gioco da cui deriva il motore.
+**Città e gruppi.** Si gestiscono cittadinanza, cariche, statuti e tesorerie; le elezioni possono essere attivate separatamente per ogni città. Organizzazioni e corporazioni hanno gerarchie e strumenti dedicati. Sono moduli facoltativi, da abilitare secondo il tipo di gioco desiderato.
 
-[Gothik.it](https://gothik.it/) è un esempio di GDR attivo con un’ambientazione e una personalizzazione grafica proprie. AlphanoGdr offre la struttura per costruire il vostro mondo, da adattare alle vostre regole.
+**Economia e produzione.** Il motore comprende saldi, trasferimenti, casse degli enti, lavori, raccolta e materie prime. Il nome della valuta è personalizzabile: corone, oro, euro o un nome inventato. Cataloghi e strumenti di produzione permettono di organizzare la creazione e il commercio degli oggetti; questo sistema richiede corporazioni attive e contenuti configurati dal gestore.
 
-Mi farà piacere ricevere prove, segnalazioni riproducibili e proposte di miglioramento. Potete aprire una issue nella repository. Per iniziare, leggete il README e la guida di installazione: la documentazione disponibile è attualmente quella su GitHub.
+**Comunicazione e regolamenti.** Bacheche e discussioni possono avere accessi pubblici o riservati. I manuali sono organizzati in raccolte e capitoli, con ricerca ed esportazione PDF; i capitoli pubblici scelti dal gestore possono essere fissati nella homepage. La posta interna consente le comunicazioni fra personaggi.
+
+**Email e accessi.** Sono configurabili mittente e trasporto delle email, con invio di prova. Benvenuto, recupero password e notifiche esterne dipendono dalla configurazione e dai servizi consentiti dall’hosting. Le email possono restare disabilitate inizialmente; la posta interna è un sistema separato.
+
+**Privacy e cookie.** Una sezione raccoglie i dati del titolare e i testi delle informative, con esempi da adattare al proprio sito e ai servizi effettivamente utilizzati. I testi di esempio non sostituiscono la valutazione degli obblighi del singolo gestore.
+
+Sono inoltre presenti strumenti per PNG, presenti, meteo, cronaca e notifiche, oltre a scacchi e dama utilizzabili nei luoghi di gioco.
+
+*Un esempio dei pannelli di amministrazione.*
+![Screenshot della demo AlphanoGdr](https://alfanew.altervista.org/assets/showcase/admin.jpg)
+
+**Aspetto e personalizzazione**
+
+Sono disponibili **cinque palette**: Blu notte, Nero e argento, Marrone e rame, Rosso rubino e Viola ametista. La scelta si effettua dalla gestione del template e viene applicata alle pagine del gioco.
+
+Si possono spostare la colonna del personaggio a destra o a sinistra e la navigazione sopra o sotto il contenuto. Menu e sottomenu possono avere immagini proprie; il pacchetto comprende una libreria iniziale utilizzabile come base.
+
+Anche homepage e pagine interne sono personalizzabili: logo, banner, sfondo, presentazione, manuali in evidenza e immagini delle intestazioni. L’intento è dare una base già utilizzabile, lasciando al gestore la possibilità di costruire un’identità grafica coerente con la propria ambientazione.
+
+*Esempi delle palette Nero e argento e Viola ametista.*
+![Screenshot della demo AlphanoGdr](https://alfanew.altervista.org/assets/showcase/home-black.jpg)
+![Screenshot della demo AlphanoGdr](https://alfanew.altervista.org/assets/showcase/home-purple.jpg)
+
+**L’intelligenza artificiale è facoltativa**
+
+Chat, personaggi, economia e sessioni condotte da Master umani funzionano senza IA. Il relativo supporto è **disabilitato alla prima installazione** e non viene installato alcun modello sull’hosting. L’eventuale automazione richiede un servizio compatibile e una configurazione separata, descritta nella documentazione; non è un requisito per aprire il proprio gioco.
+
+**Provare il progetto prima di installarlo**
+
+La demo si trova qui:
+https://alfanew.altervista.org/?preview=1
+
+**Giocatore: test — password: test**
+**Gestione completa: admin — password: admin**
+
+Gli accessi sono riportati anche nel form di login. La demo è pubblica e condivisa: l’amministratore può modificare realmente il gioco e le modifiche possono essere visibili agli altri visitatori. Non inserite dati personali o credenziali reali. Questi account dimostrativi non vengono creati nelle nuove installazioni, nelle quali si sceglie il proprio amministratore.
+
+**Licenza, documentazione e contributi**
+
+AlphanoGdr V1.0 è distribuito con **licenza GNU AGPL-3.0**. È possibile studiare, modificare e ridistribuire il motore rispettandone le condizioni; chi mette online una versione modificata deve offrire agli utenti che vi interagiscono l’accesso al relativo codice sorgente secondo quanto previsto dalla licenza.
+
+Un esempio di GDR attivo con un’ambientazione e una personalizzazione proprie è disponibile su:
+https://gothik.it/
+
+Il pacchetto non comprende il database dei giocatori, le conversazioni o l’ambientazione privata di quel gioco: contiene la struttura e i contenuti dimostrativi destinati alla distribuzione.
+
+**La documentazione è attualmente disponibile nella repository GitHub**: README, installazione FTP e AlterVista, amministrazione, template, email, integrazioni facoltative e risoluzione dei problemi. È il punto da cui partire prima dell’installazione e prima di configurare i sistemi più articolati.
+
+Questa V1.0 è un punto di partenza da provare e migliorare insieme. Il progetto include test automatici e verifiche su hosting condiviso, ma non promette compatibilità con qualunque piano o prestazioni indipendenti dalle risorse del server. Segnalazioni riproducibili, osservazioni sull’usabilità e contributi sono benvenuti tramite le issue della repository.
+
+https://github.com/Aikanairo/AlphanoGdr

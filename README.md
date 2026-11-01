@@ -12,6 +12,13 @@ Sul server non servono Composer, SSH, terminale, Node.js, Python, Docker o model
 
 [Pacchetti pronti in GitHub Actions](https://github.com/Aikanairo/AlphanoGdr/actions/workflows/verify.yml) · [Installazione dettagliata e AlterVista](docs/HOSTING.md) · [Personalizzazione grafica](docs/TEMPLATE.md) · [Immagini incluse](docs/DEFAULT-ART.md)
 
+## Origini e autori
+
+AlphanoGdr nasce a partire dalla **prima versione di Gothik.it, nata nel 2004 e programmata da Nappa (Dracula)**. Questa base è stata **completamente riscritta, aggiornata ed estesa nelle funzionalità da Alfano Gaetano (aik)**, dando origine al progetto attuale.
+
+- **Nappa (Dracula):** programmazione della prima versione di Gothik.it (2004).
+- **Alfano Gaetano (aik):** riscrittura completa, aggiornamento ed estensione delle funzionalità del motore da cui nasce AlphanoGdr.
+
 ## Anteprima e demo
 
 [Apri la demo pubblica](https://alfanew.altervista.org/?preview=1) · [Presentazione e screenshot](docs/ANNUNCIO-FORUM.md) · [Post pronto in BBCode](docs/ANNUNCIO-FORUM.bbcode.txt)
