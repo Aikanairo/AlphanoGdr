@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "stats": [
+    {
+      "key": "strength",
+      "name": "Forza",
+      "description": "Potenza fisica, lotta e impatto dei colpi.",
+      "icon": "stat-strength",
+      "position": 0
+    },
+    {
+      "key": "dexterity",
+      "name": "Destrezza",
+      "description": "Precisione, riflessi e capacità di evitare i colpi.",
+      "icon": "stat-dexterity",
+      "position": 1
+    },
+    {
+      "key": "constitution",
+      "name": "Costituzione",
+      "description": "Tenuta fisica, resistenza alle ferite e alla fatica.",
+      "icon": "stat-constitution",
+      "position": 2
+    },
+    {
+      "key": "intelligence",
+      "name": "Intelligenza",
+      "description": "Ragionamento, conoscenze e comprensione delle tecniche.",
+      "icon": "stat-intelligence",
+      "position": 3
+    },
+    {
+      "key": "wisdom",
+      "name": "Saggezza",
+      "description": "Prudenza, intuito e resistenza alle suggestioni.",
+      "icon": "stat-wisdom",
+      "position": 4
+    },
+    {
+      "key": "charisma",
+      "name": "Carisma",
+      "description": "Presenza, persuasione e capacità di guidare.",
+      "icon": "stat-charisma",
+      "position": 5
+    },
+    {
+      "key": "perception",
+      "name": "Percezione",
+      "description": "Attenzione ai dettagli, sensi e lettura dei pericoli.",
+      "icon": "stat-perception",
+      "position": 6
+    },
+    {
+      "key": "willpower",
+      "name": "Volontà",
+      "description": "Disciplina, concentrazione e fermezza mentale.",
+      "icon": "stat-willpower",
+      "position": 7
+    }
+  ],
+  "settings": {
+    "attack_strength": 40,
+    "attack_dexterity": 35,
+    "attack_perception": 25,
+    "defence_dexterity": 45,
+    "defence_constitution": 30,
+    "defence_willpower": 25,
+    "mental_charisma": 50,
+    "mental_intelligence": 25,
+    "mental_willpower": 25,
+    "resist_willpower": 60,
+    "resist_wisdom": 40,
+    "damage_strength": 150,
+    "damage_constitution": 40,
+    "quest_xp_enabled": 1,
+    "quest_xp_base": 5,
+    "quest_xp_per_round": 2,
+    "quest_xp_min_rounds": 3,
+    "quest_xp_min_actions": 2,
+    "quest_xp_max": 50,
+    "quest_xp_daily_cap": 100,
+    "scene_turn_seconds": 900,
+    "scene_support_bonus": 4,
+    "scene_max_support": 2,
+    "scene_ranged_max_range": 30,
+    "scene_reload_rounds": 1,
+    "scene_weapon_accuracy": 6,
+    "scene_defence_bonus": 4,
+    "scene_held_penalty": 6,
+    "scene_wound_penalty_max": 6,
+    "scene_damage_min": 20,
+    "scene_damage_max": 240,
+    "scene_unarmed_multiplier": 2,
+    "scene_weapon_multiplier": 3,
+    "scene_margin_multiplier": 2,
+    "scene_armor_absorption": 20,
+    "scene_reward_min_rounds": 3,
+    "scene_reward_min_actions": 2,
+    "scene_reward_daily_cap": 100,
+    "scene_reward_cooldown": 3600
+  },
+  "races": [],
+  "abilities": []
+}

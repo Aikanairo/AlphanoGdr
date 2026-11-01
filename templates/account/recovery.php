@@ -1,0 +1,16 @@
+<?php
+/** @var array $recovery Presentation shared by password and character recovery. */
+$h = static fn(mixed $value): string => htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+?>
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title><?=$h($recovery['title'])?></title></head><body class="portal account-recovery-page">
+<a class="account-recovery-brand" href="/"><?=$h(TitoloSito)?> <span>Una storia condivisa</span></a>
+<main class="account-recovery-card" aria-labelledby="recovery-title">
+<header class="account-recovery-heading" data-page-heading><span data-icon="user" aria-hidden="true"></span><div><div class="ui-eyebrow"><?=$h(TitoloSito)?> · Accesso</div><h1 id="recovery-title"><?=$h($recovery['title'])?></h1><p><?=$h($recovery['description'])?></p></div></header>
+<div class="account-recovery">
+<?php if (!empty($recovery['error'])): ?><p class="account-recovery-message" role="alert"><?=$h($recovery['error'])?></p><?php endif; ?>
+<?php if (!empty($recovery['message'])): ?><p class="account-recovery-message" role="status"><?=$h($recovery['message'])?></p><?php endif; ?>
+<?php if ($recovery['mode'] === 'request'): ?><form method="post" action="<?=$h(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))?>" class="ui-form"><input type="hidden" name="_csrf" value="<?=$h(alphano_csrf_token())?>"><label for="recovery-user">Nome del personaggio</label><input id="recovery-user" type="text" name="user" value="<?=$h($recovery['user'])?>" autocomplete="username" required><label for="recovery-email">E-mail di registrazione</label><input id="recovery-email" type="email" name="mail" value="<?=$h($recovery['email'])?>" autocomplete="email" required><div class="account-recovery-actions"><button type="submit" data-icon="mail">Recupera password</button></div></form>
+<?php elseif ($recovery['mode'] === 'password'): ?><form method="post" action="<?=$h(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))?>" class="ui-form"><input type="hidden" name="_csrf" value="<?=$h(alphano_csrf_token())?>"><input type="hidden" name="reset_token" value="<?=$h($recovery['token'])?>"><label for="recovery-password">Nuova password</label><input id="recovery-password" type="password" name="password" minlength="12" maxlength="72" autocomplete="new-password" required><label for="recovery-confirm">Conferma password</label><input id="recovery-confirm" type="password" name="password_confirm" minlength="12" maxlength="72" autocomplete="new-password" required><div class="account-recovery-actions"><button type="submit" data-icon="check">Salva password</button></div></form>
+<?php elseif ($recovery['mode'] === 'restore'): ?><form method="post" action="<?=$h(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))?>" class="ui-form"><input type="hidden" name="_csrf" value="<?=$h(alphano_csrf_token())?>"><input type="hidden" name="identity" value="<?=$h($recovery['identity'])?>"><button type="submit" data-icon="user">Ripristina il personaggio</button></form><?php endif; ?>
+<nav class="account-recovery-actions" aria-label="Navigazione"><a class="action-btn" data-icon="compass" href="/">Torna all’accesso</a></nav>
+</div></main></body></html>

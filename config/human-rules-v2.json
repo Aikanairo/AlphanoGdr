@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "initial_choices": 0,
+  "initial_points": 20,
+  "learning_cost": 20,
+  "specialization_cost": 40,
+  "abilities": [],
+  "malus": []
+}

@@ -1,0 +1,16 @@
+{
+  "author": "Alfano Gaetano",
+  "license": "AGPL-3.0-only",
+  "assets": [
+    {
+      "path": "assets/alphanogdr-logo.png",
+      "sha256": "baabb219f695a60501ae45704c79ddd40d99c40acdfeba1e76408144f2e78d17",
+      "source": "Logo fornito dall’autore per AlphanoGdr"
+    },
+    {
+      "path": "favicon.png",
+      "sha256": "033209a86a935fe60d9164ba13456688b52b1ad3f9324d2c84b1202215c33d50",
+      "source": "Favicon fornita dall’autore per AlphanoGdr"
+    }
+  ]
+}

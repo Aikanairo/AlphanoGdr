@@ -1,0 +1,10 @@
+Winwheel.js — Douglas McKechie
+Official upstream: https://github.com/zarocknz/javascript-winwheel
+Source: https://raw.githubusercontent.com/zarocknz/javascript-winwheel/master/Winwheel.js
+Retrieved: 2026-10-25
+SHA-256: bbfa9c026aa2abc0051fcadbc731ae2734c10dfc9f899682d139ba46c04db19a
+License: MIT; full copyright and license notice preserved at the top of Winwheel.js.
+
+AlphanoGdr uses the upstream wheel renderer, code-authored placeholders and a native
+requestAnimationFrame animation. No remote scripts or GSAP dependency are loaded.
+The server decides resource, multiplier, inventory award and cooldown.

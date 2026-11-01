@@ -1,0 +1,6 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__.'/../libs/kernel.inc.php';
+alphano_require_login();$user=alphano_user();if(empty($user['admin'])&&empty($user['fatepower']))alphano_fail('Permessi Master richiesti.',403);
+?>
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vulnerabilità e condizioni</title><script type="module" src="/js/rpg-malus-admin.js?v=20261030"></script></head><body class="ui-page"><main class="rpg-admin" data-malus-admin><header class="ui-page-heading" data-page-heading><span data-icon="shield"></span><div><p class="ui-eyebrow">Alphano · Regolamento razziale</p><h1>Vulnerabilità e condizioni</h1><p>Consulta i malus di ogni stirpe e registra soltanto condizioni accertate nella giocata. Ogni modifica lascia una motivazione nel registro.</p></div></header><div class="rpg-admin-toolbar"><label>Personaggio<select data-malus-target><option>Caricamento…</option></select></label><a data-malus-profile class="action-btn">Apri scheda</a></div><p data-malus-feedback role="status"></p><div data-malus-sheet></div><p><a href="/admin/rpg.php">Regole, razze e abilità</a> · <a href="/manuali/?chapter=umani-malus">Manuale Umani e Malus v2</a></p></main></body></html>

@@ -1,0 +1,16 @@
+{
+  "generated_with": "OpenAI image_gen · built-in",
+  "assets": [
+    {
+      "key": "header-panorama",
+      "kind": "header",
+      "path": "/assets/headers/panorama.webp",
+      "title": "La città al crepuscolo · Homepage e mappa",
+      "sha256": "eebaf28553f46e2a8cec4d43e24768514c80160db3382051de125526cd2d0e16",
+      "width": 1672,
+      "height": 941,
+      "license": "MIT",
+      "prompt": "Use case: stylized-concept. Asset type: original panoramic hero illustration for an open source roleplaying game portal. Create one beautiful wide cinematic matte painting, landscape 16:9. An inviting atmospheric walled fantasy city on an island plateau, a stone bridge leading towards illuminated gates, distant mountains and a wide calm river, tiny warm window lights, twilight blue hour with mist and soft moonlight. Rich painterly detail, elegant and believable architecture, restrained dark sapphire, smoky indigo, warm amber lighting. Composition: interesting city in middle and right, left quarter quiet dark atmospheric foreground for HTML headline overlay; upper sky and lower foreground remain uncluttered to permit responsive crops. Refined book-cover aesthetic, sense of discovery, legible forms. Original generic setting, no existing game lore, no recognizable franchises, no people in close-up, no text, no lettering, no logos, no watermark, no UI, no frame."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__.'/../../libs/libassemblea.inc.php';
+require_once __DIR__.'/../../libs/libelezioni.inc.php';
+require_once __DIR__.'/../../libs/libtext.inc.php';
+header('Content-Type: application/json; charset=utf-8');header('Cache-Control: private,no-store');
+try{
+ $player=alphano_require_login(true);$method=$_SERVER['REQUEST_METHOD'];if(!in_array($method,['GET','POST'],true))throw new DomainException('Metodo non consentito.',405);
+ $name=$_GET['nomecity']??'';if(!is_string($name)||trim($name)==='')throw new DomainException('Città non valida.',400);$db=ConnectDB();$city=$db->query('SELECT * FROM city WHERE city=?',[$name])[0]??null;if(!$city)throw new DomainException('Città non disponibile.',404);$cid=(int)$city['id'];
+ if($method==='POST'){
+  alphano_require_csrf(true);$action=$_POST['azione']??'';if(!is_string($action))throw new DomainException('Azione non valida.',400);
+  if($action==='candidati'){$program=$_POST['programma']??'';if(!is_string($program))throw new DomainException('Programma non valido.',422);alphano_elections_candidate($cid,$player,$program);}
+  elseif($action==='elezioni'){$candidate=filter_var($_POST['pg']??null,FILTER_VALIDATE_INT);if(!$candidate)throw new DomainException('Candidato non valido.',422);$expected=alphano_elections_round($cid);alphano_elections_vote($cid,$player,$candidate,null,(int)($expected['id']??0),(int)($expected['civic_ballot']??0));}
+  elseif($action==='vota'){EconomiaAtomica(static function()use($db,$cid,$player){$city=$db->query('SELECT * FROM city WHERE id=? FOR UPDATE',[$cid])[0];if(alphano_elections_city($player)!==$cid)throw new DomainException('Solo i cittadini possono votare.',403);$vote=filter_var($_POST['statuto']??null,FILTER_VALIDATE_INT);if($city['newstatuto']===''||!in_array($vote,[0,1],true)||$db->query('SELECT 1 FROM assemblea WHERE city=? AND pg=?',[$cid,$player]))throw new DomainException('Voto non valido o già espresso.',409);$db->execute('INSERT INTO assemblea(city,pg,voto) VALUES(?,?,?)',[$cid,$player,$vote]);});}
+  else throw new DomainException('Azione non valida.',400);
+ }
+ $citizen=alphano_elections_city($player)===$cid;$inhabitants=(int)$db->query('SELECT COUNT(*) AS n FROM utenti u JOIN araldiche a ON a.id=u.araldica WHERE a.city=?',[$cid])[0]['n'];$count=$db->query('SELECT SUM(voto=1) AS yesvotes,SUM(voto=0) AS novotes FROM assemblea WHERE city=?',[$cid])[0];$yes=(int)$count['yesvotes'];$no=(int)$count['novotes'];
+ if($method==='POST'&&$city['newstatuto']!==''&&$inhabitants>0){$ids=array_map('intval',array_column($db->query('SELECT id FROM araldiche WHERE city=?',[$cid]),'id'));if($yes>$inhabitants/2)ApprovaStatuto($cid,$ids);elseif($no>=ceil($inhabitants/2))RespingiStatuto($cid,$ids);$city=$db->query('SELECT * FROM city WHERE id=?',[$cid])[0];}
+ $s=alphano_elections_state($cid,$player);$r=alphano_elections_round($cid);$last=$s['last_result'];$winner=$last&&$last['winner_id']?['id'=>(int)$last['winner_id'],'name'=>$last['winner_name'],'votes'=>0,'consultazioni'=>json_decode($last['consultazioni'],true)?:[]]:null;
+ $canStatute=$citizen&&$city['newstatuto']!==''&&!$db->query('SELECT 1 FROM assemblea WHERE city=? AND pg=?',[$cid,$player]);
+ echo json_encode(['cityId'=>$cid,'cityName'=>$city['city'],'organization'=>GetOrg((int)$city['organizzazione'])??'','inhabitants'=>$inhabitants,'isCitizen'=>$citizen,'electionsEnabled'=>true,'statute'=>['current'=>alphano_sanitize_html($city['statuto']),'proposed'=>alphano_sanitize_html($city['newstatuto']),'votes'=>['yes'=>$yes,'no'=>$no],'userCanVote'=>$canStatute],'candidacyOpen'=>$s['can_candidate'],'candidacyDeadline'=>$r['start_elezioni']??null,'startCandidature'=>$r['start_candidature']??null,'startElezioni'=>$r['start_elezioni']??null,'endElezioni'=>$r['end_elezioni']??null,'electionType'=>'civiche','monthsToNextElection'=>null,'yourCandidature'=>$s['own_program'],'election'=>['inProgress'=>in_array($s['phase'],['voting','runoff'],true),'isBallot'=>$s['phase']==='runoff','canVote'=>$s['can_vote'],'candidates'=>$s['candidates'],'results'=>$winner['consultazioni']??[],'winner'=>$winner],'civic'=>$s],JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR);
+}catch(Throwable $e){$status=$e instanceof DomainException?(int)$e->getCode():500;if($status<400||$status>599)$status=500;http_response_code($status);if($status===500)error_log('[assemblea] '.$e);echo json_encode(['error'=>true,'message'=>$status===500?'Impossibile completare l’operazione.':$e->getMessage()],JSON_UNESCAPED_UNICODE);}

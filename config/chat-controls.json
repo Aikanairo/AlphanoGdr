@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "key": "dialogue",
+      "label": "Chat",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "location",
+      "label": "Luogo",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "description",
+      "label": "Descrizione",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "present",
+      "label": "Presenti",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "combat",
+      "label": "Scontro",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "options",
+      "label": "Opzioni",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "expand",
+      "label": "Espandi la chat",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "master",
+      "label": "Master",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "back",
+      "label": "Torna al luogo",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "rooms",
+      "label": "Camere e affitti",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "menu",
+      "label": "Menu e pannelli",
+      "path": "/assets/placeholder.svg"
+    },
+    {
+      "key": "games",
+      "label": "Scacchi e Dama",
+      "path": "/assets/placeholder.svg"
+    }
+  ]
+}

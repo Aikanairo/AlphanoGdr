@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "source": "Immagini caricate dal titolare su alfanew e autorizzate per il pacchetto dimostrativo.",
+  "license": "AGPL-3.0-only",
+  "assets": [
+    {
+      "path": "assets/maps/world.png",
+      "sha256": "2e6d4e08edcf630b4257dc12c069267277e12be3f261ae8837fd6de7f0d73f5b",
+      "role": "Mappa generale",
+      "license": "AGPL-3.0-only"
+    },
+    {
+      "path": "assets/maps/city.png",
+      "sha256": "539f6a36e3e8015792e82c01572acf15dc4c4894484f15a5429fb18fda004ec3",
+      "role": "Sottomappa e immagine di City Alphano",
+      "license": "AGPL-3.0-only"
+    }
+  ]
+}

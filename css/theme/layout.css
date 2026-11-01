@@ -1,0 +1,172 @@
+/* Cornice unica: barra superiore, area centrale e colonna destra. */
+body[data-view=main] { padding: 0; height: 100dvh; overflow: hidden; }
+.game-shell { height: 100%; }
+/* Medaglioni e panorama originali del template Alphano_Header_Medaglioni_Leggeri. */
+.topbar { --header-ivory:#eae3da; --header-bronze:#c0ae92; display:flex; align-items:center; justify-content:center; gap:clamp(13px,2vw,32px); padding:7px clamp(12px,1.5vw,30px); min-height:108px; background:var(--panel); position:relative; flex:0 0 auto; border:0; border-bottom:1px solid #a6b2bd1f; border-radius:0; z-index:20; box-shadow:0 10px 35px #0007; isolation:isolate; }
+.topbar::before { content:""; position:absolute; z-index:-2; inset:0; background-image:linear-gradient(90deg,color-mix(in srgb,var(--bg) 54.90%,transparent),color-mix(in srgb,var(--bg) 3.14%,transparent) 48%,color-mix(in srgb,var(--bg) 60.00%,transparent)),linear-gradient(180deg,color-mix(in srgb,var(--bg) 13.33%,transparent),color-mix(in srgb,var(--bg) 85.88%,transparent) 84%,var(--bg)),none; background-position:center,center,center 45%; background-size:cover; opacity:.95; pointer-events:none; }
+.topbar::after { content:""; position:absolute; inset:auto 0 0; height:1px; background:linear-gradient(90deg,transparent,#8a98a56e 35%,#9c8a704f 60%,transparent); pointer-events:none; }
+.game-navigation { flex:1; min-width:0; max-width:100%; }
+.game-navigation .tabs { display:flex; align-items:center; justify-content:safe center; flex-wrap:nowrap; gap:clamp(3px,.42vw,12px); overflow-x:auto; scrollbar-width:none; overscroll-behavior-inline:contain; padding:2px 0 3px; }
+.game-navigation .tabs::-webkit-scrollbar { display:none; }
+.game-navigation .tab { position:relative; display:flex; justify-content:center; flex:1 0 auto; max-width:130px; min-width:70px; }
+.game-navigation .tab-btn { display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; width:100%; min-width:66px; border:0; background:none; color:var(--header-ivory); padding:4px 4px 2px; border-radius:12px; position:relative; transition:background .2s,transform .2s; box-shadow:none; }
+.game-navigation .menu-text { display:inline-flex; align-items:center; gap:5px; font:400 clamp(11px,.9vw,15px)/1.2 Georgia,serif; white-space:nowrap; text-shadow:0 1px 4px #000; letter-spacing:.05px; }
+.game-navigation .nav-medallion { display:block; width:clamp(46px,4vw,60px); height:clamp(46px,4vw,60px); object-fit:cover; max-width:none; border-radius:50%; border:1px solid #bcbdb873; box-shadow:inset 0 1px #e6e1d53d,0 3px 13px #0009; filter:saturate(.83) contrast(1.07); transition:filter .2s,box-shadow .2s,border-color .2s; flex:none; }
+.game-navigation .tab-btn .ui-icon { color:var(--header-bronze); width:50px; height:50px; }
+.game-navigation .tab-btn:is(:hover,.active,[aria-expanded=true]) { background:#a1b4c812; transform:translateY(-2px); color:var(--header-ivory); box-shadow:none; }
+.game-navigation .tab-btn:is(:hover,.active,[aria-expanded=true]) .nav-medallion { filter:saturate(1.05) contrast(1.06); border-color:#e7cfa1d9; box-shadow:0 0 0 3px #b9a2781c,0 4px 20px #c1a57b2c; }
+.game-navigation .tab-btn:focus-visible { outline:2px solid var(--gold-2); outline-offset:-2px; }
+.game-navigation .tab-list { display:none; position:fixed; top:var(--menu-top,150px); left:var(--menu-left,12px); width:270px; min-width:0; max-width:calc(100vw - 24px); max-height:min(60dvh,calc(100dvh - var(--menu-top,150px) - 14px)); overflow-y:auto; margin:0; padding:10px; list-style:none; background:linear-gradient(160deg,color-mix(in srgb,var(--panel) 96.08%,transparent),color-mix(in srgb,var(--panel) 98.04%,transparent)); border:1px solid #c6b3994a; border-radius:16px; box-shadow:0 17px 50px #000b,inset 0 0 0 1px #ffffff0c; backdrop-filter:blur(18px); z-index:100; }
+.game-navigation .tab-list.show { display:block; }
+.game-navigation .tab-list a { display:block; padding:11px 12px; border-radius:9px; color:#e2e8f0; font:14px/1.4 var(--font-ui); }
+.game-navigation .tab-list a:is(:hover,:focus-visible) { background:#ffffff15; color:#ffe3aa; text-decoration:none; }
+.top-actions,.quicklinks-box { display:flex; gap:8px; align-items:center; flex:none; }
+.top-actions { padding-left:clamp(14px,1.6vw,28px); border-left:1px solid #e8e4df24; }
+.topbar .top-actions .icon-btn { height:42px; width:42px; min-height:42px; min-width:42px; display:grid; place-items:center; padding:0; border:1px solid #b9b09e3d; color:#d8d5c8; background:color-mix(in srgb,var(--panel) 78.82%,transparent); border-radius:12px; box-shadow:none; }
+.topbar .top-actions .icon-btn:is(:hover,:focus-visible) { background:var(--panel-2); border-color:#bda783a0; }
+.topbar .top-actions .ui-icon { width:21px; height:21px; margin:0; color:inherit; }
+@media(min-width:901px) and (max-width:1250px) { .topbar {gap:10px;padding:6px 12px;} .game-navigation .tabs {justify-content:flex-start;} .game-navigation .tab {flex:0 0 82px;} .top-actions {gap:5px;padding-left:10px;} .topbar .top-actions .icon-btn {width:39px;min-width:39px;height:39px;min-height:39px;} }
+.game-content { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) var(--sidebar-w); gap: var(--gap); padding: var(--gap); height: 100%; min-height: 0; overflow: hidden; align-items: stretch; }
+.main-col { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.map-area { flex: 1; margin-top: var(--gap); min-height: 0; position: relative; overflow: hidden; }
+.map-area > iframe { width: 100%; height: 100%; }
+.sidebar.right-col { height: 100%; min-height: 0; display: flex; flex-direction: column; gap: var(--gap); overflow-y: auto; padding-right: 4px; }
+.right-col > .panel { flex-shrink: 0; overflow: hidden; }
+/* Pannello personaggio: identità, risorse e sorte sullo stesso fondale di stirpe. */
+.profile-card { position:relative;isolation:isolate;padding:20px 20px 16px;border-radius:21px;background:linear-gradient(158deg,var(--panel-2),var(--panel));box-shadow:0 18px 38px #0003,inset 0 1px #f6e2b00d; }
+.profile-card::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background-image:linear-gradient(90deg,color-mix(in srgb,var(--panel) 92.16%,transparent),color-mix(in srgb,var(--panel) 65.10%,transparent)),linear-gradient(0deg,var(--panel) 5%,color-mix(in srgb,var(--panel) 27.06%,transparent) 85%),var(--profile-card-art,none);background-size:cover;background-position:center,center,72% top;opacity:.78}
+.profile-card::after{content:"";position:absolute;inset:8px 12px auto;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);pointer-events:none}
+.profile-card-eyebrow{font:750 10px/1.4 var(--font-ui);letter-spacing:.17em;text-transform:uppercase;color:var(--gold);margin-bottom:15px}
+.character-top { display:grid;grid-template-columns:100px minmax(0,1fr);gap:15px;align-items:center; }
+.profile-card .portrait { width:100px;height:100px;padding:3px;object-fit:cover;border-radius:50%;border:1px solid var(--gold);background:var(--brand-background);box-shadow:0 8px 23px #0008,0 0 0 4px color-mix(in srgb,var(--panel) 69.02%,transparent); }
+.prof-info{min-width:0}
+.prof-name { color:var(--gold-2);font:700 30px/1.1 Georgia,serif;cursor:pointer;overflow-wrap:anywhere; }
+.prof-name img { width:19px;height:19px;vertical-align:middle; }
+.profile-card-race{margin-top:8px;color:var(--text);font:12px/1.4 var(--font-ui)}
+.prof-sub { display:block;font:12px/1.5 var(--font-ui);color:var(--muted);margin-top:6px; }
+.profile-stats { margin-top:19px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:14px; }
+.profile-card .coins-row { display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0;border:0;background:none;font:13px/1.5 var(--font-ui); }
+.profile-card .coins-row strong { color:var(--gold-2);font:700 23px/1 Georgia,serif;font-variant-numeric:tabular-nums; }
+.profile-card .health-row{display:block}
+.profile-health-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;font:13px/1.4 var(--font-ui);color:var(--muted)}
+.profile-health-heading>span:first-child,.coins-row>span{display:inline-flex;align-items:center;gap:8px}
+.profile-card :is(.profile-health-heading,.coins-row) .ui-icon{width:16px;height:16px;color:var(--gold);margin:0}
+#profile-health-label{font-size:11px}
+.profile-card-footer{margin-top:13px;color:var(--muted-2);font:9px/1.4 var(--font-ui);letter-spacing:.06em;text-transform:uppercase}
+.bar { height:9px; border-radius:999px; overflow: hidden; background: var(--panel-2); border: 1px solid var(--line); }
+.bar-inner, .bar { min-width: 0; }
+.bar-inner { height: 100%; transition: width var(--transition); background: var(--danger); }
+.bar-inner.green { background:var(--health-background); }.bar-inner.orange, .bar-inner.yellow { background: var(--gold); }.bar-inner.gray { background: var(--muted-2); }
+.weather-wrap { display: grid; gap: 10px; }
+.weather-icons { display: flex; justify-content: center; gap: 18px; }
+.wi { position: relative; width: 32px; height: 32px; }
+.wi img { width: 100%; height: 100%; }
+.wi:hover::after { content: attr(data-tooltip); position: absolute; z-index: 3; bottom: 110%; left: 50%; transform: translateX(-50%); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: .35rem .55rem; white-space: nowrap; font-size: .8rem; }
+.weather-time, .weather-moon { text-align: center; }
+.weather-moon small { display: block; }
+.right-col ul { margin: 0; list-style: none; }
+#presenti-list, #news-list { display: grid; gap: 10px; max-height: 260px; overflow-y: auto; padding-inline: 0; }
+#presenti-list li { display: flex; align-items: center; gap: 10px; }
+#presenti-list li + li, #news-list li + li { padding-top: 10px; border-top: 1px solid var(--line); }
+#presenti-list .posta-btn { padding: .25rem .4rem; }
+.razza-icon { width: 16px; height: 16px; }
+.presenti-name { color: var(--text); }
+.news-box > #news-list { padding-inline: 18px; }
+#news-list { font-size: .9rem; color: var(--muted); line-height: 1.5; }
+.sidebar-toggle { display: none; }
+/* Ogni modulo usa la stessa finestra, senza ricreare la colonna personaggio. */
+.modal-overlay { position: fixed; inset: 0; padding: 18px; background: var(--shadow-color); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.modal-window { display: flex; flex-direction: column; width: min(var(--mw, 900px), 96vw); height: min(var(--mh, 750px), 92dvh); min-width: 280px; min-height: 240px; max-width: 96vw; max-height: 94dvh; resize: both; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); background: var(--bg); }
+.modal-header { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 10px 18px; border-bottom: 1px solid var(--line); background: var(--panel-2); }
+.modal-header h3 { margin: 0; font-size: 1.05rem; }
+.modal-header button { padding: .2rem .65rem; font-size: 1.4rem; }
+.modal-body { min-height: 0; flex: 1; padding: 0; overflow: auto; }
+.modal-body iframe { width: 100%; height: 100%; }
+body[data-view=map] { padding: 0; overflow: hidden; height: 100dvh; }
+body[data-view=map] > img[data-fullcover] { display: block; }
+@media (max-width: 1280px) { :root { --sidebar-w: 310px; } .profile-card{padding:17px 16px 14px} .character-top { grid-template-columns: 82px minmax(0,1fr);gap:12px; } .profile-card .portrait { width:82px; height:82px; } .prof-name{font-size:24px} }
+@media (max-width: 900px) { .topbar { flex-wrap: wrap; } .top-actions { margin-left: auto; } .game-navigation { order: 2; flex-basis: 100%; } .game-navigation .tabs { gap: 5px; } .game-navigation .tab-btn { font-size: .8rem; } .game-content { grid-template-columns: 1fr; padding: 12px; gap: 12px; } .sidebar-toggle { display: inline-flex; } .sidebar.right-col { position: absolute; right: 12px; top: 12px; bottom: 12px; height: auto; width: min(360px, calc(100vw - 24px)); z-index: 30; background: var(--bg); padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); transform: translateX(calc(100% + 24px)); transition: transform var(--transition); } .sidebar.right-col.active { transform: translateX(0); } .modal-overlay { padding: 6px; } .modal-window { width: 98vw; max-width: 98vw; height: 94dvh; max-height: 94dvh; } }
+.workspace { position: absolute; inset: 0; display: flex; flex-direction: column; min-width: 0; min-height: 0; background: var(--bg); }
+.workspace-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); background: var(--panel-2); }
+.workspace-header h1 { font-size: 1.1rem; margin: 0; }
+.workspace-header button { font-size: .85rem; padding: .45rem .75rem; }
+.workspace-frame { flex: 1; min-height: 0; width: 100%; }
+.workspace.has-inner-heading > .workspace-header { display:none; }
+.ui-page-heading .ui-return-location { display:inline-flex; align-items:center; gap:7px; margin-left:auto; flex-shrink:0; padding:8px 11px; font-size:.8rem; }
+@media(max-width:600px) { .ui-page-heading .ui-return-location { max-width:110px; white-space:normal; } }
+.weather-icons img { mix-blend-mode: screen; }
+@media (max-width: 900px) {
+  .sidebar.right-col { visibility: hidden; z-index: 10; }
+  .sidebar.right-col.active { visibility: visible; }
+}
+
+/* Il triangolo identifica ogni gruppo come menu espandibile. */
+.game-navigation .menu-text::after { content:"⌄"; margin:0; color:var(--header-bronze); opacity:.7; font:14px/1 system-ui,sans-serif; transition:transform .2s; }
+.game-navigation .tab-btn[aria-expanded=true] .menu-text::after { transform:rotate(180deg); }
+
+.right-col .panel-header h2 > .ui-icon { width:16px; height:16px; margin-right:8px; }
+
+.game-content.chat-wide { grid-template-columns:minmax(0,1fr); }
+.game-content.chat-wide > .right-col { display:none; }
+
+.mobile-return-chat{display:none}
+@media(max-width:760px){
+ body[data-view=main].has-focused-chat:not(.mobile-game-menu) .topbar{display:none}
+ body[data-view=main].has-focused-chat .game-content{padding:0;gap:0}
+ body[data-view=main].has-focused-chat .map-area{margin:0;border-radius:0;border:0}
+ body[data-view=main].has-focused-chat:not(.mobile-game-menu) .right-col{display:none}
+ body[data-view=main].has-focused-chat.mobile-game-menu .topbar{position:absolute;inset:0 0 auto;max-height:75dvh;overflow:visible;z-index:100;padding:14px;box-shadow:0 20px 80px #000c}
+ body[data-view=main].has-focused-chat.mobile-game-menu .mobile-return-chat{display:inline-flex}
+ body[data-view=main].has-focused-chat.mobile-game-menu .game-navigation{order:0}.mobile-game-menu .game-navigation .tabs{display:grid;grid-template-columns:1fr 1fr}
+}
+
+/* Quattro simboli senza cornice, ridotti del 20%; riepilogo su una sola riga. */
+.weather-icons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.weather-icons .wi{position:relative;display:flex;align-items:center;flex-direction:column;width:auto;height:auto;margin:0;min-width:0}
+.weather-icons .wi img{width:80%;height:auto;aspect-ratio:1;max-width:80px;object-fit:contain;mix-blend-mode:normal;filter:none}
+.weather-temperature{text-align:center;font:700 20px Georgia,serif;color:var(--gold-2)}
+.weather-time{font:12px/1.7 var(--font-ui);color:var(--muted)}
+.weather-summary{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;white-space:nowrap}
+.weather-summary .weather-temperature{flex:none}
+.weather-summary .weather-time{min-width:0;line-height:1.4;font-size:clamp(10px,1vw,12px)}
+.scene-container{position:absolute;inset:0;min-width:0;min-height:0;display:flex;flex-direction:column}.scene-container>.scene-frame{width:100%;height:100%;flex:1;min-height:0}
+
+/* The lineage action belongs to the character name, on desktop and mobile. */
+.profile-name-row{display:inline-flex;align-items:center;gap:6px;max-width:calc(100% - 25px);vertical-align:middle}
+.profile-name-text{min-width:0;overflow-wrap:anywhere}
+.profile-transform{flex:none;display:inline-grid;place-items:center;vertical-align:middle;width:34px;height:34px;min-height:34px;padding:7px;margin-left:0;border-radius:50%;color:var(--gold);border:1px solid var(--line);background:var(--button-background)}
+.profile-transform .ui-icon{width:20px;height:20px;margin:0}
+.profile-transform[aria-pressed=true]{border-color:var(--gold);box-shadow:0 0 12px #cba45e38}
+@media(max-width:900px){.profile-transform{width:44px;height:44px;min-height:44px}}
+/* Profile quick actions share existing identity space; desktop medals adapt to the available column. */
+.profile-card-tools.top-actions{display:flex;justify-content:flex-start;gap:6px;padding:0;margin:8px 0;border:0}
+.profile-card-tools .quicklinks-box{display:flex}
+.profile-card-tools .icon-btn{display:grid;place-items:center;width:34px;height:32px;min-width:34px;min-height:32px;padding:6px;border-radius:9px;background:var(--panel);border:1px solid var(--line);color:var(--gold-2)}
+.profile-card-tools .ui-icon{width:17px;height:17px;margin:0}
+@media(min-width:901px){.game-navigation{container-type:inline-size}.game-navigation .tabs{display:grid;grid-template-columns:repeat(var(--menu-count,11),minmax(0,1fr));gap:3px;overflow:visible;justify-content:stretch}.game-navigation .tab{min-width:0;max-width:none;width:100%}.game-navigation .tab-btn{min-width:0;width:100%;padding:4px 2px 2px}.game-navigation .nav-medallion{width:clamp(29px,calc(75cqw / var(--menu-count,11)),60px);height:clamp(29px,calc(75cqw / var(--menu-count,11)),60px)}.game-navigation .menu-text{max-width:100%;font-size:clamp(10px,calc(13cqw / var(--menu-count,11)),15px);gap:2px;letter-spacing:-.15px}.game-navigation .menu-text::after{font-size:9px;flex:none}.topbar{min-height:94px;padding-left:10px;padding-right:10px}}
+.game-navigation .menu-text{min-width:0}.game-navigation .menu-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.profile-card .profile-name-row{display:flex;flex-wrap:wrap;max-width:100%;gap:7px}.profile-card .profile-name-text{max-width:100%}.profile-card .profile-transform{width:28px;height:28px;min-height:28px;padding:5px}.profile-card .profile-transform .ui-icon{width:17px;height:17px}
+@media(max-width:900px){.profile-card-tools .icon-btn{width:40px;height:40px;min-width:40px;min-height:40px}.profile-card .profile-transform{width:36px;height:36px;min-height:36px}}
+/* Entry medallions and direct destinations share the central header navigation. */
+.game-navigation .nav-direct{text-decoration:none;cursor:pointer}.game-navigation .nav-direct .menu-text::after{display:none}
+.game-navigation .tab-list a{display:flex;align-items:center;gap:12px;padding:8px 10px;min-height:66px}.game-navigation .nav-item-medallion{display:block;flex:0 0 50px;width:50px;height:50px;max-width:none;object-fit:cover;border-radius:50%;border:1px solid #b89a617d;box-shadow:0 2px 7px #0008;background:var(--panel)}.game-navigation .nav-item-label{flex:1;min-width:0;overflow-wrap:anywhere}.game-navigation .tab-list .notification-badge{flex:none}
+
+/* Navigation destinations are not character identities, including cached decorations. */
+.game-navigation .character-markers{display:none}
+
+/* Personal return path lives under Mappa without adding a second full menu row. */
+.game-navigation [data-navigation-recent-scene]{margin:0 10px 8px 35px;padding-left:14px;border-left:1px solid #c6a56c70}
+.game-navigation .tab-list a.nav-recent-scene{min-height:48px;padding:7px 9px;gap:10px;background:#d9b9760b;border-radius:7px}
+.nav-recent-copy{display:grid;gap:3px;min-width:0;flex:1}
+.nav-recent-caption{font:500 10px/1.4 var(--font-ui);letter-spacing:.04em;color:var(--muted)}
+.nav-recent-title{font:500 12px/1.45 var(--font-ui);color:var(--gold-2);overflow-wrap:anywhere}
+.nav-recent-dot{flex:none;width:9px;height:9px;border-radius:50%;background:#62c886;box-shadow:0 0 8px #62c88665}
+.game-navigation [data-navigation-recent-scene][hidden],.nav-recent-dot[hidden]{display:none}
+
+/* One narrative calendar; real login, work and moon clocks keep their own rules. */
+.world-calendar{display:flex;align-items:center;justify-content:center;gap:.45rem;margin:0 0 .7rem;color:var(--gold);font-size:.85rem;letter-spacing:.035em}
+.world-calendar [data-icon]{width:1rem;height:1rem}
+
+/* Cartography has no outer workspace title or return strip. */
+.workspace.is-visual-map>.workspace-header{display:none!important}.workspace.is-visual-map>.workspace-frame{height:100%;border:0}

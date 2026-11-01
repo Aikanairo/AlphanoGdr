@@ -1,0 +1,207 @@
+/* Mobile is one presentation layer over the complete game, not a reduced client. */
+.mobile-game-dock,.mobile-drawer-heading,.mobile-shell-backdrop,.mobile-composer-tools{display:none}
+.mobile-table-scroll{max-width:100%;min-width:0;overflow:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+body[data-view=map] .map-native{font:700 13px var(--font-ui)}
+body[data-view=map] .map-scale{font:11px var(--font-ui);color:var(--gold-2);min-width:33px;text-align:center}
+body[data-view=map] .map-minimap{position:absolute;left:14px;bottom:14px;width:132px;height:88px;padding:3px;border:1px solid var(--gold);border-radius:8px;background:var(--panel);box-shadow:0 4px 16px #0009;z-index:4;pointer-events:none}
+body[data-view=map] .map-minimap svg{display:block;width:100%;height:100%;border-radius:5px}
+body[data-view=map] .map-minimap-view{fill:#e7c67a15;stroke:#f4d99b;stroke-width:14}
+body[data-view=map] .map-minimap-toggle{pointer-events:all;position:absolute;left:0;top:-25px;display:grid;place-items:center;width:28px;height:26px;min-height:26px;padding:0;font:18px var(--font-ui);background:var(--panel);border:1px solid var(--gold);border-radius:6px 6px 0 0}
+body[data-view=map] .map-minimap.is-collapsed{width:28px;height:0;border:0;padding:0}
+body[data-view=map] .map-minimap.is-collapsed svg{display:none}
+body[data-view=map] .map-gesture-hint{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);padding:6px 10px;margin:0;max-width:calc(100% - 175px);border:1px solid var(--line);border-radius:7px;background:color-mix(in srgb,var(--bg) 85.10%,transparent);font:11px/1.4 var(--font-ui);color:var(--gold-2);pointer-events:none;text-align:center;z-index:3}
+body[data-view=map] .map-atlas>svg.is-pannable{cursor:grab;user-select:none;-webkit-user-select:none}
+body[data-view=map] .map-atlas>svg.is-dragging,body[data-view=map] .map-atlas>svg.is-dragging *{cursor:grabbing}
+.mobile-chat-tools-dialog:not([open]){display:none}
+@media(max-width:900px),(max-width:1100px) and (max-height:500px){
+ html{scroll-padding-bottom:80px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ body[data-view=main]{height:var(--game-viewport-height,100dvh);min-height:0;padding:0;overscroll-behavior:none}
+ body[data-view=main] .game-shell{display:flex;flex-direction:column;height:100%;min-height:0}
+ body[data-view=main] .game-content,body[data-view=main].has-focused-chat .game-content{flex:1;min-height:0;height:auto;padding:0;gap:0;display:block;overflow:hidden}
+ body[data-view=main] .main-col{height:100%}
+ body[data-view=main] .map-area,body[data-view=main].has-focused-chat .map-area{margin:0;border:0;border-radius:0;min-height:0}
+ body[data-view=main] .topbar,body[data-view=main].has-focused-chat:not(.mobile-game-menu) .topbar{display:none}
+ body[data-view=main].mobile-game-menu .topbar,body[data-view=main].has-focused-chat.mobile-game-menu .topbar{display:flex;flex-direction:column;align-items:stretch;gap:12px;position:absolute;inset:8px 8px 8px;max-height:none;overflow:auto;z-index:110;padding:14px;border-radius:14px;background:var(--panel);box-shadow:var(--shadow)}
+ body[data-view=main] .mobile-drawer-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;color:var(--gold-2);font:600 17px var(--font-body);padding:0 0 12px;border-bottom:1px solid var(--line);flex:none}
+ body[data-view=main] .mobile-drawer-heading button{display:grid;place-items:center;min-height:44px;min-width:44px;padding:10px}
+ body[data-view=main] .mobile-drawer-heading .ui-icon{width:21px;height:21px}
+ body[data-view=main] .game-navigation{order:0;flex:1;flex-basis:auto;min-height:0;overflow:auto}
+ body[data-view=main] .game-navigation .tabs,body[data-view=main].mobile-game-menu .game-navigation .tabs{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible;gap:6px;padding:0}
+ body[data-view=main] .game-navigation .tab-btn{min-height:47px;width:100%;font:15px var(--font-ui);text-align:left;justify-content:flex-start;padding:8px 12px;display:flex;flex-direction:row;gap:12px;background:color-mix(in srgb,var(--panel) 61.18%,transparent);border:1px solid var(--line)}
+ body[data-view=main] .game-navigation .tab{display:block;max-width:none;min-width:0;}
+ body[data-view=main] .game-navigation .nav-medallion{width:44px;height:44px;}
+ body[data-view=main] .game-navigation .menu-text{font:15px/1.3 Georgia,serif;}
+ body[data-view=main] .game-navigation .tab-btn:is(:hover,.active,[aria-expanded=true]){transform:none;}
+ body[data-view=main] .game-navigation .tab-list{position:static;width:100%;max-width:100%;max-height:none;min-width:0;margin:5px 0;padding:5px;border-radius:9px;box-shadow:none;background:var(--bg)}
+ body[data-view=main] .tab-list a{min-height:44px;padding:10px 13px;font:14px/1.6 var(--font-ui)}
+ body[data-view=main] .top-actions{margin:0;justify-content:space-between;order:2;padding-top:10px;border-top:1px solid var(--line)}
+ body[data-view=main] .top-actions :is(a,button){min-width:44px;min-height:44px}
+ body[data-view=main] .mobile-return-chat{display:none!important}
+ body[data-view=main] .mobile-game-dock{flex:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:4px max(5px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left));background:var(--topbar-background);border-top:1px solid var(--line);z-index:120;min-height:58px}
+ body[data-view=main] .mobile-dock-item{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid transparent;border-radius:9px;padding:5px 2px;min-width:0;min-height:48px;background:transparent;color:var(--muted);font:11px/1.2 var(--font-ui);box-shadow:none}
+ body[data-view=main] .mobile-dock-item .ui-icon{width:20px;height:20px;margin:0;color:var(--gold)}
+ body[data-view=main] .mobile-dock-item.is-active{background:var(--hover);color:var(--gold-2);border-color:var(--line);box-shadow:inset 0 -2px var(--gold)}
+ body[data-view=main] .mobile-shell-backdrop{display:block;position:absolute;inset:0;z-index:100;border:0;border-radius:0;padding:0;background:color-mix(in srgb,var(--bg) 72.16%,transparent);backdrop-filter:blur(4px)}
+ body[data-view=main] .sidebar.right-col,body[data-view=main].has-focused-chat .sidebar.right-col{display:flex;position:absolute;inset:8px 8px 8px auto;width:min(400px,calc(100% - 16px));height:auto;padding:12px;z-index:110;overscroll-behavior:contain;visibility:hidden;transform:translateX(calc(100% + 24px));background:var(--panel);border:1px solid var(--line);border-radius:14px}
+ body[data-view=main].mobile-world-open .sidebar.right-col.active{visibility:visible;transform:translateX(0)}
+ body[data-view=main] .sidebar .mobile-drawer-heading{position:sticky;top:-12px;padding:10px 0;background:var(--panel);z-index:3}
+ body[data-view=main] .workspace{height:100%;overscroll-behavior:none}
+ body[data-view=main] .workspace-header{min-height:50px;padding:5px 10px}
+ body[data-view=main] .workspace-header button{min-height:40px}
+ body[data-view=main].mobile-keyboard-open .mobile-game-dock{display:none}
+ body[data-view=map] .map-toolbar{top:max(8px,env(safe-area-inset-top));right:auto;gap:4px;padding:5px;max-width:calc(100% - 16px)}
+ body[data-view=map] .map-toolbar button,body[data-view=map] .map-tool-link{width:40px;height:40px;min-height:40px;padding:9px}
+ body[data-view=map] .map-atmosphere-status{flex-basis:100%;font-size:11px;padding:0 6px}
+ body[data-view=map] .map-destinations summary{min-height:40px;padding:11px 6px}
+ body[data-view=map] .map-destinations>a{min-height:44px}
+ body[data-view=map] .map-destinations[open]{position:absolute;top:100%;right:0;min-width:190px;max-height:min(420px,70dvh);overflow:auto;box-shadow:var(--shadow);border:1px solid var(--line)}
+ body[data-view=map] .map-minimap{width:108px;height:72px;left:max(10px,env(safe-area-inset-left));bottom:14px}
+ body[data-view=map] .map-gesture-hint{left:auto;right:10px;transform:none;max-width:calc(100% - 135px);bottom:14px}
+ body.ui-page{overflow-x:clip;overflow-wrap:anywhere}
+ body.ui-page :is(input:not([type=checkbox]):not([type=radio]),select,textarea){font-size:16px;max-width:100%}
+ body.ui-page :is(button,.action-btn,.ui-action){min-height:42px}
+ body.ui-page :is(.ui-tablist,.rpg-tabs,.profile-editor-tabs){overflow-x:auto;flex-wrap:nowrap;max-width:100%;overscroll-behavior-inline:contain;scrollbar-width:thin}
+ body.ui-page [role=tab]{flex:none;min-height:44px}
+ body.ui-page :is(dialog,.modal-window){max-width:calc(100vw - 12px);max-height:calc(100dvh - 12px);min-width:0;resize:none}
+ body.ui-page :is(.ui-table-scroll,.mobile-table-scroll){scrollbar-width:thin}
+ body.ui-page :is(.ui-table-scroll,.mobile-table-scroll):focus-visible{outline-offset:-3px}
+ body.ui-page .ui-page-heading{min-width:0}
+ body.ui-page .ui-page-heading .ui-heading-controls{min-width:0;max-width:100%}
+}
+@media(max-width:900px),(max-width:1100px) and (max-height:500px){
+ body[data-view=chat-index]{height:100dvh;min-height:0;overscroll-behavior:none}
+ body[data-view=chat-index] .scene-toolbar{min-height:60px;padding:6px 9px}
+ body[data-view=chat-index] .scene-mobile-menu{min-width:44px;min-height:44px}
+ body[data-view=chat-index] .scene-id h1{font-size:15px;line-height:1.25}
+ body[data-view=chat-index] #chatbox{overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;padding:10px 7px}
+ body[data-view=chat-index] .chat-message{grid-template-columns:48px minmax(0,1fr);gap:9px;padding:10px 2px;min-height:0}
+ body[data-view=chat-index] .chat-prose{font-size:var(--chat-font,16px);line-height:1.7}
+ body[data-view=chat-index] #chatbox .chat-master{margin:10px 2px 10px 59px;font-size:15px}
+ body[data-view=chat-index].chat-noport #chatbox .chat-master{margin-left:2px}
+ body[data-view=chat-index] .chat-meta .chat-persona{font-size:15px}
+ body[data-view=chat-index] .composer{display:grid;grid-template-columns:80px minmax(0,1fr) 44px 68px;gap:5px;padding:7px 7px max(7px,env(safe-area-inset-bottom));min-height:0}
+ body[data-view=chat-index] .composer #comodo{grid-column:1/-1;grid-row:1;min-height:44px;max-height:120px;height:44px;font-size:16px;padding:10px;line-height:1.4}
+ body[data-view=chat-index] .composer :is(#messageType,#ai-chat-npc){max-width:100%;height:44px;min-height:44px;padding:7px 5px;font:12px var(--font-ui);text-overflow:ellipsis}
+ body[data-view=chat-index] .composer .mobile-composer-tools{display:grid;place-items:center;grid-column:3;grid-row:2;min-height:44px;width:44px;padding:10px}
+ body[data-view=chat-index] .composer #sendBtn{grid-column:4;grid-row:2;min-height:44px;width:100%;font-size:14px}
+ body[data-view=chat-index] .composer #sendBtn .ui-icon{width:17px;height:17px;margin:0 4px 0 0}
+ .mobile-chat-tools-dialog{margin:auto auto 8px;width:calc(100% - 16px);max-width:480px;padding:0;border:1px solid var(--gold);border-radius:16px;background:var(--panel);color:var(--text);box-shadow:var(--shadow)}
+ .mobile-chat-tools-dialog::backdrop{background:color-mix(in srgb,var(--bg) 73.33%,transparent);backdrop-filter:blur(3px)}
+ .mobile-chat-tools-dialog>header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;border-bottom:1px solid var(--line)}
+ .mobile-chat-tools-dialog h2{margin:0;font:20px var(--font-body)}
+ .mobile-chat-tools-dialog header button{width:44px;height:44px;padding:10px}
+ .mobile-chat-tools-body{display:grid;grid-template-columns:1fr;gap:9px;padding:14px;max-height:65dvh;overflow:auto}
+ .mobile-chat-tools-body :is(button,select){display:flex;align-items:center;gap:10px;min-height:46px;width:100%;font-size:16px;padding:10px 12px}
+ .mobile-chat-tools-body .ui-icon{width:21px;height:21px;flex:none}
+ body[data-view=chat-index] #ai-chat-status{font:11px/1.4 var(--font-ui);padding-inline:8px;max-height:32px;overflow:auto}
+ body[data-view=chat-index] .privacy-ai-disclosure{font-size:10px;padding:3px 8px;line-height:1.35}
+ body[data-view=chat-index] .chat-drawer{position:fixed;inset:0;max-height:100%;border-radius:0}
+ body[data-view=chat-index] .chat-drawer-head{padding:10px 13px}
+ body[data-view=chat-index] .chat-drawer-head button{width:44px;height:44px}
+ body[data-view=chat-index] .scene-mobile-links button{min-height:46px}
+ body.ui-page .ui-data-list .ui-data-row{min-width:0;grid-template-columns:minmax(0,1fr) 45px 45px}
+ body.ui-page .ui-data-list .ui-data-row .col-lastpost{grid-column:1/-1;padding-top:0;font-size:12px}
+ body.ui-page .ui-data-list .ui-data-row .col-lastpost:empty{display:none}
+ body.ui-page .ui-data-list .ui-data-head .col-lastpost{display:none}
+ body.ui-page .ui-reading{padding:16px;font-size:16px;line-height:1.75}
+}
+@media(max-width:360px){
+ body[data-view=chat-index] .composer{grid-template-columns:68px minmax(0,1fr) 44px 60px}
+ body[data-view=map] .map-toolbar{gap:3px}
+ body[data-view=map] .map-toolbar button,body[data-view=map] .map-tool-link{width:37px;padding:8px}
+ body[data-view=map] .map-scale{display:none}
+}
+@media(max-height:480px) and (max-width:1100px){
+ body[data-view=main] .mobile-game-dock{min-height:44px;padding-block:2px}
+ body[data-view=main] .mobile-dock-item{flex-direction:row;gap:5px;min-height:38px}
+ body[data-view=map] .map-atmosphere-status{flex-basis:auto}
+ body[data-view=map] .map-gesture-hint{display:none}
+ body[data-view=chat-index] .privacy-ai-disclosure{display:none}
+}
+@media(max-width:900px),(max-width:1100px) and (max-height:500px){
+ body[data-view=main]>.privacy-launcher,body.is-game-frame>.privacy-launcher{display:none}
+}
+@media(max-width:760px){
+ body.ui-page table[data-mobile-cards]{display:block;min-width:0!important;width:100%;table-layout:auto}
+ body.ui-page table[data-mobile-cards] caption{display:block}
+ body.ui-page table[data-mobile-cards] thead{display:block;position:static}
+ body.ui-page table[data-mobile-cards] thead tr{display:flex;flex-wrap:wrap;gap:5px;background:var(--panel-2)}
+ body.ui-page table[data-mobile-cards] thead th{display:none}
+ body.ui-page table[data-mobile-cards] thead th:has(button,input){display:flex;align-items:center;gap:8px;width:auto;padding:8px 12px;min-height:44px}
+ body.ui-page table[data-mobile-cards] tbody{display:block;width:100%}
+ body.ui-page table[data-mobile-cards] tbody tr{display:block;width:100%;border-bottom:1px solid var(--reading-line);padding:8px 12px}
+ body.ui-page table[data-mobile-cards] tbody td{display:block!important;width:100%!important;border:0;padding:6px 0;min-width:0;font-size:14px;line-height:1.5}
+ body.ui-page table[data-mobile-cards] tbody td[data-column-label]:not(:first-child):before{content:attr(data-column-label);font:600 10px/1.4 var(--font-ui);color:#68583f;text-transform:uppercase;letter-spacing:.04em}
+ body.ui-page table[data-mobile-cards] tbody td:first-child{font-size:16px}
+ body.ui-page table[data-mobile-cards] tbody td .ui-row-actions{flex-wrap:wrap;gap:6px}
+ body.ui-page table[data-mobile-cards] .ui-person{min-width:0;flex-wrap:wrap}
+}
+@media(max-width:760px){
+ body.ui-page table[data-mobile-cards] tbody td[data-column-label]:not(:first-child):before{display:block;margin:0 0 3px}
+}
+@media(max-width:760px){
+ body.ui-page table[data-mobile-cards] tr[data-mobile-head]{display:flex;flex-wrap:wrap;gap:5px;background:var(--panel-2);padding:0}
+ body.ui-page table[data-mobile-cards] tr[data-mobile-head] th{display:none}
+ body.ui-page table[data-mobile-cards] tr[data-mobile-head] th:has(button,input){display:flex;align-items:center;gap:8px;width:auto;min-height:44px;padding:8px 12px}
+}
+@media(max-width:760px){body.ui-page table[data-mobile-cards] tr[data-mobile-head] th:has(a){display:flex;align-items:center;width:auto;min-height:44px;padding:8px 12px}}
+@media(max-width:760px){
+ body.ui-page .ui-integrated-heading:not(.rpg-hero):not(.scene-toolbar)>div:has(>h1){max-width:calc(100% - 100px)}
+ body.ui-page .ui-integrated-heading:not(.rpg-hero):not(.scene-toolbar)>.ui-return-location{position:absolute;right:12px;top:14px;min-width:42px;min-height:42px;margin:0}
+ body.ui-page .ui-integrated-heading:not(.rpg-hero):not(.scene-toolbar)>:is(.ui-tablist,.tabs,.inbox-toolbar,.forum-toolbar){max-width:100%}
+}
+@media(orientation:landscape) and (max-width:1100px){
+ body[data-view=main] .game-content{padding-inline:env(safe-area-inset-left) env(safe-area-inset-right)}
+}
+@media(max-width:360px){
+ body[data-view=chat-index] .composer #sendBtn{font-size:0;display:grid;place-items:center;padding:7px}
+ body[data-view=chat-index] .composer #sendBtn .ui-icon{width:23px;height:23px;margin:0}
+}
+@media(max-width:900px),(max-width:1100px) and (max-height:500px){
+ body[data-view=chat-index] .scene-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 8px}
+ body[data-view=chat-index] .scene-id{grid-column:1;grid-row:1;min-width:0}
+ body[data-view=chat-index] .scene-id p{display:none}
+ body[data-view=chat-index] .scene-location-image{width:48px;height:37px}
+ body[data-view=chat-index] .scene-controls{grid-column:2;grid-row:1/3}
+ body[data-view=chat-index] .scene-actions{overflow:visible}
+ body[data-view=chat-index] .scene-actions>.scene-tool{display:none}
+ body[data-view=chat-index] .scene-actions>.scene-mobile-menu{display:grid;place-items:center;width:44px;height:44px}
+ body[data-view=chat-index] .scene-return-row{display:none}
+ body[data-view=chat-index] .quest-header-slot{grid-column:1;grid-row:2;width:100%;max-width:none;padding:0;margin:0}
+ body[data-view=chat-index] .quest-header-slot .quest-chat-status{border:0;padding:0;gap:5px}
+ body[data-view=chat-index] .quest-header-button{font-size:11px;min-width:0}
+ body[data-view=chat-index] .quest-header-eta{display:none}
+ body[data-view=chat-index] .quest-countdown{font-size:11px;white-space:nowrap}
+ body[data-view=chat-index] .composer #messageType{grid-column:1;grid-row:2;width:100%}
+ body[data-view=chat-index] .composer #ai-chat-npc{grid-column:2;grid-row:2;width:100%}
+}
+@media(max-width:900px),(max-width:1100px) and (max-height:500px){
+ body[data-view=chat-index] .composer #sendBtn{display:flex;align-items:center;justify-content:center;gap:4px;min-width:0;padding:6px 4px}
+ body[data-view=chat-index] .composer #sendBtn .ui-icon{flex:none;margin:0}
+}
+/* The game menu slides from the left; the scene remains visible behind its scrim. */
+@media(max-width:900px),(max-width:1100px) and (max-height:500px){
+ body[data-view=main] .topbar,body[data-view=main].has-focused-chat:not(.mobile-game-menu) .topbar,
+ body[data-view=main].mobile-game-menu .topbar,body[data-view=main].has-focused-chat.mobile-game-menu .topbar{
+  display:flex;flex-direction:column;flex-wrap:nowrap;align-items:stretch;position:absolute;inset:0 auto 0 0;
+  width:min(360px,calc(100% - 48px));max-width:100%;max-height:none;gap:12px;
+  padding:max(14px,env(safe-area-inset-top)) 14px 14px max(14px,env(safe-area-inset-left));
+  border:0;border-right:1px solid var(--line);border-radius:0 16px 16px 0;overflow:hidden;z-index:110;
+  background:var(--panel);box-shadow:12px 0 45px #0008;
+  transform:translateX(calc(-100% - 16px));visibility:hidden;pointer-events:none;
+  transition:transform .26s cubic-bezier(.22,.61,.36,1),visibility 0s .26s;
+ }
+ body[data-view=main].mobile-game-menu .topbar,body[data-view=main].has-focused-chat.mobile-game-menu .topbar{
+  transform:translateX(0);visibility:visible;pointer-events:auto;transition-delay:0s;
+ }
+ body[data-view=main] .topbar .game-navigation{width:100%;min-width:0;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ body[data-view=main] .topbar .top-actions{flex:none}
+}
+body[data-view=map] .map-atlas>svg[data-fullcover-overlay],
+body[data-view=map] .map-atlas>svg[data-fullcover-overlay] *{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-user-drag:none}
+
+/* The privacy shortcut shares the compact action rail on every screen. */
+body[data-view=main] .mobile-privacy-choice{width:44px;flex:none;padding:10px}
+body[data-view=main] .mobile-privacy-choice .ui-icon{width:21px;height:21px;margin:0}
+/* Search uses the shared mobile table adapter with its own two-column result card. */
+@media(max-width:600px){body.ui-page .search-table[data-mobile-cards] tbody{display:grid;gap:12px}body.ui-page .search-table[data-mobile-cards] tbody tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:0;border:1px solid var(--reading-line);border-radius:10px;overflow:hidden;background:var(--reading-background)}body.ui-page .search-table[data-mobile-cards] tbody td{padding:10px;border-bottom:1px solid var(--reading-line);box-sizing:border-box}body.ui-page .search-table[data-mobile-cards] tbody .search-character{grid-column:1/-1;min-width:0}body.ui-page .search-table[data-mobile-cards] thead tr{display:flex;border:0;border-radius:8px;background:var(--panel-2);margin-bottom:10px}.search-table[data-mobile-cards] .search-portrait{float:left}.search-table[data-mobile-cards] .character-markers{margin-top:5px}}

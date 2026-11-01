@@ -1,0 +1,101 @@
+{
+  "version": 2,
+  "city": "City Alphano",
+  "race": {
+    "name": "Umano",
+    "stats": {
+      "strength": 10,
+      "dexterity": 10,
+      "constitution": 10,
+      "intelligence": 10,
+      "wisdom": 10,
+      "charisma": 10,
+      "perception": 10,
+      "willpower": 10
+    }
+  },
+  "ethnicity": {
+    "name": "Italiano",
+    "description": "Etnia dimostrativa modificabile dal gestore."
+  },
+  "materials": [
+    "argento",
+    "canapa",
+    "carbone",
+    "cera",
+    "cotone",
+    "cuoio",
+    "diamante",
+    "erbe",
+    "ferro",
+    "legno",
+    "oro",
+    "piombo",
+    "platino",
+    "rame",
+    "salnitro",
+    "seta",
+    "silicio",
+    "zolfo",
+    "acqua",
+    "vetro",
+    "cereali",
+    "carne",
+    "miele"
+  ],
+  "map": {
+    "world_image": "/assets/maps/world.png",
+    "city_image": "/assets/maps/city.png",
+    "city_marker": {
+      "x": 53.83672,
+      "y": 49.30645,
+      "style": "label"
+    }
+  },
+  "chats": [
+    {
+      "key": "alphano_square",
+      "name": "Piazza",
+      "description": "La piazza centrale della città: incontri, mercato e avventure condivise.",
+      "image": "/assets/maps/city.png",
+      "marker": {
+        "x": 51.02995,
+        "y": 58.62439,
+        "style": "label"
+      }
+    },
+    {
+      "key": "alphano_inn",
+      "name": "Locanda",
+      "description": "Una locanda accogliente dove incontrarsi, riposare e scambiare racconti.",
+      "image": "/assets/headers/community.webp",
+      "marker": {
+        "x": 23.32291,
+        "y": 54.45565,
+        "style": "label"
+      }
+    },
+    {
+      "key": "alphano_garden",
+      "name": "Giardino",
+      "description": "Il giardino cittadino, tra viali, fontane e spazi per conversare.",
+      "image": "/assets/maps/city.png",
+      "marker": {
+        "x": 77.84319,
+        "y": 55.34895,
+        "style": "label"
+      }
+    },
+    {
+      "key": "alphano_library",
+      "name": "Biblioteca",
+      "description": "La biblioteca della città: letture, ricerche e incontri tra studiosi.",
+      "image": "/assets/headers/library.webp",
+      "marker": {
+        "x": 65.49792,
+        "y": 35.7956,
+        "style": "label"
+      }
+    }
+  ]
+}

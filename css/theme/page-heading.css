@@ -1,0 +1,55 @@
+/* Shared header contract. Section artwork remains decorative behind high contrast text. */
+body.ui-page .ui-integrated-heading{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding:22px 24px;background:var(--panel);border-bottom:1px solid var(--line);min-width:0}
+.ui-integrated-heading>.ui-header-art{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 48%;z-index:-2;opacity:.7;pointer-events:none}
+.ui-integrated-heading:has(>.ui-header-art):after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,color-mix(in srgb,var(--panel) 96.08%,transparent) 0%,color-mix(in srgb,var(--panel) 90.98%,transparent) 30%,color-mix(in srgb,var(--panel) 58.82%,transparent) 65%,color-mix(in srgb,var(--panel) 33.33%,transparent))}
+body.ui-page .ui-integrated-heading>div:has(>h1){flex:1 1 270px;min-width:0}
+body.ui-page .ui-integrated-heading h1{color:var(--gold-2);font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.15;margin:3px 0 7px;text-wrap:balance}
+body.ui-page .ui-integrated-heading>div>p{margin:0;max-width:65ch;color:#c1cad7;font:.87rem/1.6 var(--font-ui)}
+body.ui-page .ui-integrated-heading>.ui-heading-control{display:flex;align-items:center;flex-wrap:wrap;gap:8px;min-width:0;max-width:100%;margin:0;padding:0;border:0;background:none;box-shadow:none;flex:0 1 auto}
+body.ui-page .ui-integrated-heading>:is(.tabs,.ui-tablist,.forum-channels,.city-directory-tabs,.rpg-admin-tabs){flex:1 1 100%;gap:7px}
+body.ui-page .ui-integrated-heading>.forum-toolbar{flex:1 1 330px;justify-content:flex-end}
+body.ui-page .ui-integrated-heading .forum-toolbar h2,body.ui-page .ui-integrated-heading>.forum-toolbar h2{font:1rem/1.4 var(--font-ui);color:var(--gold-2);margin:0}
+body.ui-page .ui-integrated-heading>.city-directory-toolbar{flex:1 1 250px;justify-content:flex-end}
+body.ui-page .ui-integrated-heading :is(.forum-location,.forum-breadcrumb){display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0;margin:0}
+body.ui-page .ui-integrated-heading select{max-width:100%;min-width:0;width:auto}
+body.ui-page .ui-integrated-heading .ui-row-actions{gap:7px;flex-wrap:wrap}
+body.ui-page .ui-integrated-heading :is(button,.action-btn,.button){min-height:38px;padding:8px 12px;font-size:.83rem}
+body.ui-page .ui-integrated-heading>.ui-return-location{margin-left:auto;white-space:nowrap}
+body.ui-page .ui-integrated-heading.rpg-hero{padding:24px 28px;gap:18px;overflow:hidden}
+body.ui-page .rpg-hero>.rpg-profile-tabs{flex-basis:100%;padding-top:14px;border-top:1px solid #c9a26045}
+body.ui-page .rpg-hero .rpg-archive-label{margin-left:auto}
+body.ui-page .ui-integrated-heading>.search-alphabet{flex-basis:100%}
+body.ui-page .ui-integrated-heading>.search-alphabet a{min-width:26px}
+body.ui-page .ui-integrated-heading.ui-heading-embedded{display:flex;padding:12px 0;background:none;border:0;gap:10px;min-height:0}
+.ui-heading-embedded>:is(.ui-header-art,span[data-icon],div:has(>h1),a[href^="/profili/"]){display:none!important}
+.ui-heading-embedded:after{display:none}
+body.ui-page .ui-heading-embedded .armory-filters{margin-left:auto}
+@media(max-width:600px){body.ui-page .ui-integrated-heading{padding:16px 14px;gap:10px}.ui-integrated-heading>.ui-header-art{object-position:65% center;opacity:.5}body.ui-page .ui-integrated-heading>div:has(>h1){flex-basis:calc(100% - 78px)}body.ui-page .ui-integrated-heading>.ui-heading-control{justify-content:flex-start}body.ui-page .ui-integrated-heading>.tabs,body.ui-page .ui-integrated-heading>.ui-tablist{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:4px}body.ui-page .ui-integrated-heading>.tabs>* ,body.ui-page .ui-integrated-heading>.ui-tablist>*{flex-shrink:0}body.ui-page .ui-integrated-heading.rpg-hero{padding:18px 14px}.rpg-hero .rpg-archive-label{display:none}}
+
+body.ui-page .ui-integrated-heading>.ui-return-location{font-size:0;width:38px;height:38px;min-width:38px;padding:8px;justify-content:center}
+body.ui-page .ui-integrated-heading>.ui-return-location .ui-icon{width:18px;height:18px;margin:0}
+body.ui-page .ui-integrated-heading>.presence-filters{flex:1 1 100%;display:flex;padding:0;background:none;box-shadow:none}
+body.ui-page .ui-integrated-heading .presence-filters label{flex:1 1 180px}
+body.ui-page .ui-integrated-heading>.presence-update{flex-basis:100%}
+body.ui-page .ui-integrated-heading .inbox-toolbar{flex:1 1 100%}
+body.ui-page .ui-integrated-heading.rpg-hero{display:grid;grid-template-columns:74px minmax(0,1fr)}
+body.ui-page .ui-integrated-heading.rpg-hero>.rpg-profile-tabs{grid-column:1/-1;display:flex}
+body.ui-page .ui-integrated-heading.rpg-hero .rpg-identity{width:100%;max-width:900px}
+@media(max-width:600px){body.ui-page .ui-integrated-heading.rpg-hero{grid-template-columns:54px minmax(0,1fr)}body.ui-page .ui-integrated-heading>.presence-filters{flex-wrap:wrap}}
+
+body.ui-page .ui-integrated-heading>.forum-channels{flex-wrap:wrap;overflow:visible;white-space:normal;flex-basis:100%}
+body.ui-page .ui-integrated-heading>.forum-channels button{white-space:normal}
+body.ui-page .ui-integrated-heading>.forum-toolbar:empty{display:none}
+body.ui-page .ui-integrated-heading>.media-admin-toolbar{flex-basis:100%}
+body.ui-page .ui-integrated-heading.session-replay-header .scene-id{flex:1 1 330px}
+
+.ui-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+body.ui-page .ui-integrated-heading>#controls{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:0;background:none;border:0;box-shadow:none}
+body.ui-page .ui-integrated-heading .ui-heading-control:has(#transfer-balance){font:1rem var(--font-ui);color:var(--gold-2)}
+body.ui-page.armory-page .ui-integrated-heading>.armory-filters{order:2}
+
+/* Compact search controls share the standard illustrated header. */
+body.ui-page .ui-integrated-heading>.search-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));flex:1 1 100%;gap:10px 12px;padding:14px 0 0;border-top:1px solid var(--line)}body.ui-page .search-filters .search-filter{display:grid;gap:5px;min-width:0;font:11px/1.35 var(--font-ui);color:var(--muted)}body.ui-page .ui-integrated-heading .search-filters :is(input,select){width:100%;min-width:0;max-width:100%;box-sizing:border-box;min-height:36px;padding:7px 9px;font:12px var(--font-ui)}body.ui-page .search-filters .search-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin:0}body.ui-page .ui-integrated-heading>.search-alphabet{gap:4px;padding-top:10px;border-top:1px solid var(--line)}body.ui-page .ui-integrated-heading>.search-alphabet a{min-width:22px;padding:3px 5px;font-size:11px}.search-alphabet a[aria-current=true]{background:var(--gold);color:var(--bg)}body.ui-page .search-results{padding:18px 0 0;min-width:0}body.ui-page .search-table .search-character{min-width:200px}body.ui-page .search-table img.search-portrait{width:48px;height:48px;max-width:none;max-height:none;object-fit:cover;object-position:center 25%;border-radius:50%;border:1px solid #bd985e;margin-right:10px;vertical-align:middle}.search-character>a{display:inline-block;vertical-align:middle;max-width:calc(100% - 65px)}.search-more{display:flex;align-items:center;justify-content:center;gap:14px;padding:16px;color:var(--muted);font:12px var(--font-ui)}@media(max-width:900px){body.ui-page .ui-integrated-heading>.search-filters{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){body.ui-page .ui-integrated-heading>.search-filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}body.ui-page .search-filters .search-actions{justify-content:stretch}.search-filters .search-actions>*{flex:1;justify-content:center}body.ui-page .search-table{min-width:0;display:block;background:none}body.ui-page .search-table :is(tbody,tr){display:grid;width:100%;box-sizing:border-box}body.ui-page .search-table thead{display:none}body.ui-page .search-table tbody{gap:12px}body.ui-page .search-table tr{grid-template-columns:1fr 1fr;border:1px solid var(--reading-line);border-radius:10px;overflow:hidden;background:var(--reading-background)}body.ui-page .search-table td{display:block;min-width:0;padding:10px;border-bottom:1px solid var(--reading-line)}body.ui-page .search-table .search-character{grid-column:1/-1;min-width:0}body.ui-page .search-table td[data-label]:before{content:attr(data-label);display:block;margin-bottom:4px;font:600 10px var(--font-ui);opacity:.7}body.ui-page .search-table .ui-badge-row{justify-content:flex-start}.search-more{flex-wrap:wrap}}
+body.ui-page .search-table .search-character{min-width:260px}.search-character .character-markers{display:flex;margin:5px 0 0}.search-character>a{width:calc(100% - 65px);max-width:none}@media(max-width:600px){body.ui-page .search-table .search-character{min-width:0}.search-character>a{width:calc(100% - 65px)}}
+body.ui-page[data-view=ricerca-index] .ui-integrated-heading .search-filters .search-filter :is(input,select){height:36px;min-height:36px;margin:0;padding:7px 9px}body.ui-page[data-view=ricerca-index] .ui-integrated-heading>.ui-return-location{position:absolute;right:18px;top:18px;margin:0}@media(max-width:600px){body.ui-page[data-view=ricerca-index] .ui-integrated-heading .search-filters .search-filter :is(input,select){height:42px;min-height:42px}body.ui-page[data-view=ricerca-index] .ui-integrated-heading>.ui-return-location{top:14px;right:14px}}
+body.ui-page .search-table{table-layout:auto}.search-table th:first-child{width:30%}

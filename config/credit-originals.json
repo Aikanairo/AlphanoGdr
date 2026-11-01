@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "fragments": {
+    "home": "<footer class=\"alphano-credit\" data-credit-recovery style=\"display:block!important;visibility:visible!important;opacity:1!important;position:static!important;font-size:12px!important;line-height:1.8!important;color:#d8e7f3!important;background:#0c1a2a!important;padding:14px!important;margin:18px 0!important;text-align:center!important;height:auto!important;max-height:none!important;overflow:visible!important;clip:auto!important;clip-path:none!important;transform:none!important\">Motore AlphanoGdr V1.0 · Programmato da Alfano Gaetano · <a href=\"https://gothik.it/\" style=\"color:#aad3f5!important;text-decoration:underline!important\">Gothik.it</a></footer>",
+    "equipment": "<footer class=\"alphano-credit\" data-credit-recovery style=\"display:block!important;visibility:visible!important;opacity:1!important;position:static!important;font-size:12px!important;line-height:1.8!important;color:#d8e7f3!important;background:#0c1a2a!important;padding:14px!important;margin:18px 0!important;text-align:center!important;height:auto!important;max-height:none!important;overflow:visible!important;clip:auto!important;clip-path:none!important;transform:none!important\">Grafica ispirata da <a href=\"https://gothik.it/\" style=\"color:#aad3f5!important;text-decoration:underline!important\">Gothik.it</a> · Motore di Alfano Gaetano</footer>"
+  }
+}

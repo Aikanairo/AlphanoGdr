@@ -1,0 +1,70 @@
+{
+  "summary": "Allineamento narrativo personalizzabile, senza effetti automatici.",
+  "overview": "Allineamento narrativo personalizzabile, senza effetti automatici.",
+  "mechanics": "Allineamento narrativo personalizzabile, senza effetti automatici.",
+  "alignments": [
+    {
+      "code": "LB",
+      "name": "Legale Buono",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "NB",
+      "name": "Neutrale Buono",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "CB",
+      "name": "Caotico Buono",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "LN",
+      "name": "Legale Neutrale",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "NN",
+      "name": "Neutrale Puro",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "CN",
+      "name": "Caotico Neutrale",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "LM",
+      "name": "Legale Malvagio",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "NM",
+      "name": "Neutrale Malvagio",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    },
+    {
+      "code": "CM",
+      "name": "Caotico Malvagio",
+      "description": "Indicazione narrativa di esempio.",
+      "example": "Indicazione narrativa di esempio.",
+      "image": "Indicazione narrativa di esempio."
+    }
+  ]
+}

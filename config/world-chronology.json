@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "real_anchor": "2026-01-01",
+  "story_anchor": "2026-01-01",
+  "timezone": "Europe/Rome",
+  "title": "Calendario di gioco",
+  "public_context": "Ambientazione da configurare.",
+  "technology_context": "Definire le tecnologie del proprio mondo.",
+  "moon_convention": "Calendario astronomico."
+}

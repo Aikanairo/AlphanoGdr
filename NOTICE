@@ -1,0 +1,24 @@
+AlphanoGdr V1.0
+Copyright (c) 2026 Alfano Gaetano (Aikanairo).
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, version 3 of the License (AGPL-3.0-only).
+This program is distributed WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See LICENSE.
+
+Autore: Alfano Gaetano — https://github.com/Aikanairo
+Progetto: https://github.com/Aikanairo/AlphanoGdr
+Gioco di esempio e credito predefinito: https://gothik.it/
+
+Il pacchetto include un controllo locale dei crediti, con sospensione tecnica
+se il credito predefinito manca e un ripristino riservato al gestore autenticato.
+Il controllo, i collegamenti e i template possono essere modificati o rimossi
+secondo l'AGPL. Nessun obbligo aggiuntivo impone un backlink promozionale o la
+conservazione del meccanismo. Rimuoverlo non è di per sé una violazione.
+Conservare gli avvisi d'autore e di licenza come previsto dall'AGPL.
+Chi offre online una versione modificata deve offrire ai suoi utenti il
+Sorgente Corrispondente secondo la sezione 13, senza dati privati dei giocatori.
+
+Le componenti esterne conservano le licenze indicate in THIRD_PARTY.md.
+Le concessioni delle versioni precedenti non sono revocate retroattivamente.

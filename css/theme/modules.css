@@ -1,0 +1,102 @@
+/* Operative controllers with a shared navigation and active-panel contract. */
+body[data-styles~="master-detail"] *,
+body[data-styles~="master-detail"] *::before,
+body[data-styles~="master-detail"] *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body[data-styles~="master-detail"] { width: 100%; height: 100%; overflow: hidden; }
+body[data-styles~="master-detail"] h1 { font-size: 1.75rem; margin-bottom: var(--gap); }
+body[data-styles~="master-detail"] h2 { font-size: 1.5rem; }
+body[data-styles~="master-detail"] h3 { padding: .3em .8em; font-size: 1rem; }
+body[data-styles~="master-detail"] .page-header { height: var(--header-h); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; flex: 0 0 var(--header-h); }
+body[data-styles~="master-detail"] .wrap { display: flex; flex: 1 1 auto; height: calc(100% - var(--header-h)); overflow: hidden; }
+body[data-styles~="master-detail"] .nav-panel { flex: 0 0 30%; max-width: 30%; overflow-y: auto; }
+body[data-styles~="master-detail"] .nav-panel h2 { padding: 1rem; text-align: center; }
+body[data-styles~="master-detail"] .nav-panel ul { list-style: none; }
+body[data-styles~="master-detail"] .nav-panel li { padding: .75rem 1rem; cursor: pointer; transition: background .2s; }
+body[data-styles~="master-detail"] .main-panel { flex: 1 1 auto; display: flex; flex-direction: column; overflow: hidden; }
+body[data-styles~="master-detail"] .panel-header { flex: 0 0 50px; display: flex; align-items: center; padding: 0 1rem; font-size: 1.25rem; }
+body[data-styles~="master-detail"] .panel-container { flex: 1 1 auto; overflow-y: auto; padding: var(--gap); }
+body[data-styles~="master-detail"] .panel { display: none; }
+body[data-styles~="master-detail"] .panel.active { display: block; }
+body[data-styles~="master-detail"] .session-details p { margin: .5rem 0; }
+body[data-styles~="master-detail"] .session-details label { display: inline-block; width: 120px; }
+body[data-styles~="master-detail"] .action-btn { padding: .5rem 1rem; font-size: 1rem; cursor: pointer; transition: background .2s; display: inline-block; }
+@media (max-width: 600px) {
+body[data-styles~="master-detail"] .wrap { flex-direction: column; }
+body[data-styles~="master-detail"] .nav-panel,
+body[data-styles~="master-detail"] .main-panel { flex: 0 0 auto; max-width: 100%; }
+body[data-styles~="master-detail"] .nav-panel ul { display: flex; flex-wrap: nowrap; overflow-x: auto; padding: 0 var(--gap); }
+body[data-styles~="master-detail"] .nav-panel li { flex: 0 0 auto; margin: 0 .5rem; text-align: center; }
+body[data-styles~="master-detail"] .nav-panel li:first-child { margin-left: var(--gap); }
+body[data-styles~="master-detail"] .nav-panel li:last-child { margin-right: var(--gap); }
+}
+body[data-styles~="master-detail"] .api-output { margin-top: 1rem; padding: 1rem; font-size: 0.9rem; }
+body[data-styles~="master-detail"] .api-output dl dt { margin-top: 0.5rem; }
+body[data-styles~="master-detail"] .api-output dl dd { margin: 0.25rem 0 0.5rem 0; padding-left: 1rem; }
+
+/* Embedded private-room and message-composer controllers. The application shell is in layout.css. */
+body[data-styles~="workspace"] { width:100%; min-width:0; }
+body[data-styles~="workspace"] .container { width:100%; min-width:0; }
+
+/* Document controllers: ordinary data, forms and dialogs. */
+body[data-styles~="document"] { height: 100%; width: 100%; font-size: var(--font-base); line-height: 1.5; display: flex; flex-direction: column; overflow: auto; min-height: 100vh; }
+body[data-styles~="document"] ::-webkit-scrollbar { width: 8px; height: 8px; }
+body[data-styles~="document"] * { scrollbar-width: thin; }
+body[data-styles~="document"] .modal-body,
+body[data-styles~="document"] .main,
+body[data-styles~="document"] .ris-wrapper,
+body[data-styles~="document"] .contenitore-mail { scrollbar-width: thin; }
+body[data-styles~="document"] .modal-body::-webkit-scrollbar,
+body[data-styles~="document"] .main::-webkit-scrollbar,
+body[data-styles~="document"] .ris-wrapper::-webkit-scrollbar,
+body[data-styles~="document"] .contenitore-mail::-webkit-scrollbar { width: 8px; height: 8px; }
+body[data-styles~="document"] a { text-decoration: none; }
+body[data-styles~="document"] a:hover { text-decoration: underline; }
+body[data-styles~="document"] header { flex-shrink: 0; }
+
+body[data-styles~="document"] main { flex:1; min-width:0; }
+
+body[data-styles~="document"] h2,
+body[data-styles~="document"] h3 { margin-top: var(--gap); margin-bottom: calc(var(--gap) / 2); }
+body[data-styles~="document"] .tabs { display: flex; }
+body[data-styles~="document"] .tabs button { flex: 1; padding: 0.75rem; cursor: pointer; font-size: 1rem; }
+body[data-styles~="document"] .tab-content { display: none; padding: var(--gap); }
+body[data-styles~="document"] .tab-content.active { display: block; }
+body[data-styles~="document"] table { width: 100%; border-collapse: collapse; margin-bottom: var(--gap); }
+body[data-styles~="document"] th,
+body[data-styles~="document"] td { padding: 0.5rem; }
+body[data-styles~="document"] .Descrizione { font-size: 0.9rem; }
+body[data-styles~="document"] .panel-button { padding: 0.5rem 1rem; cursor: pointer; font-size: 1rem; }
+body[data-styles~="document"] form.inline { display: inline; }
+body[data-styles~="document"] .wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: var(--gap); }
+body[data-styles~="document"] .card { padding: var(--gap); }
+body[data-styles~="document"] .card h2 { margin-bottom: 0.75rem; font-size: 1.25rem; }
+body[data-styles~="document"] .flash { display: inline-block; padding: 0.5rem 1rem; margin-top: 0.5rem; }
+body[data-styles~="document"] .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+body[data-styles~="document"] .form-grid .full { grid-column: 1 / -1; }
+body[data-styles~="document"] .form-grid label { display: flex; flex-direction: column; font-size: 0.9rem; }
+body[data-styles~="document"] .form-grid input,
+body[data-styles~="document"] .form-grid select,
+body[data-styles~="document"] .form-grid textarea { margin-top: 0.25rem; padding: 0.5rem; font-size: 1rem; }
+body[data-styles~="document"] .btn { padding: 0.5rem 1rem; cursor: pointer; font-size: 1rem; transition: background 0.2s, color 0.2s; }
+body[data-styles~="document"] .results { margin-top: var(--gap); display: flex; flex-direction: column; gap: var(--gap); }
+body[data-styles~="document"] .result { padding: var(--gap); }
+body[data-styles~="document"] .r-header { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem; }
+body[data-styles~="document"] .r-desc { margin-bottom: 0.5rem; white-space: pre-wrap; }
+body[data-styles~="document"] .r-meta { display: flex; gap: 1rem; font-size: 0.8rem; }
+body[data-styles~="document"] .inline { display: inline; }
+@media (max-width: 600px) {
+
+body[data-styles~="document"] .form-grid { grid-template-columns: 1fr; }
+}
+body[data-styles~="document"] .modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; align-items: center; justify-content: center; z-index: 2000; }
+body[data-styles~="document"] .modal { max-width: 90%; max-height: 90%; overflow: auto; padding: var(--gap); position: relative; }
+body[data-styles~="document"] .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--gap); }
+body[data-styles~="document"] .modal-title { font-size: 1.25rem; font-weight: bold; }
+body[data-styles~="document"] .modal-close { font-size: 1.5rem; cursor: pointer; }
+body[data-styles~="document"] .modal-body { margin-bottom: var(--gap); line-height: 1.6; }
+body[data-styles~="document"] .modal-footer { display: flex; justify-content: flex-end; gap: var(--gap); }
+body[data-styles~="document"] .modal-backdrop.show { display: flex; }
+/* Public account-recovery documents use the same base typography. */
+body[data-styles~="article"] h1 { font-size:1.75em; }
+body[data-styles~="article"] h2 { font-size:1.25em; }
+body[data-styles~="article"] h3 { font-size:1.1em; }

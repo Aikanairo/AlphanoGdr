@@ -1,0 +1,1 @@
+<small class="portal-author alphano-credit">Motore AlphanoGdr <?=$h($version)?> · <a href="<?=$h($credit['author_url'])?>" target="_blank" rel="noopener noreferrer">Programmato da <?=$h($credit['author'])?></a> · <a href="<?=$h($credit['credit_url'])?>" target="_blank" rel="noopener noreferrer">Gothik.it</a></small>

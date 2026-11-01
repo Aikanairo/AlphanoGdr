@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": "^8.4",
+        "dompdf/dompdf": "^3.1",
+        "minishlink/web-push": "^10.0",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "name": "aikanairo/alphanogdr",
+    "description": "Motore PHP e MySQL per giochi di ruolo testuali, con attribuzione dell’autore",
+    "license": "AGPL-3.0-only",
+    "version": "1.0.0"
+}

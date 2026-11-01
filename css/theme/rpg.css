@@ -1,0 +1,84 @@
+/* Central progression: eight compact meters and one investment dialog. */
+.rpg-standalone,.rpg-admin,.progression{min-width:0;width:100%}.rpg-standalone>.progression{padding:20px}.progression{font-family:var(--font-ui);color:var(--text)}
+.progression-overview{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:13px}.progression-overview h2{font:400 28px Georgia,serif;color:var(--gold-2);margin:0}.progression-xp{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.progression-xp-item{display:flex;align-items:baseline;gap:5px}.progression-xp-item small{font:11px var(--font-ui);color:var(--muted)}.progression-xp-item strong{font:600 15px var(--font-ui);color:var(--gold-2)}.progression-xp-item:first-child strong{color:var(--ok)}.progression-xp-alert{padding:4px 7px;border:1px solid var(--line);border-radius:5px;color:var(--gold);font:10px var(--font-ui)}
+.progression .rpg-feedback{margin:8px 0;font:12px/1.5 var(--font-ui);color:var(--muted)}.progression .rpg-feedback[hidden]{display:none}.rpg-feedback.error{color:var(--danger)}
+.progression-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.progression-stat{min-width:0;padding:13px;border:1px solid var(--line);border-radius:7px;background:var(--panel)}.progression-stat-heading{display:flex;align-items:center;gap:6px;min-width:0}.progression-stat h3{min-width:0;flex:1;margin:0;overflow:hidden;text-overflow:ellipsis;color:var(--gold-2);font:600 11px var(--font-ui)}.progression-stat-value{color:var(--gold-2);font:400 25px Georgia,serif}.rpg-progress-icon{display:inline-grid;place-items:center;flex:none;width:24px;height:24px;color:var(--icon)}.rpg-progress-icon .ui-icon,.rpg-progress-icon img{width:20px;height:20px;object-fit:contain}.progression-stat meter{display:block;width:100%;height:5px;margin-top:9px;border:0;border-radius:6px;background:var(--panel-2);overflow:hidden}.progression-stat meter::-webkit-meter-bar{background:var(--panel-2);border:0}.progression-stat meter::-webkit-meter-optimum-value{background:linear-gradient(90deg,#8e6d34,#d7b96e)}.progression-stat meter::-moz-meter-bar{background:var(--gold)}
+body.ui-page .progression-stat-add{display:inline-grid;place-items:center;min-height:24px;width:24px;height:24px;padding:4px;border:1px solid #c7a45a66;border-radius:6px;background:#c9a35c15;color:var(--gold)}.progression-stat-add .ui-icon{width:14px;height:14px}
+.progression-initial{display:flex;align-items:center;gap:10px;padding:10px 12px;margin-top:10px;border:1px solid #b9954c66;background:#b9954c09;border-radius:8px}.progression-initial[hidden]{display:none}.progression-initial>.ui-icon,.progression-initial>span .ui-icon{width:20px;height:20px;color:var(--gold)}.progression-initial p{flex:1;margin:0;font:11px/1.5 var(--font-ui);color:var(--muted)}.progression-initial strong{color:var(--gold-2);font-weight:600}.progression-initial p span{margin-left:8px}.progression-initial button{font-size:11px;padding:7px 10px;min-height:30px}
+.progression-section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0 7px}.progression-section-heading h3{margin:0;color:var(--gold-2);font:600 17px var(--font-body)}.rpg-compact-filter select{padding:6px 9px;min-height:30px;font:11px var(--font-ui)}.progression-ability-summary{font:11px/1.5 var(--font-ui);color:var(--muted);margin:0 0 10px}
+.progression-abilities{overflow:hidden;border:1px solid var(--reading-line);border-radius:8px;background:var(--reading-background);color:var(--reading-ink)}.progression-ability{display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:start;gap:10px;padding:11px 13px}.progression-ability+.progression-ability{border-top:1px solid #ffffff15}.progression-ability:nth-child(even){background:transparent}.progression-ability>.rpg-progress-icon{border-radius:5px;background:var(--panel);color:var(--gold)}.progression-ability .rpg-progress-icon .ui-icon{width:16px;height:16px}.progression-ability-content{min-width:0}.progression-ability-content>summary{display:flex;align-items:center;gap:8px;cursor:pointer;min-height:24px}.progression-ability-content>summary:after{content:'+';color:#846535;font-size:15px}.progression-ability-content[open]>summary:after{content:'−'}.progression-ability h4{color:var(--text);font:600 13px var(--font-ui);margin:0}.rpg-rule-chip{font:9px var(--font-ui);color:var(--muted);opacity:.75;white-space:nowrap}.progression-ability-description{padding-top:5px}.progression-ability-description p{font:12px/1.65 var(--font-ui);margin:6px 0;color:var(--muted)}.progression-ability small{display:block;font:10px/1.6 var(--font-ui);color:var(--muted)}.progression-ability-action{display:flex;align-items:center;justify-content:flex-end;gap:8px;font:11px var(--font-ui);min-height:24px}.progression-ability-action strong{font-size:11px}.progression-ability-action button{font:10px var(--font-ui);min-height:26px;padding:5px 8px}.rpg-owned-mark{font:10px var(--font-ui);color:var(--muted)}.rpg-empty{padding:14px;margin:0}
+.progression-history{margin-top:16px;padding:12px 0;border-top:1px solid var(--line)}.progression-history>summary{display:flex;align-items:center;gap:8px;color:var(--gold-2);font:14px var(--font-body);cursor:pointer}.progression-history>summary .ui-icon{width:16px;height:16px;color:var(--icon)}.progression-xp-detail{padding:12px 0;font:11px/1.6 var(--font-ui);color:var(--muted)}.progression-history .ui-data-table{font-size:12px}
+.rpg-train-dialog{width:min(450px,calc(100vw - 24px));padding:0;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text)}.rpg-train-dialog:not([open]){display:none}.rpg-train-dialog .modal-body{padding:18px}.rpg-train-dialog p{font:13px/1.6 var(--font-ui);color:var(--muted)}.rpg-train-dialog label{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--gold-2)}.rpg-train-dialog input{width:90px}.rpg-train-dialog button[type=submit]{width:100%;margin-top:10px}
+
+@media(max-width:600px){.progression-overview{gap:8px}.progression-overview h2{font-size:24px}.progression-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.progression-stat{padding:8px 7px}.progression-stat-heading{gap:7px;flex-wrap:nowrap}.progression-stat h3{font-size:10px;flex-basis:auto}.progression-stat .rpg-progress-icon{width:20px;height:20px}.progression-stat .rpg-progress-icon .ui-icon,.progression-stat .rpg-progress-icon img{width:18px;height:18px}.progression-stat-value{font-size:17px}.progression-stat-add{margin-left:auto}.progression-initial p span{display:block;margin-left:0;font-size:10px}.progression-ability{gap:7px;padding:10px}.progression-ability h4{font-size:13px}.progression-ability-content>summary{flex-wrap:wrap;gap:4px 7px}.progression-ability-action{flex-direction:column;gap:5px;align-items:flex-end}.rpg-owned-mark{max-width:70px;text-align:right;font-size:9px}.rpg-standalone>.progression{padding:13px}}
+.progression .progression-abilities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;background:transparent;border:0;border-radius:0;color:var(--text);overflow:visible}.progression-skill-group{min-width:0;border:1px solid var(--line);border-radius:8px;padding:16px}.progression-skill-group:only-child{grid-column:1/-1}.progression-skill-group>h3{margin:0 0 12px;color:var(--gold-2);font:400 20px Georgia,serif}.progression-skill-group .progression-ability{grid-template-columns:20px minmax(0,1fr) auto;padding:12px 0;gap:8px}.progression-skill-group .rpg-progress-icon{width:20px;height:24px;background:none}.progression-ability-action{color:var(--gold-2)}.progression-ability-content>summary:after{color:var(--gold)}@media(min-width:601px){.progression-stat .rpg-progress-icon .ui-icon{width:24px;height:24px}}
+@media(max-width:1050px){.progression .progression-abilities{grid-template-columns:1fr}}
+/* Administration keeps one editing column, with bounded grids for scalar rules. */
+.rpg-admin-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:14px 20px;margin:0;border-bottom:1px solid var(--line);background:var(--panel)}
+.rpg-admin-tabs button{display:inline-flex;align-items:center;gap:8px;font-size:.8rem}
+.rpg-admin-tabs .active{border-color:var(--gold);color:var(--gold-2);box-shadow:inset 0 -2px var(--gold)}
+.rpg-admin>.rpg-feedback{padding:0 20px}
+.rpg-admin>[data-rpg-panel-content]{padding:20px}
+.rpg-admin>[data-rpg-panel-content][hidden]{display:none}
+.rpg-admin-toolbar{display:flex;align-items:end;gap:12px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.rpg-admin-toolbar>label{flex:1;max-width:600px}
+.rpg-admin-form{margin:0;min-width:0}
+.rpg-admin-form :is(label,legend),.rpg-admin-toolbar label,.rpg-admin-stat-definition label{display:block;color:var(--muted);font:.75rem/1.6 var(--font-ui)}
+.rpg-admin-form label>:is(input:not([type=checkbox]),textarea,select),.rpg-admin-toolbar label>select,.rpg-admin-stat-definition label>:is(input,textarea,select){display:block;width:100%;margin-top:7px}
+.rpg-admin-form>label,.rpg-admin-form>fieldset{margin:0 0 20px}
+.rpg-form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:18px;margin-bottom:20px}
+.rpg-admin-form input[type=checkbox]{margin-right:7px;vertical-align:middle}
+.rpg-admin-form fieldset{padding:18px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--panel)}
+.rpg-admin-form legend{padding:0 8px;color:var(--gold-2)}
+.rpg-admin-form fieldset>p{font:.73rem/1.6 var(--font-ui);color:var(--muted);margin:15px 0 0}
+.rpg-admin-form fieldset>.rpg-form-grid{margin-bottom:0}
+.rpg-editor-heading{margin:22px 0 16px}
+.rpg-editor-heading h2,.rpg-admin-ledger h2,.rpg-admin-stat-definitions h2{margin:0 0 8px;font:1.25rem var(--font-body);color:var(--gold-2)}
+.rpg-editor-heading p,.rpg-admin-stat-definitions>p{margin:0;color:var(--muted);font:.8rem/1.6 var(--font-ui)}
+.rpg-admin-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}
+.rpg-admin-stat{padding:13px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm)}
+.rpg-admin-stat-label{display:flex;gap:9px;align-items:center}
+.rpg-admin-stat-label .ui-icon{width:21px;height:21px;color:var(--gold)}
+.rpg-admin-stat-label strong{font-size:.75rem;color:var(--text)}
+.rpg-admin-stat input{max-width:100%}
+.rpg-race-checks{display:flex;flex-wrap:wrap;gap:10px 18px}
+.rpg-race-checks label{padding:6px 10px;background:var(--panel-2);border:1px solid var(--line);border-radius:6px;color:var(--text)}
+.rpg-admin-actions{display:flex;justify-content:flex-end;gap:10px;padding:16px 0;margin-top:20px;border-top:1px solid var(--line)}
+.rpg-admin-actions button{display:inline-flex;align-items:center;gap:8px}
+.rpg-admin-ledger,.rpg-admin-stat-definitions{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.rpg-admin-npcs{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.rpg-admin-npcs h2{margin:0 0 8px;font:1.25rem var(--font-body);color:var(--gold-2)}
+.rpg-admin-npcs>p{margin:0 0 16px;color:var(--muted);font:.8rem/1.6 var(--font-ui)}
+.rpg-admin-npcs .action-btn{display:inline-flex;align-items:center;gap:7px;min-height:32px;font-size:.75rem;padding:7px 10px}
+.rpg-admin-stat-definition{display:grid;grid-template-columns:42px minmax(120px,.7fr) minmax(200px,1.5fr) minmax(120px,.7fr) auto;align-items:center;gap:15px;padding:17px 0;margin:0;border-bottom:1px solid var(--line)}
+.rpg-admin-stat-definition button{align-self:end;margin-bottom:4px;font-size:.72rem}
+.rpg-admin-stat-definition textarea{resize:vertical}
+.rpg-admin [aria-busy=true],.progression[aria-busy=true]{cursor:progress}
+@media(max-width:600px){
+ body.ui-page :is(.rpg-standalone,.rpg-admin)>.ui-page-heading{display:grid;grid-template-columns:36px minmax(0,1fr) 32px;gap:10px;padding:16px 14px}
+ body.ui-page :is(.rpg-standalone,.rpg-admin)>.ui-page-heading>div{min-width:0;grid-column:2;grid-row:1}
+ body.ui-page :is(.rpg-standalone,.rpg-admin)>.ui-page-heading>span[data-icon]{grid-column:1;grid-row:1;width:36px;height:36px;min-width:0;padding:7px}
+ body.ui-page :is(.rpg-standalone,.rpg-admin)>.ui-page-heading>.action-btn{display:none}
+ body.ui-page :is(.rpg-standalone,.rpg-admin)>.ui-page-heading>.ui-return-location{grid-column:3;grid-row:1;width:32px;min-width:32px;min-height:32px;height:32px;padding:7px;margin:0;font-size:0;gap:0}
+ body.ui-page :is(.rpg-standalone,.rpg-admin)>.ui-page-heading>.ui-return-location .ui-icon{width:17px;height:17px}
+ body.ui-page .progression-heading>.action-btn{display:none}
+}
+@media(max-width:1250px){.rpg-admin-stat-definition{grid-template-columns:42px 1fr 2fr}.rpg-admin-stat-definition>:nth-child(4){grid-column:2}.rpg-admin-stat-definition button{justify-self:start}.rpg-form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.rpg-admin-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rpg-admin-stat-definition{grid-template-columns:1fr 1fr;align-items:start}.rpg-admin-stat-definition>.rpg-progress-icon{grid-column:1/-1}.rpg-admin-stat-definition>:nth-child(3){grid-column:1/-1}.rpg-admin-stat-definition>:nth-child(4){grid-column:auto}.rpg-admin-stat-definition button{align-self:end}.rpg-admin>[data-rpg-panel-content]{padding:16px}.rpg-admin-tabs{padding:12px 16px}}
+@media(max-width:480px){.rpg-form-grid{grid-template-columns:1fr}.rpg-admin-toolbar{flex-wrap:wrap;align-items:stretch}.rpg-admin-toolbar>label{flex-basis:100%}.rpg-admin-tabs{gap:6px}.rpg-admin-tabs button{font-size:.72rem;padding:8px}.rpg-admin-form fieldset{padding:13px}.rpg-admin-stat-definition{grid-template-columns:1fr}.rpg-admin-stat-definition>*{grid-column:1!important}}
+
+/* Square item-style ability art shared by profile, lists, chat and editor. */
+.rpg-ability-art{display:block;width:96px;height:96px;aspect-ratio:1;object-fit:cover;flex:none;border:1px solid var(--gold);border-radius:9px;background:var(--panel-2)}
+.progression-ability.has-art{grid-template-columns:96px minmax(0,1fr) auto;align-items:center}
+.rpg-ability-prose,.race-ability details>div>p{white-space:pre-line}
+[data-rpg-ability-preview]{width:160px;height:160px;margin:10px 0}[data-rpg-ability-preview][hidden]{display:none}
+#rpg-chat-description>.rpg-ability-art{width:128px;height:128px;margin:0 auto 12px}
+@media(max-width:600px){.rpg-ability-art{width:72px;height:72px}.progression-ability.has-art{grid-template-columns:72px minmax(0,1fr);gap:9px}.progression-ability.has-art>.rpg-ability-art{grid-row:1/3}.progression-ability.has-art>.progression-ability-action{grid-column:2;justify-self:start}.race-ability summary>.rpg-ability-art{width:64px;height:64px}.race-ability summary h2{font-size:16px}}
+
+/* Shared learning state: identical eligibility and visual emphasis in both catalogues. */
+.rpg-learning-balance{display:inline-flex;align-items:center;padding:8px 14px;border:1px solid #5f9c6b;border-radius:24px;background:#183c2d;color:#def1dc;font-size:14px;font-weight:600}
+.rpg-learning-toolbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:16px 0 24px}.rpg-learning-toolbar p{margin:0;color:var(--text)}
+.progression-ability.is-learnable,.race-ability.is-learnable{border:1px solid #69ab79;border-radius:10px;background:linear-gradient(#6cc98412,#6cc98412),var(--panel-2);box-shadow:inset 0 0 0 1px #78c48b25,0 0 12px #59ac7310}
+.rpg-learning-ready{color:#a9d6aa;font-weight:600}.progression-ability-action small{display:block;max-width:180px;font-size:12px}
+.race-ability-learning{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px}.race-ability-learning>span{flex:1}.race-ability-learning button{flex:none}
+@media(max-width:600px){.race-ability-learning{align-items:flex-start;flex-direction:column}.race-ability-learning button{width:100%}.progression-section-heading{flex-wrap:wrap;gap:10px}.rpg-learning-balance{font-size:13px}.progression-ability.is-learnable{padding:12px}}

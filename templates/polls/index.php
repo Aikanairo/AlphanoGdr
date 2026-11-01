@@ -1,0 +1,15 @@
+<?php $h=static fn($value)=>htmlspecialchars((string)$value,ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8');$csrf=alphano_csrf_token(); ?>
+<!doctype html><html lang="it"><head><meta charset="utf-8"><title>Sondaggi – <?=$h(TitoloSito)?></title><script src="/js/polls.js" defer></script></head><body>
+<section class="poll-workspace" aria-label="Sondaggi della comunità">
+<?php if($message): ?><p class="flash" role="status"><?=$h($message)?></p><?php endif; ?>
+<nav class="forum-channels" aria-label="Stato dei sondaggi"><button type="button" data-poll-tab="active" class="active" aria-pressed="true" data-icon="check">Attivi <span><?=count($pollGroups['active'])?></span></button><button type="button" data-poll-tab="archive" aria-pressed="false" data-icon="book">Archivio <span><?=count($pollGroups['archive'])?></span></button><?php if($admin): ?><a class="action-btn" data-icon="settings" href="/sondaggi/adminsondaggi.php">Amministra i sondaggi</a><?php endif; ?></nav>
+<?php foreach($pollGroups as $group=>$polls): ?><section data-poll-panel="<?=$group?>" <?=$group==='active'?'':'hidden'?>>
+<?php if(!$polls): ?><p class="ui-empty"><?=$group==='active'?'Nessun sondaggio attivo.':'Nessun sondaggio archiviato.'?></p><?php endif; ?>
+<?php foreach($polls as $poll): ?><article class="poll-section" aria-labelledby="poll-title-<?=$poll['id']?>"><header class="forum-toolbar"><h2 id="poll-title-<?=$poll['id']?>"><?=$h($poll['title'])?></h2><span class="forum-summary"><?=$poll['active']?($poll['canVote']?'Votazione aperta':'Hai già votato'):'Sondaggio concluso'?> · <?=$poll['total']?> voti</span></header>
+<?php if($poll['canVote']): ?><form method="post" id="poll-form-<?=$poll['id']?>" class="poll-vote-form"><input type="hidden" name="_csrf" value="<?=$h($csrf)?>"><input type="hidden" name="id" value="<?=$poll['id']?>"><?php endif; ?>
+<div class="ui-table-scroll" tabindex="0" role="region" aria-label="Risposte: <?=$h($poll['title'])?>"><table class="ui-data-table poll-table"><thead><tr><th scope="col">Risposta</th><?php if(!$poll['canVote']): ?><th scope="col">Voti</th><th scope="col">Percentuale</th><?php endif; ?></tr></thead><tbody>
+<?php foreach($poll['answers'] as $answer): ?><tr><td><?php if($poll['canVote']): ?><label class="poll-answer"><input type="radio" name="vota" value="<?=$answer['id']?>" required form="poll-form-<?=$poll['id']?>"><span><?=$h($answer['label'])?></span></label><?php else: ?><strong><?=$h($answer['label'])?></strong><?php if($poll['ownVote']===$answer['id']): ?><small class="ui-cell-meta">La tua scelta</small><?php endif;endif; ?></td><?php if(!$poll['canVote']): ?><td><?=$answer['votes']?></td><td><span class="poll-percentage"><?=number_format((float)$answer['percent'],2,',','.')?>%</span></td><?php endif; ?></tr><?php endforeach; ?>
+</tbody></table></div>
+<?php if($poll['canVote']): ?><footer class="ui-list-footer"><button type="submit" form="poll-form-<?=$poll['id']?>" data-icon="check">Vota</button><p>Dopo il voto puoi consultare i risultati.</p></footer></form><?php endif; ?>
+</article><?php endforeach; ?></section><?php endforeach; ?>
+</section></body></html>

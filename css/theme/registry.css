@@ -1,0 +1,75 @@
+/* Registri pubblici: schede di gruppi e città, con azioni reali condivise. */
+.city-election-preview{padding:14px;margin:0 0 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);min-width:0}
+.city-election-preview.is-active{border-color:#669c79;background:linear-gradient(135deg,#17382d,var(--panel));box-shadow:inset 3px 0 #90c99d}
+.city-election-preview h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;color:var(--gold-2);font:600 14px/1.5 var(--font-ui)}
+.city-election-dot{width:8px;height:8px;flex:none;border-radius:50%;background:#718091}.is-active .city-election-dot{background:#9fe5af;box-shadow:0 0 9px #80d99a55}
+.city-election-preview p{margin:5px 0;color:var(--muted);font:12px/1.6 var(--font-ui)}.city-election-preview>strong{display:block;color:#c7e9ce;font:600 12px/1.6 var(--font-ui);margin:8px 0 12px}
+body.ui-page .city-election-preview>.action-btn{display:flex;justify-content:center;white-space:normal;width:100%;margin:12px 0 0;font-size:12px}.city-election-preview [hidden]{display:none!important}
+.registry{padding:20px 24px;min-width:0;font-family:var(--font-ui)}
+.registry-totals,.registry-overview{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;color:var(--muted);font:12px/1.5 var(--font-ui)}
+.registry-totals>span{padding:9px 14px;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--bg) 70.20%,transparent)}
+.registry-totals strong{display:block;color:var(--gold-2);font:26px Georgia,serif}
+.registry-overview{padding:14px 18px;margin-bottom:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.registry-overview>span{display:inline-flex;align-items:center;gap:8px}.registry-overview .ui-icon{color:var(--gold)}
+.registry-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.registry-filters,.registry-view{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.registry-filters button,.registry-view button{margin:0;padding:8px 12px;border:1px solid var(--line);border-radius:22px;background:var(--panel);color:var(--muted);font:12px var(--font-ui)}
+.registry-filters button[aria-pressed=true],.registry-view button[aria-pressed=true]{background:var(--panel-2);color:var(--gold-2);border-color:var(--gold)}
+.registry-search{display:flex;align-items:center;gap:9px;flex:0 1 320px;min-width:180px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--gold)}
+body.ui-page .registry-search input{width:100%;min-width:0;margin:0;padding:11px 0;border:0;background:transparent;box-shadow:none;font:12px var(--font-ui);color:var(--text)}
+.registry-search:focus-within{outline:1px solid var(--gold)}.registry-count{margin:0 0 14px;color:var(--muted);font:12px var(--font-ui)}
+.registry-groups{display:grid;gap:16px}.registry-group{border:1px solid var(--panel-2);border-left:3px solid #b89865;border-radius:17px;background:linear-gradient(120deg,var(--panel),var(--panel));overflow:hidden;box-shadow:0 8px 24px #0002;transition:border-color .18s}
+.registry-group:hover,.registry-city:hover{border-color:#b89764}
+.registry-group-top{display:flex;align-items:center;gap:20px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.registry-standard{display:grid;place-items:center;flex:0 0 94px;width:94px;height:86px;overflow:hidden;border:1px solid #a787526b;border-radius:10px;background:var(--panel)}
+.registry-standard img{width:100%;height:100%;object-fit:cover}.registry-standard .ui-icon{width:40px;height:40px;color:var(--gold)}
+.registry-group-title{flex:1;min-width:0}.registry-group-title>.ui-eyebrow{font-size:10px;letter-spacing:1.5px;color:var(--muted)}
+.registry-title-line{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin:5px 0 8px}
+.registry-title-line h2{margin:0;min-width:0;font:normal clamp(21px,2vw,29px)/1.2 Georgia,serif;color:var(--gold-2);overflow-wrap:anywhere}
+.registry-title-line h2>a{color:inherit;text-decoration:none}.registry-title-line h2>a:hover{text-decoration:underline;text-underline-offset:4px}
+.registry-title-line form{margin:0}.registry-title-line>.registry-membership{font:11px var(--font-ui);color:#bed8c2;border:1px solid #5c8b6955;border-radius:20px;padding:6px 10px}
+.registry-place{display:flex;align-items:center;gap:8px;font:12px var(--font-ui);color:var(--muted)}.registry-place img{width:28px;height:28px;border:1px solid var(--line);border-radius:50%;object-fit:cover}.registry-place a{color:var(--muted)}
+.registry-group-bottom{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);align-items:start;gap:22px;padding:16px 22px}
+.registry :is(.registry-responsibles,.registry-quick,.registry-city-government)>h3{margin:0 0 10px;font:600 10px/1.4 var(--font-ui);letter-spacing:1.4px;text-transform:uppercase;color:#9cafc2}
+.registry .group-responsibles{display:flex;flex-wrap:wrap;align-items:start;gap:14px 20px}
+.registry .group-responsible{display:flex;align-items:center;gap:10px;min-width:0;max-width:100%;color:var(--text);text-decoration:none}
+.registry .group-responsible strong{display:block;font:600 13px/1.4 var(--font-ui);color:#e8e0d2;overflow-wrap:anywhere}.registry .group-responsible small{display:block;margin-top:3px;color:var(--muted);font:11px/1.4 var(--font-ui)}
+.registry .group-person-media{position:relative;display:block;width:50px;height:50px;flex:0 0 50px}.registry .group-person-media>img{width:50px;height:50px;max-width:none;max-height:none;border:1px solid #bd985e;border-radius:50%;object-fit:cover;object-position:90% center}
+.registry .character-markers{margin:4px 0 0;gap:5px}.registry .character-markers .character-race,.registry .character-markers .character-race img{width:23px;height:23px;min-width:23px;max-width:23px}
+.registry-quick{min-width:0;max-width:420px}.registry-actions{display:flex;flex-wrap:wrap;gap:7px}
+body.ui-page .registry-action{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:8px 10px;margin:0;border:1px solid var(--registry-edge,#59697a);border-radius:9px;background:var(--registry-bg,var(--panel));color:var(--registry-ink,#e4d4b5);text-decoration:none;font:600 11px/1.4 var(--font-ui);box-shadow:none;white-space:normal;text-align:center}
+.registry-action .ui-icon{width:16px;height:16px;flex:none}.registry-action:hover{filter:brightness(1.18)}.registry-action:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+.registry-action-statute{--registry-bg:#352d20;--registry-edge:#95794b;--registry-ink:#f1d7a0}
+.registry-action-catalogue{--registry-bg:var(--panel);--registry-edge:#4e8d84;--registry-ink:#bde4da}
+.registry-action-members{--registry-bg:var(--panel-2);--registry-edge:#537ca3;--registry-ink:#cae0f4}
+.registry-action-manage{--registry-bg:#30273f;--registry-edge:#8a70a9;--registry-ink:#e2d1f3}
+.registry-action-trade{--registry-bg:#3e2b20;--registry-edge:#a47a50;--registry-ink:#f0ceaa}
+.registry-action-art{--registry-bg:#3b2431;--registry-edge:#a06b86;--registry-ink:#edc6da}
+.registry-action-join{--registry-bg:#26442d;--registry-edge:#729d6e;--registry-ink:#e0efd2}
+.registry-action-assembly{--registry-bg:var(--panel-2);--registry-edge:#648d9b;--registry-ink:#d0e8ee}
+.registry-action-external{--registry-bg:var(--panel-2);--registry-edge:#6c8298;--registry-ink:#d5dfe9}
+.registry-membership{color:#bdd8c2;font:11px var(--font-ui)}
+.registry-cities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.registry-city{min-width:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--panel-2);border-radius:17px;background:linear-gradient(var(--panel),var(--panel));box-shadow:0 10px 26px #0003;transition:border-color .18s}
+.registry-city-cover{position:relative;height:230px;isolation:isolate;background:var(--panel)}.registry-city-cover>a{display:block;height:100%}.registry-city-cover>a>img{display:block;width:100%;height:100%;object-fit:cover}
+.registry-city-cover:after{position:absolute;inset:0;z-index:0;content:'';background:linear-gradient(0deg,color-mix(in srgb,var(--panel) 96.08%,transparent),transparent 80%);pointer-events:none}
+.registry-city-number,.registry-city-badge{position:absolute;top:14px;z-index:1;padding:6px 10px;border:1px solid #c09c645c;border-radius:20px;background:color-mix(in srgb,var(--panel) 87.06%,transparent);color:var(--gold-2);font:11px var(--font-ui)}.registry-city-number{left:14px}.registry-city-badge{right:14px}
+.registry-city-label{position:absolute;bottom:14px;left:18px;right:18px;z-index:1}.registry-city-label>small{font:10px var(--font-ui);text-transform:uppercase;letter-spacing:1.5px;color:var(--gold)}
+.registry-city-label .registry-title-line{margin:5px 0 0;gap:9px}.registry-city-label h2{font:32px Georgia,serif;color:#f7e5c5}.registry-city-label .registry-action{font-size:10px;padding:7px 8px;min-height:32px}
+.registry-city-body{display:flex;flex-direction:column;flex:1;min-width:0;padding:18px}
+.registry-city-lore{margin:0 0 14px;color:#b9c6d3;font:14px/1.6 Georgia,serif}.registry-city-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 0 16px;border-bottom:1px solid var(--line)}
+.registry-city-metrics span{color:var(--muted);font:10px var(--font-ui);text-transform:uppercase;letter-spacing:.7px}.registry-city-metrics strong{display:block;margin-bottom:4px;color:var(--gold-2);font:24px Georgia,serif}
+.registry-city-government{padding:16px 0}.registry-city-government>p{color:var(--muted);font:12px var(--font-ui);margin:0}
+.registry-city-body>.registry-quick{margin-top:auto;max-width:none}.registry-city .registry-actions>*{flex:1 1 auto}
+.registry-list-view{grid-template-columns:1fr}.registry-list-view .registry-city{display:grid;grid-template-columns:minmax(220px,30%) minmax(0,1fr)}.registry-list-view .registry-city-cover{height:100%;min-height:250px}
+.registry [data-registry-item][hidden],.registry [hidden]{display:none!important}
+@media(max-width:1200px){.registry-cities{grid-template-columns:repeat(2,minmax(0,1fr))}.registry-cities.registry-list-view{grid-template-columns:1fr}.registry-group-bottom{grid-template-columns:1fr}.registry-quick{max-width:none}}
+@media(max-width:650px){.registry{padding:16px 14px}.registry-toolbar{align-items:stretch}.registry-search{flex:1 1 100%;min-width:0;order:-1}.registry-cities{grid-template-columns:1fr}.registry-group-top{gap:12px;padding:16px 14px;align-items:flex-start}.registry-standard{width:66px;height:70px;flex-basis:66px}.registry-title-line h2{font-size:22px}.registry-group-bottom{padding:14px;gap:18px}.registry-title-line{gap:10px}.registry-actions>*{flex:1 1 auto}.registry-city-cover{height:230px}.registry-list-view .registry-city{display:flex}.registry-list-view .registry-city-cover{height:230px;min-height:0}.registry-overview{gap:10px 18px;padding:12px}.registry-totals{gap:8px}.registry-totals>span{padding:7px 10px}.registry-totals strong{font-size:21px}.registry-view{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){.registry-group,.registry-city{transition:none}}
+.registry .group-responsible{flex:0 1 auto;flex-direction:row;text-align:left;min-width:140px;max-width:240px}
+.registry .group-responsible>span:last-child{min-width:0}
+body.ui-page .registry .registry-search input[type=search]{margin:0;padding:10px 0;border:0;border-radius:0;background:transparent;box-shadow:none;font:12px var(--font-ui)}
+/* Campo nativo del tema: un solo bordo, con il simbolo di ricerca accanto. */
+.registry-search{border:0;background:none;padding:0;gap:10px}
+body.ui-page .registry .registry-search input[type=search]{padding:10px 12px}
+body.ui-page .registry-action:disabled{opacity:.5;cursor:not-allowed;filter:none}

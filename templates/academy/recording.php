@@ -1,0 +1,7 @@
+<?php $h = static fn(mixed $value): string => htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>
+<!doctype html><html lang="it"><head><meta charset="utf-8"><title>Giocata · <?=$h($recording['title'])?></title></head><body class="ui-page">
+<header class="ui-page-heading" data-page-heading><span data-icon="book" aria-hidden="true"></span><div><div class="ui-eyebrow">Alphano · Accademia</div><h1><?=$h($recording['title'])?></h1><p>Lettura della giocata e valutazione dell’Accademia.</p></div></header>
+<main class="recording-reader"><article class="ui-reading" aria-label="Testo della giocata"><?=$recording['html']?></article>
+<section class="academy-flags" aria-label="Valutazione della giocata"><?php if ($recording['can_vote']): ?><h2>Valuta la giocata</h2><form class="ui-form" action="/admin/accademia.php" method="post"><input type="hidden" name="azione" value="vota"><input type="hidden" name="giocata" value="<?=(int)$recording['id']?>"><label>Valutazione<select name="voto" required><option value="">Scegli la valutazione</option><option value="1">Positiva</option><option value="0">Negativa</option></select></label><label>Motivo<input type="text" name="motivo"></label><button type="submit" data-icon="check">Invia valutazione</button></form><?php else: ?><p>Hai già votato per questa giocata.</p><?php endif; ?></section>
+</main><footer class="ui-list-footer"><a class="action-btn" data-icon="book" href="/admin/accademia.php">Torna all’Accademia</a></footer>
+</body></html>

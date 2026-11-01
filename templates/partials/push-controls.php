@@ -1,0 +1,4 @@
+<section class="push-controls ui-row-actions" data-push-controls aria-label="Notifiche del browser">
+  <div class="push-controls-copy"><strong>Le tue missive, anche fuori dal gioco</strong><p>Se lo desideri, il browser può avvisarti quando arriva posta. L’anteprima mostra un avviso generico, senza mittente né contenuto. Puoi disattivarlo qui in qualsiasi momento; l’uscita dall’account disattiva questo dispositivo.</p><p data-push-status role="status" aria-live="polite">Gli avvisi nel gioco restano disponibili. Nei browser compatibili puoi anche attivare le notifiche push.</p></div>
+  <div class="ui-row-actions"><button type="button" data-push-enable data-icon="mail" disabled>Attiva notifiche</button><button type="button" data-push-disable hidden>Disattiva su questo browser</button></div>
+</section>

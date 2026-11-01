@@ -1,0 +1,187 @@
+{
+  "format": "SVG",
+  "license": "AGPL-3.0-or-later",
+  "description": "Original editable artwork for the engine default template.",
+  "assets": [
+    {
+      "key": "compass",
+      "kind": "menu",
+      "path": "/assets/default-nav-compass.svg",
+      "title": "Esplorazione"
+    },
+    {
+      "key": "users",
+      "kind": "menu",
+      "path": "/assets/default-nav-users.svg",
+      "title": "Personaggi e gruppi"
+    },
+    {
+      "key": "crown",
+      "kind": "menu",
+      "path": "/assets/default-nav-crown.svg",
+      "title": "Classifiche e incarichi"
+    },
+    {
+      "key": "messages",
+      "kind": "menu",
+      "path": "/assets/default-nav-messages.svg",
+      "title": "Bacheche e dialoghi"
+    },
+    {
+      "key": "shield",
+      "kind": "menu",
+      "path": "/assets/default-nav-shield.svg",
+      "title": "Corporazioni e protezione"
+    },
+    {
+      "key": "city",
+      "kind": "menu",
+      "path": "/assets/default-nav-city.svg",
+      "title": "Città e territori"
+    },
+    {
+      "key": "book",
+      "kind": "menu",
+      "path": "/assets/default-nav-book.svg",
+      "title": "Biblioteca e Accademia"
+    },
+    {
+      "key": "scroll",
+      "kind": "menu",
+      "path": "/assets/default-nav-scroll.svg",
+      "title": "Giocate e cronache"
+    },
+    {
+      "key": "settings",
+      "kind": "menu",
+      "path": "/assets/default-nav-settings.svg",
+      "title": "Gestione e configurazione"
+    },
+    {
+      "key": "search",
+      "kind": "menu",
+      "path": "/assets/default-nav-search.svg",
+      "title": "Ricerca e strumenti"
+    },
+    {
+      "key": "map",
+      "kind": "menu",
+      "path": "/assets/default-nav-map.svg",
+      "title": "Mappa del mondo"
+    },
+    {
+      "key": "user",
+      "kind": "menu",
+      "path": "/assets/default-nav-user.svg",
+      "title": "Profilo del personaggio"
+    },
+    {
+      "key": "bag",
+      "kind": "menu",
+      "path": "/assets/default-nav-bag.svg",
+      "title": "Inventario ed equipaggiamento"
+    },
+    {
+      "key": "moon",
+      "kind": "menu",
+      "path": "/assets/default-nav-moon.svg",
+      "title": "Forme e trasformazioni"
+    },
+    {
+      "key": "dice",
+      "kind": "menu",
+      "path": "/assets/default-nav-dice.svg",
+      "title": "Dadi e giochi"
+    },
+    {
+      "key": "coins",
+      "kind": "menu",
+      "path": "/assets/default-nav-coins.svg",
+      "title": "Tesorerie e scambi"
+    },
+    {
+      "key": "mail",
+      "kind": "menu",
+      "path": "/assets/default-nav-mail.svg",
+      "title": "Posta e benvenuto"
+    },
+    {
+      "key": "chart",
+      "kind": "menu",
+      "path": "/assets/default-nav-chart.svg",
+      "title": "Statistiche"
+    },
+    {
+      "key": "heart",
+      "kind": "menu",
+      "path": "/assets/default-nav-heart.svg",
+      "title": "Salute e cure"
+    },
+    {
+      "key": "clock",
+      "kind": "menu",
+      "path": "/assets/default-nav-clock.svg",
+      "title": "Sessioni e turni"
+    },
+    {
+      "key": "swords",
+      "kind": "menu",
+      "path": "/assets/default-nav-swords.svg",
+      "title": "Regia e scontri"
+    },
+    {
+      "key": "pen",
+      "kind": "menu",
+      "path": "/assets/default-nav-pen.svg",
+      "title": "Redazione e creazione"
+    },
+    {
+      "key": "bell",
+      "kind": "menu",
+      "path": "/assets/default-nav-bell.svg",
+      "title": "Notifiche"
+    },
+    {
+      "key": "back",
+      "kind": "menu",
+      "path": "/assets/default-nav-back.svg",
+      "title": "Uscita e ritorno"
+    },
+    {
+      "key": "send",
+      "kind": "menu",
+      "path": "/assets/default-nav-send.svg",
+      "title": "Invio e trasferimenti"
+    },
+    {
+      "key": "eye",
+      "kind": "menu",
+      "path": "/assets/default-nav-eye.svg",
+      "title": "Presenze e lettura"
+    },
+    {
+      "key": "board",
+      "kind": "cover",
+      "path": "/assets/default-board.svg",
+      "title": "Bacheca delle comunicazioni"
+    },
+    {
+      "key": "manual",
+      "kind": "cover",
+      "path": "/assets/default-manual.svg",
+      "title": "Biblioteca dei manuali"
+    },
+    {
+      "key": "city",
+      "kind": "cover",
+      "path": "/assets/default-city.svg",
+      "title": "Città e territori"
+    },
+    {
+      "key": "chat",
+      "kind": "cover",
+      "path": "/assets/default-chat.svg",
+      "title": "Luogo di incontro"
+    }
+  ]
+}

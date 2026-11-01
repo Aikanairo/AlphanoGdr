@@ -1,0 +1,8 @@
+/* Allineamenti e proporzioni dichiarati nel tema, senza attributi HTML di presentazione. */
+.align-center { text-align:center; }.align-left { text-align:left; }.align-right { text-align:right; }
+.vertical-top { vertical-align:top; }.vertical-middle { vertical-align:middle; }.vertical-bottom { vertical-align:bottom; }
+.column-width-3 { width:3%; }
+.column-width-33 { width:33%; }
+.column-width-34 { width:34%; }
+.column-width-50 { width:50%; }
+.column-width-100 { width:100%; }

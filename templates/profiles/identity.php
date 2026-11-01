@@ -1,0 +1,6 @@
+<?php /** Compact disclosures only; affiliations already appear once in the hero. */ ?>
+<div class="rpg-identity-dossier">
+ <?php if($s['rows']): ?><details class="rpg-profile-disclosure rpg-dossier-disclosure"><summary><img src="<?=$h(alphano_profile_symbol('identity'))?>" alt="" width="40" height="40">Informazioni sul personaggio</summary><?php $fields($s['rows']); ?></details><?php endif; ?>
+ <?php foreach($s['children']??[] as $child): ?><details class="rpg-profile-disclosure rpg-dossier-disclosure" id="<?=$h($child['id'])?>"><summary><img src="<?=$h(alphano_profile_chapter_symbol($child['title']))?>" alt="" width="40" height="40"><?=$h($child['title'])?></summary><?php if(($child['template']??'')==='npc-relationship'): require __DIR__.'/npc-relationship.php'; else:$fields($child['rows']);endif; ?></details><?php endforeach; ?>
+ <?php if($sheet['motto_html']||$sheet['music']): ?><details class="rpg-profile-disclosure rpg-dossier-disclosure"><summary><img src="<?=$h(alphano_profile_symbol('story'))?>" alt="" width="40" height="40">Motto e atmosfera</summary><?php if($sheet['motto_html']): ?><blockquote><?=$sheet['motto_html']?></blockquote><?php endif; ?><?php if($sheet['music']): ?><audio controls preload="none" src="<?=$h($sheet['music'])?>" aria-label="Musica del personaggio"></audio><?php endif; ?></details><?php endif; ?>
+</div>

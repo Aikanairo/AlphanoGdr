@@ -1,0 +1,22 @@
+/* Illustrated scene controls retain semantic buttons and existing chat handlers. */
+:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions .scene-tool{padding:3px;gap:7px}
+.scene-control-art{display:block;width:32px;height:32px;flex:0 0 32px;object-fit:contain;border-radius:50%;pointer-events:none;filter:drop-shadow(0 1px 2px #0007)}
+:is(body[data-view=chat-index],body.session-replay) .scene-tool.active .scene-control-art{filter:drop-shadow(0 0 4px #d0a64c66)}
+:is(body[data-view=chat-index],body.session-replay) .scene-return .scene-control-art{width:20px;height:20px;flex-basis:20px}
+.scene-mobile-links>button{display:flex;align-items:center;justify-content:flex-start;gap:12px;text-align:left;min-height:48px}
+.scene-mobile-links .scene-control-art{width:32px;height:32px;flex-basis:32px}
+body[data-view=chat-index] .scene-controls .scene-actions>#scene-master-control{padding:3px 10px}
+@media(max-width:760px){:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions .scene-tool{padding:3px}.scene-control-art{width:30px;height:30px;flex-basis:30px}}
+
+/* The medallion is the control: no surrounding button plate. */
+:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool{position:relative;width:52px;height:64px;min-width:0;min-height:0;padding:0;align-items:flex-start;justify-content:center;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;gap:0;flex:none;overflow:visible}
+body[data-view=chat-index] .scene-controls .scene-actions>#scene-master-control{width:52px;min-width:0;padding:0}
+:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool>.scene-control-art{width:48px;height:48px;flex:0 0 48px;transition:transform .18s ease,filter .18s ease;transform-origin:center}
+:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool:after{content:attr(data-control-label);position:absolute;bottom:0;left:50%;transform:translate(-50%,3px);opacity:0;white-space:nowrap;pointer-events:none;color:var(--gold-2);font:11px/14px var(--font-ui);text-shadow:0 1px 3px #000;transition:opacity .18s ease,transform .18s ease}
+:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool:is(:hover,:focus-visible)>.scene-control-art{transform:scale(1.12)}
+:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool:is(:hover,:focus-visible):after{opacity:1;transform:translate(-50%,0)}
+body[data-view=chat-index] .scene-controls .scene-actions>#scene-master-control>.scene-master-label{display:none!important}
+:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+@media(max-width:760px){:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool{width:42px;height:50px}:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool>.scene-control-art{width:38px;height:38px;flex-basis:38px}body[data-view=chat-index] .scene-controls .scene-actions>#scene-master-control{width:42px}}
+@media(hover:none){:is(body[data-view=chat-index],body.session-replay) .scene-controls .scene-actions>.scene-tool:after{opacity:1;transform:translate(-50%,0);font-size:10px}}
+@media(prefers-reduced-motion:reduce){.scene-controls .scene-control-art,.scene-controls .scene-tool:after{transition:none!important}}

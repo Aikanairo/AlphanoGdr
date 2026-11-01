@@ -1,0 +1,62 @@
+/* Un solo componente per elenchi, archivi e risultati. La geometria resta nella vista. */
+.ui-list-section { min-width: 0; width: 100%; }
+.ui-list-footer { display:flex; align-items:center; flex-wrap:wrap; gap:12px; padding:16px; border-top:1px solid var(--line); }
+.ui-list-footer p { margin:0; color:var(--muted); font-size:.84rem; }
+body.ui-page .ui-table-scroll { width:100%; min-width:0; max-width:100%; overflow:auto; margin:0; border:0; border-radius:0; }
+body.ui-page :is(.ui-data-table,.session-table) { width:100%; border-collapse:collapse; margin:0; border:0; background:var(--reading-background); color:var(--reading-ink); font-size:.94rem; }
+body.ui-page :is(.ui-data-table,.session-table) caption { padding:12px 16px; text-align:left; background:var(--panel); color:var(--muted); font:.8rem/1.5 system-ui,sans-serif; }
+body.ui-page :is(.ui-data-table,.session-table) :is(th,td) { padding:14px 16px; text-align:left; vertical-align:middle; border:0; border-bottom:1px solid var(--reading-line); overflow-wrap:anywhere; }
+body.ui-page :is(.ui-data-table,.session-table) th { background:var(--panel-2); color:var(--gold-2); font:600 .75rem/1.5 system-ui,sans-serif; letter-spacing:.05em; text-transform:uppercase; }
+body.ui-page :is(.ui-data-table,.session-table) thead { position:sticky; top:0; z-index:1; }
+body.ui-page :is(.ui-data-table,.session-table) tbody { background:transparent; color:var(--reading-ink); }
+body.ui-page :is(.ui-data-table,.session-table) tbody tr { background:transparent; }
+body.ui-page :is(.ui-data-table,.session-table) tbody tr:nth-child(even) { background:var(--reading-stripe); }
+body.ui-page :is(.ui-data-table,.session-table) tbody tr:hover { background:var(--reading-hover); }
+body.ui-page :is(.ui-data-table,.session-table) tbody :is(td,a:not(.action-btn):not(.ui-action),strong,small,label,.Valore,.Descrizione,.meta) { color:var(--reading-ink); }
+body.ui-page :is(.ui-data-table,.session-table) th a { color:var(--gold-2); }
+.ui-cell-meta { display:block; margin-top:5px; font:.73rem/1.45 system-ui,sans-serif; }
+.ui-cell-summary { font-size:.84rem; margin-top:6px; line-height:1.5; }
+body.ui-page .ui-row-actions { display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+body.ui-page .ui-row-actions form { display:contents; }
+body.ui-page :is(.ui-data-table,.ui-row-actions,.session-actions) :is(.action-btn,button:not(.ui-text-action)) { display:inline-flex; align-items:center; gap:6px; margin:0; padding:8px 11px; border:1px solid var(--line); border-radius:9px; background:var(--button-background); color:var(--text); font:.8rem/1.4 var(--font-ui); white-space:nowrap; text-decoration:none; }
+.ui-person { display:inline-flex; align-items:center; gap:8px; }
+.ui-person img { width:20px; height:20px; object-fit:contain; flex:none; }
+.ui-badge-row { display:flex; align-items:center; justify-content:center; gap:10px; }
+.ui-empty { padding:28px 16px; text-align:center; }
+body.ui-page .ui-data-table .ui-text-action { background:transparent; border:0; padding:0; text-align:left; color:var(--reading-ink); box-shadow:none; }
+body.ui-page .mail-table { min-width:580px; }
+.mail-unread-cell { font-weight:bold; }
+body.ui-page .group-table { min-width:860px; }
+.group-table td:first-child { width:23%; }
+.group-table td:nth-child(2) { width:20%; }
+.group-table td:nth-child(3) { width:12%; }
+.group-table td:last-child { width:34%; }
+body.ui-page .group-table .ui-row-actions { flex-wrap:wrap; }
+body.ui-page :is(.forum-thread-table,.discussion-table) { min-width:680px; }
+body.ui-page table.forum-thread-table .thread-item { display:table-row; opacity:1; transform:none; border:0; box-shadow:none; }
+.forum-thread-table td:first-child { width:42%; }
+body.ui-page .presence-directory { padding:0; }
+.presence-directory > :is(.presence-summary,.presence-filters,.presence-update,.presence-results) { padding-inline:16px; }
+body.ui-page .presence-places { display:block; width:100%; min-width:0; }
+body.ui-page .presence-place { border:0; border-radius:0; background:transparent; margin:0 0 20px; }
+body.ui-page .presence-place > header { display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--panel-2); padding:12px 16px; border-block:1px solid var(--line); }
+.presence-place .ui-eyebrow { display:none; }
+body.ui-page .presence-place h2 { margin:0; font-size:1.08rem; }
+body.ui-page .presence-table { min-width:580px; table-layout:fixed; }
+.presence-table th:first-child { width:30%; }.presence-table th:nth-child(2) { width:28%; }
+body.ui-page .presence-person { display:table-row; padding:0; }
+body.ui-page .presence-person:last-child { border:0; }
+/* Forum: lo stesso contrasto delle tabelle, su righe div con colonne allineate. */
+body.ui-page .ui-data-list { overflow:auto; background:var(--reading-background); color:var(--reading-ink); }
+body.ui-page .ui-data-list .ui-data-row { display:grid; grid-template-columns:minmax(260px,1fr) 64px 64px minmax(200px,.55fr); min-width:650px; align-items:center; margin:0; padding:0; border:0; border-bottom:1px solid var(--reading-line); border-radius:0; box-shadow:none; }
+body.ui-page .ui-data-list .ui-data-row:nth-child(odd) { background:var(--reading-stripe); }
+body.ui-page .ui-data-list .ui-data-row:hover { background:var(--reading-hover); }
+body.ui-page .ui-data-list .ui-data-head { display:grid; background:var(--panel-2); color:var(--gold-2); font:600 .75rem/1.5 system-ui,sans-serif; text-transform:uppercase; }
+body.ui-page .ui-data-list .ui-data-row > div { display:block; padding:14px 16px; min-width:0; }
+body.ui-page .ui-data-row:not(.ui-data-head) :is(.desc,.lp-info,.lp-date,.lp-user,.lp-subject) { color:var(--reading-ink); }
+body.ui-page .ui-data-row .col-lastpost { display:block; }
+@media(max-width:720px) {
+ body.ui-page :is(.ui-data-table,.session-table) :is(th,td) { padding:11px 12px; }
+ body.ui-page .ui-data-list .ui-data-row > div { padding:11px 12px; }
+}
+body.ui-page .ui-data-table th button.ui-sort { border:0; border-radius:0; padding:0; background:transparent; color:var(--gold-2); font:inherit; letter-spacing:inherit; text-transform:inherit; box-shadow:none; }

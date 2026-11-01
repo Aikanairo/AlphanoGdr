@@ -1,0 +1,119 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__.'/../libs/ai.inc.php';
+require_once __DIR__.'/../libs/ai-adult-admin.inc.php';
+try { ai_admin(false); } catch (DomainException $e) { alphano_fail($e->getMessage(),403); }
+?><!doctype html>
+<html lang="it"><head><meta charset="utf-8"><title>Luoghi e personaggi IA</title><script src="/js/master-ia.js" defer></script></head>
+<body>
+<main class="ai-admin">
+  <header class="ui-page-heading" data-page-heading><span data-icon="city"></span><div><div class="ui-eyebrow">Alphano · Amministrazione IA</div><h1>Luoghi e personaggi</h1><p>Ambientazione, identità dei PNG, memoria canonica e prove prima della pubblicazione.</p></div><nav class="ui-module-toolbar ai-toolbar" aria-label="Amministrazione IA"><a class="action-btn" href="/admin/master-engine.php" data-icon="compass">Panoramica amministrazione</a><a class="action-btn" href="/admin/master-engine.php?section=characters" data-icon="users">Caratteristiche e dotazioni</a><a class="action-btn" href="/admin/master-engine.php?section=knowledge" data-icon="book">Regole e fonti</a><a class="action-btn" href="/sessione/sessione.php" data-icon="scroll">Regia sessione</a></nav></header>
+  <details class="ai-info"><summary>Info · da dove iniziare</summary><ol><li>Scegli il luogo e controlla descrizione pubblica, disponibilità dell’IA e modalità della quest.</li><li>Prepara l’identità e il carattere dei PNG nella scheda Personaggi; abilità, statistiche e oggetti si gestiscono da Caratteristiche e dotazioni.</li><li>Fissa in Memoria soltanto fatti canonici verificati. I ricordi dei singoli incontri restano nel dossier personale del PNG.</li><li>Usa Prova e attività per verificare una voce senza pubblicarla in chat. Salva prima i campi modificati.</li></ol><p>La conduzione quotidiana di una giocata appartiene alla Regia sessione. Questo pannello modifica la configurazione amministrativa utilizzata dall’IA.</p></details>
+  <aside class="ai-heading"><p id="ai-engine" role="status">Verifica del servizio locale…</p></aside>
+  <?php if(ai_local_model_config()): ?>
+  <script src="/js/local-ai-models.js" defer></script>
+  <section class="ai-local-model" aria-labelledby="local-model-title">
+    <header><div class="ui-eyebrow">Laboratorio locale · amministratore</div><h2 id="local-model-title">Modello dei PNG</h2><p id="local-model-current" role="status">Verifica del modello attivo…</p></header>
+    <form id="local-model-form" class="ai-form">
+      <label>Modello installato<select name="id" required></select></label>
+      <details><summary>Parametri del runtime e della narrazione</summary><p>Il contesto è per slot e comprende istruzioni, ricordi e risposta. I parametri narrativi valgono per i dialoghi; le estrazioni JSON del motore conservano il proprio campionamento. Un contesto più ampio richiede più memoria e tempo.</p><div class="ai-form-row">
+      <?php foreach(['threads'=>['Thread CPU',1,6,1],'slots'=>['Slot simultanei',1,2,1],'context'=>['Contesto per slot · token',1536,4096,256],'temperature'=>['Temperatura · varietà',0,1.5,.05],'top_p'=>['Top P',.1,1,.05],'top_k'=>['Top K',1,100,1],'min_p'=>['Min P',0,1,.01],'repeat_penalty'=>['Penalità delle ripetizioni',1,1.5,.05]] as $key=>[$label,$min,$max,$step]): ?><label><?=$label?><input type="number" name="<?=$key?>" min="<?=$min?>" max="<?=$max?>" step="<?=$step?>" required></label><?php endforeach; ?>
+      </div></details>
+      <button type="submit" id="local-model-switch" disabled>Carica e usa questo modello</button>
+    </form>
+    <div class="ai-model-progress"><progress id="local-model-progress" max="100" value="0" aria-label="Avanzamento del cambio modello"></progress><p id="local-model-phase" role="status" aria-live="polite"></p></div>
+    <details class="ai-info"><summary>Info · cosa succede durante il cambio</summary><p>Il modello attuale resta disponibile mentre si verificano checksum, avvio, slot e una breve generazione del nuovo modello. Soltanto dopo questi controlli le nuove risposte usano il modello scelto. I turni già in corso mantengono il proprio modello fino alla conclusione. Se la prova fallisce, il modello attuale resta attivo. Gemma resta disponibile come backup. Questo controllo è abilitato soltanto per questa copia locale.</p></details>
+  </section>
+  <?php endif; ?>
+  <div class="ai-toolbar"><label for="ai-room">Luogo di gioco</label><select id="ai-room"><option value="">Seleziona una chat…</option></select><button type="button" id="ai-reload">Ricarica</button></div>
+  <p id="ai-feedback" role="status" aria-live="polite"></p>
+  <div id="ai-editor" hidden>
+    <nav class="ai-tabs" role="tablist" aria-label="Configurazione Master IA">
+      <button type="button" role="tab" id="tab-scene" aria-controls="ai-scene" aria-selected="true">📖 Ambientazione</button>
+      <button type="button" role="tab" id="tab-npcs" aria-controls="ai-npcs" aria-selected="false" tabindex="-1">♟ Personaggi</button>
+      <button type="button" role="tab" id="tab-controls" aria-controls="ai-controls" aria-selected="false" tabindex="-1">⚙ Regole e capacità del PNG</button>
+      <button type="button" role="tab" id="tab-memory" aria-controls="ai-memory" aria-selected="false" tabindex="-1">📜 Memoria</button>
+      <button type="button" role="tab" id="tab-test" aria-controls="ai-test" aria-selected="false" tabindex="-1">✦ Prova e attività</button>
+    </nav>
+    <section id="ai-scene" role="tabpanel" aria-labelledby="tab-scene">
+      <form id="ai-room-form" class="ai-form">
+        <label><input type="checkbox" name="enabled"> Master IA disponibile in questo luogo</label>
+        <input type="hidden" name="mode" value="request"><input type="hidden" name="trigger_every" value="1">
+        <div class="ai-form-row"><label><input type="checkbox" name="quest_auto" checked> Apri una quest per conflitti, allenamenti e metamorfosi osservate</label><label><input type="checkbox" name="quest_auto_close" checked> Concludi automaticamente le scene risolte</label><label><input type="checkbox" name="quest_auto_continue" checked> Recupera automaticamente la regia; nella modalità assistita prosegue senza effetti non convalidati</label></div><div class="ai-form-row"><label>Regolamento della regia<select name="quest_rules"><option value="legacy">Convalida assistita dal Master</option><option value="alphano_scene_v1">Alphano v1 · esiti e conseguenze automatiche</option></select></label><label><input type="checkbox" name="quest_lethal"> Consenti esiti mortali secondo le regole della stirpe</label><label>Premio massimo di fine quest (<?=alphano_currency_html()?>)<input type="number" name="quest_reward" min="0" max="100" value="20"></label></div><p class="ai-help">L’avvio automatico richiede questa opzione attiva e non sostituisce una regia umana. Gli attacchi fra personaggi giocanti e contro i PNG usano lo stesso motore. Alphano v1 usa forza effettiva, dichiarazioni, tiri registrati, difesa, sostegno e inventario. I manuali vincolano le abilità. I premi sono limitati e una nota conclude la giocata; le aggressioni ai PNG non generano <?=alphano_currency_html()?>.</p>
+        <p class="ai-help">L’IA usa il Session Manager e i turni del gioco. Gli esiti che richiedono convalida restano affidati al Master; una sessione umana non viene sostituita.</p>
+        <label>Ambientazione pubblica · scheda Descrizione<textarea name="public_setting" maxlength="6000" rows="6" placeholder="Descrivi il luogo, l’atmosfera e ciò che i visitatori possono conoscere. Non inserire segreti."></textarea></label>
+        <label>Contesto per il Master IA · riservato<textarea name="setting" maxlength="1600" rows="5" placeholder="Luogo, epoca, dettagli del mondo e limiti della scena"></textarea></label>
+        <div class="ai-form-row"><label>Atmosfera<textarea name="atmosphere" maxlength="500" rows="3" placeholder="Tesa, malinconica, misteriosa…"></textarea></label><label>Trama e obiettivi<textarea name="plot" maxlength="1000" rows="3" placeholder="Conflitti aperti e sviluppi possibili, senza decidere le azioni dei PG"></textarea></label></div>
+        <label>Stile narrativo<textarea name="style" maxlength="400" rows="2">Evocativo e concreto, italiano curato, dialoghi naturali e dettagli sensoriali.</textarea></label>
+        <div class="ai-form-row"><label>Lunghezza<select name="response_length"><option value="short">Breve · 50–90 parole</option><option value="medium" selected>Media · 100–160 parole</option><option value="long">Ampia · 170–240 parole</option></select></label><label>Pausa minima tra interventi (secondi)<input type="number" name="cooldown" min="10" max="600" value="30" required></label></div>
+        <p class="ai-help">Il destinatario esplicito sceglie il PNG; Automatico dal testo cerca l’interlocutore nei nomi e nella continuità del dialogo. Nessuno evita una risposta ordinaria. Gli eventi pubblici verificati, come una metamorfosi, mantengono le reazioni dei testimoni; i sussurri non entrano nelle memorie condivise.</p>
+        <button type="submit">Salva ambientazione e attivazione</button>
+      </form>
+    </section>
+    <section id="ai-npcs" role="tabpanel" aria-labelledby="tab-npcs" hidden>
+      <div class="ai-toolbar"><label for="ai-npc">Personaggio</label><select id="ai-npc"><option value="0">Nuovo PNG…</option></select><button type="button" id="ai-new-npc">Nuovo personaggio</button></div>
+      <form id="ai-npc-form" class="ai-form">
+        <p class="ai-help">Storia pubblica e Personalità pubblica guidano anche le risposte, insieme a voce, doveri e conoscenze. I rapporti attuali e gli esiti verificati prevalgono sullo sfondo. Salvare un PNG attivo conserva i messaggi in attesa; una bozza superata viene rigenerata con i nuovi dati senza interrompere gli altri PNG. Per correggere un rapporto specifico usa Ricordi e relazioni.</p>
+        <div class="ai-form-row"><label>Nome<input name="name" maxlength="80" required></label><label><input type="checkbox" name="active"> Presente nella chat</label></div>
+        <details class="ai-profile-editor" open><summary>Profilo pubblico del personaggio</summary>
+          <div class="ai-portrait-editor"><img id="ai-npc-portrait-preview" class="npc-portrait" src="/assets/placeholder.svg" alt="Anteprima del ritratto"><div><label>Indirizzo del ritratto<input name="profile_portrait" data-profile="portrait" type="text" maxlength="512" placeholder="https://… oppure un percorso locale"></label><label>Carica ritratto · PNG, JPEG, WebP fino a 3 MB<input id="ai-portrait-upload" type="file" accept="image/png,image/jpeg,image/webp"></label><p id="ai-portrait-feedback" role="status"></p></div></div>
+          <div class="ai-form-row">
+            <label>Sesso<select name="profile_sex" data-profile="sex"><option>Maschio</option><option>Femmina</option></select></label>
+            <label>Razza<select name="profile_race_id" data-profile="race_id" data-number><?php foreach(ai_db()->query('SELECT id,nome FROM razze ORDER BY id') as $r): ?><option value="<?=(int)$r['id']?>"><?=htmlspecialchars($r['nome'],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8')?></option><?php endforeach; ?></select></label>
+            <label>Etnia<select name="profile_ethnicity_id" data-profile="ethnicity_id" data-number><option value="0">Non indicata</option><?php foreach(ai_db()->query('SELECT id,nome FROM etnie ORDER BY nome') as $r): ?><option value="<?=(int)$r['id']?>"><?=htmlspecialchars($r['nome'],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8')?></option><?php endforeach; ?></select></label>
+            <label>Età · 0 se non indicata<input name="profile_age" data-profile="age" data-number type="number" min="0" max="2000" value="0"></label>
+            <label>Allineamento<select name="profile_alignment" data-profile="alignment"><?php foreach(['NN','LB','LN','LM','NB','NM','CB','CN','CM'] as $value): ?><option><?= $value ?></option><?php endforeach; ?></select></label>
+          </div>
+          <div class="ai-form-row"><label>Occupazione<input name="profile_occupation" data-profile="occupation" maxlength="160"></label><label>Stato sociale<input name="profile_social_status" data-profile="social_status" maxlength="160"></label></div>
+          <details class="ai-profile-group"><summary>Presenza nel luogo e attività iniziale</summary><p>Lascia vuoto per usare il contesto pubblico già scritto per questo PNG. Questi campi definiscono la partenza della scena: durante la giocata il personaggio può fare una pausa e cambiare argomento. Gli esiti del Master hanno sempre precedenza.</p><label>Punto nel luogo · tag in chat<input name="profile_scene_position" data-profile="scene_position" maxlength="100" placeholder="Cerchio in rovina"></label><label>Attività iniziale · frase al presente dopo il nome<textarea name="profile_scene_activity" data-profile="scene_activity" maxlength="240" rows="2" placeholder="ricopia un bassorilievo presso il cerchio di pietra"></textarea></label><label>Perché si trova qui<textarea name="profile_scene_purpose" data-profile="scene_purpose" maxlength="240" rows="2" placeholder="Studia le incisioni per completare la propria raccolta di disegni"></textarea></label></details>
+          <?php foreach (['Aspetto, storia e personalità'=>['motto'=>['Motto',500],'appearance'=>['Aspetto e presentazione',3000],'biography'=>['Storia pubblica',4000],'psychology'=>['Personalità pubblica',3000]],'Relazioni e note'=>['relationships'=>['Amicizie e relazioni',2000],'affections'=>['Affetti',2000],'animals'=>['Animali',2000],'notes'=>['Note pubbliche',3000]]] as $group=>$fields): ?>
+            <details class="ai-profile-group"><summary><?=$group?></summary>
+            <?php foreach ($fields as $key=>[$label,$limit]): ?><label><?=$label?><textarea name="profile_<?=$key?>" data-profile="<?=$key?>" maxlength="<?=$limit?>" rows="3"></textarea></label><?php endforeach; ?>
+            </details>
+          <?php endforeach; ?>
+          <details class="ai-profile-group"><summary>Salute, <?=alphano_currency_html()?> e appartenenze</summary>
+          <label>Ferite<textarea name="profile_wounds" data-profile="wounds" maxlength="500" rows="2"></textarea></label>
+          <div class="ai-form-row"><label>Punti ferita<input name="profile_hit_points" data-profile="hit_points" data-number type="number" min="0" max="1000000" value="1000"></label><label><?=alphano_currency_html()?><input name="profile_money" data-profile="money" data-number readonly type="number" min="0" max="1000000000000" value="0"></label>
+          <?php foreach (['corporation_id'=>['Corporazione','corporazioni','nome'],'organization_id'=>['Organizzazione','organizzazioni','nome'],'heraldry_id'=>['Araldica','araldiche','descrizione']] as $key=>[$label,$table,$column]): ?>
+            <label><?=$label?><select name="profile_<?=$key?>" data-profile="<?=$key?>" data-number><option value="0">Nessuna</option><?php foreach(ai_db()->query('SELECT id,'.$column.' label FROM '.$table.' ORDER BY id') as $r): ?><option value="<?=(int)$r['id']?>"><?=htmlspecialchars($r['label'],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8')?></option><?php endforeach; ?></select></label>
+          <?php endforeach; ?></div>
+          </details>
+          <details class="ai-profile-group"><summary>Informazioni aggiuntive</summary><div id="ai-profile-details"></div><button type="button" id="ai-add-profile-detail">Aggiungi un’informazione</button></details>
+          <p class="ai-help">Questi campi sono visibili nel profilo. PF e appartenenze sono impostati solo dall’amministrazione. Le <?=alphano_currency_html()?> si trasferiscono dalla sezione Cassa; il modello non può crearle.</p>
+        </details>
+        <details class="ai-profile-group" id="ai-adult-settings"><summary>Scene adulte, accompagnatrici e fedeltà</summary>
+          <div class="ai-form-row"><label><input type="checkbox" name="adult_sexuality_enabled" data-adult="sexuality_enabled"> Sessualità adulta · scene non esplicite</label><label><input type="checkbox" name="adult_companion_enabled" data-adult="companion_enabled"> Meretrice / accompagnatrice</label></div>
+          <div class="ai-form-row"><label>Luogo di lavoro<select name="adult_workplace_key" data-adult="workplace_key"><option value="">Nessun luogo assegnato</option><?php $workplaceGroup=null; foreach(ai_adult_admin_workplaces() as $workplace): if($workplaceGroup!==$workplace['city']): if($workplaceGroup!==null): ?></optgroup><?php endif; $workplaceGroup=$workplace['city']; ?><optgroup label="<?=htmlspecialchars($workplaceGroup,ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8')?>"><?php endif; ?><option value="<?=htmlspecialchars($workplace['chat_key'],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8')?>"><?=htmlspecialchars($workplace['title'],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8')?><?=$workplace['companion_enabled']?'':' · servizio non attivo'?></option><?php endforeach; if($workplaceGroup!==null): ?></optgroup><?php endif; ?></select></label>
+          <label>Vincolo di fedeltà verso un personaggio<select name="adult_exclusive_player_id" data-adult="exclusive_player_id" data-number><option value="0">Nessun vincolo esclusivo</option><?php foreach(ai_db()->query('SELECT u.id,u.nome FROM utenti u JOIN ai_player_preferences p ON p.player_id=u.id WHERE p.character_age>=18 ORDER BY u.nome') as $pg): ?><option value="<?=(int)$pg['id']?>"><?=htmlspecialchars($pg['nome'],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8')?></option><?php endforeach; ?></select></label></div>
+          <p class="ai-help">Il PNG deve avere almeno 18 anni. Il lavoro deve coincidere con il luogo di gioco selezionato: scegli prima la locanda in alto, poi crea o modifica il suo PNG. Il servizio è disponibile soltanto se abilitato anche in Luoghi e immagini.</p>
+          <p class="ai-help">Consenso, preferenze e storia della relazione restano necessari. Il prezzo acquista il tempo dell’incontro, senza imporre affetto o intimità. Gli incontri privati usano una dissolvenza narrativa e possono essere rifiutati; non generano descrizioni sessuali esplicite. Il vincolo di fedeltà limita le proposte e non crea una relazione.</p>
+        </details>
+        <details class="ai-profile-group"><summary>Interpretazione e informazioni riservate</summary>
+        <div class="ai-form-row"><label>Carattere e voce<textarea name="character_text" maxlength="700" rows="4" placeholder="Temperamento, modo di parlare, espressioni ricorrenti"></textarea></label><label>Personalità e motivazioni<textarea name="personality" maxlength="700" rows="4" placeholder="Desideri, paure, valori e contraddizioni"></textarea></label></div>
+        <label>Storia personale<textarea name="history" maxlength="700" rows="4"></textarea></label>
+        <div class="ai-form-row"><label>Conoscenze e segreti<textarea name="knowledge" maxlength="700" rows="4" placeholder="Ciò che sa, ciò che ignora e cosa può rivelare"></textarea></label><label>Comportamento e limiti<textarea name="behavior" maxlength="700" rows="4" placeholder="Come reagisce, cosa rifiuta, cosa non deve fare"></textarea></label></div>
+        </details>
+        <button type="submit">Salva personaggio</button><a id="ai-social-admin-link" class="action-btn" href="/admin/png-relazioni.php">Ricordi, relazioni e cassa del PNG</a><p class="ai-help">Fino a <?= AI_MAX_ACTIVE_NPCS ?> PNG attivi per luogo, tutti sullo stesso modello. I profili archiviati conservano la loro storia. Puoi provare anche un personaggio non ancora presente in chat.</p>
+      </form>
+    </section>
+    <section id="ai-controls" role="tabpanel" aria-labelledby="tab-controls" hidden>
+      <h2 id="ai-controls-title">Regole e capacità del PNG selezionato</h2><p>Seleziona un personaggio nella scheda Personaggi. Qui trovi i valori attualmente utilizzati, compresi quelli predefiniti. Le modifiche guidano davvero le prossime risposte e restano nel registro amministrativo.</p>
+      <form id="ai-controls-form" class="ai-form"><div id="ai-controls-fields"></div><label>Motivo della modifica<input name="reason" maxlength="500" required placeholder="Preparazione del PNG, correzione del carattere o nuova situazione…"></label><button id="ai-controls-save" type="submit" disabled>Salva regole e comportamento</button></form>
+      <p class="ai-help">Il contesto qui è comune a tutte le conversazioni del PNG. Per sostituire il trascorso con un solo personaggio usa Ricordi e relazioni, che permette anche di modificare emozioni e ricordi personali. Le abilità e le dotazioni effettive si assegnano nella scheda di progressione: una direttiva narrativa non crea poteri o oggetti.</p>
+      <nav class="ai-toolbar"><button type="button" id="ai-controls-adult">Scene adulte e accompagnatori</button><a id="ai-controls-equipment" class="action-btn" href="/admin/master-engine.php?section=characters">Abilità, caratteristiche e oggetti</a><a id="ai-controls-relations" class="action-btn" href="/admin/png-relazioni.php">Rapporti e contesto personale</a><a class="action-btn" href="/admin/master-engine.php?section=knowledge">Regole ufficiali e fonti</a></nav>
+      <p class="ai-help">Le impostazioni adulte comprendono età, disponibilità affettiva, accompagnamento, luogo degli incontri e fedeltà. Sono configurabili insieme a voce e limiti personali. Il motore mantiene preferenze e consenso, riservatezza delle camere e rappresentazione non grafica dell’intimità; queste verifiche tecniche non sono disattivabili da una direttiva narrativa.</p>
+      <details class="ai-info"><summary>Regole calcolate e anteprima del contesto</summary><p>Consulta le istruzioni ricostruite dal profilo, dal luogo, dalle regole e dal rapporto con il tuo personaggio. I fatti verificati e le autorizzazioni appartengono al gioco. Restano obbligatori identità, separazione dei personaggi, validazione degli esiti e delle transazioni, preferenze delle persone e limiti delle scene adulte non grafiche.</p><button type="button" id="ai-controls-inspect">Mostra le istruzioni attuali</button><pre id="ai-controls-prompt" class="ai-prompt-preview" tabindex="0"></pre></details>
+    </section>
+    <section id="ai-memory" role="tabpanel" aria-labelledby="tab-memory" hidden>
+      <form id="ai-memory-form" class="ai-form"><label>Memoria da consultare<select id="ai-memory-owner" name="npc_id"><option value="0">Luogo · fatti condivisi</option></select></label><label>Fatti persistenti<textarea id="ai-summary" name="summary" rows="8" maxlength="600"></textarea></label><p class="ai-help">Questi fatti canonici restano fissati e non vengono sovrascritti dal modello. Il sistema conserva anche la cronaca delle risposte e recupera i ricordi pertinenti, separati per chat e PNG.</p><button type="submit">Salva memoria</button></form>
+      <h2>Cronaca recente</h2><div id="ai-chronicle" class="scene-note"></div>
+    </section>
+    <section id="ai-test" role="tabpanel" aria-labelledby="tab-test" hidden>
+      <form id="ai-test-form" class="ai-form"><label>PNG da provare<select name="npc_id" id="ai-test-npc" required></select></label><label>Intervento del giocatore<textarea name="prompt" maxlength="1200" rows="3" required placeholder="Buonasera, cerco qualcuno che conosca il vecchio monastero…"></textarea></label><button type="submit" id="ai-test-submit">Prova il personaggio</button><p class="ai-help">Salva prima le modifiche. La prova usa la memoria corrente, ma non pubblica in chat e non altera la memoria.</p></form>
+      <p class="ai-help">La prova permette di valutare voce, stile e coerenza dei personaggi prima di portarli nella scena di gioco.</p>
+      <article id="ai-preview" class="scene-note" aria-live="polite" hidden></article>
+      <h2>Attività del luogo</h2><div class="ai-table-scroll"><table><thead><tr><th scope="col">Richiesta</th><th scope="col">Tipo</th><th scope="col">Stato</th><th scope="col">Dettaglio</th><th scope="col">Azione</th></tr></thead><tbody id="ai-jobs"></tbody></table></div>
+    </section>
+  </div>
+</main>
+</body></html>

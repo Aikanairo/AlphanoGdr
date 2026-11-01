@@ -1,0 +1,72 @@
+/* The registration is one form, presented as eight progressively validated chapters. */
+body[data-view=homepage] .home-auth-art{position:relative;isolation:isolate;overflow:hidden}
+body[data-view=homepage] .home-auth-art>[data-registration-art]{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+body[data-view=homepage] .registration-art-caption{display:none}
+body[data-view=homepage] .home-auth.is-register[open]{width:min(1180px,calc(100% - 32px));max-width:1180px;height:min(900px,94dvh);max-height:94dvh;overflow:hidden;grid-template-columns:240px minmax(0,1fr)}
+body[data-view=homepage] .home-auth.is-register .home-auth-art{align-items:flex-end;padding:26px;background:var(--bg)}
+body[data-view=homepage] .home-auth.is-register .home-auth-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,color-mix(in srgb,var(--bg) 96.08%,transparent),transparent 70%);z-index:-1}
+body[data-view=homepage] .home-auth.is-register .home-auth-art>[data-registration-art]{display:block}
+body[data-view=homepage] .home-auth.is-register .registration-art-caption{display:block;font:28px/1.25 Georgia,serif;color:#f0d39c}
+body[data-view=homepage] .home-auth.is-register .home-auth-login-caption{display:none}
+body[data-view=homepage] .home-auth.is-register .home-auth-content{display:flex;flex-direction:column;min-height:0;padding:25px 28px 0}
+body[data-view=homepage] .home-auth.is-register h2{font-size:30px;margin:10px 40px 12px 0}
+body[data-view=homepage] .home-auth.is-register .home-auth-tabs{flex:none;margin-bottom:12px}
+body[data-view=homepage] .home-auth.is-register #authStatus{flex:none;margin:0 0 10px;padding:8px 12px}
+body[data-view=homepage] .home-auth.is-register #registerPanel{display:flex;flex-direction:column;flex:1;min-height:0}
+body[data-view=homepage] #registerForm{display:flex;flex-direction:column;flex:1;min-height:0}
+body[data-view=homepage] .registration-steps{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));list-style:none;padding:0;margin:0;gap:5px;flex:none}
+body[data-view=homepage] .registration-steps li{min-width:0}
+body[data-view=homepage] .registration-steps button{width:100%;display:grid;justify-items:center;gap:5px;background:transparent;border:0;border-bottom:2px solid var(--hover);padding:5px 2px 8px;color:#9aafc0;cursor:pointer}
+body[data-view=homepage] .registration-step-medallion{position:relative;display:block;width:48px;height:48px}
+body[data-view=homepage] .registration-step-medallion>img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;transition:transform .2s ease,box-shadow .2s ease}
+body[data-view=homepage] .registration-step-number{position:absolute;right:-3px;bottom:-2px;display:grid;place-items:center;min-width:17px;height:17px;padding:0 2px;box-sizing:border-box;border:1px solid #617787;border-radius:50%;background:var(--panel);color:#c0ced7;font:10px/1 system-ui}
+body[data-view=homepage] .registration-steps small{font:10px/1.2 system-ui;overflow-wrap:anywhere}
+body[data-view=homepage] .registration-steps button[aria-current=step]{color:#f1cd8a;border-color:#d5ad69}
+body[data-view=homepage] .registration-steps button[aria-current=step] img{box-shadow:0 0 0 2px #d5ad69,0 0 17px #d5ad6940}
+body[data-view=homepage] .registration-steps button[aria-current=step] .registration-step-number{background:#614729;border-color:#e1b96e;color:#ffebbe}
+body[data-view=homepage] .registration-steps .is-complete{color:#abd2b2;border-color:#638b72}
+body[data-view=homepage] .registration-steps .is-complete .registration-step-number{border-color:#82ad8e;color:#bce5c4}
+body[data-view=homepage] .registration-steps button:disabled{opacity:.58;cursor:default}
+body[data-view=homepage] .registration-steps button:focus-visible{outline:2px solid #f1cd8a;outline-offset:3px;border-radius:5px}
+@media(hover:hover){body[data-view=homepage] .registration-steps button:enabled:hover img{transform:scale(1.08)}}
+@media(prefers-reduced-motion:reduce){body[data-view=homepage] .registration-step-medallion>img{transition:none}}
+body[data-view=homepage] .registration-caption{font:12px/1.4 system-ui;color:#d7bb89;margin:10px 0 12px;flex:none}
+body[data-view=homepage] .registration-stage{overflow:auto;min-height:0;flex:1;padding:0 8px 12px 0;scrollbar-gutter:stable}
+body[data-view=homepage] .registration-step-heading{display:flex;gap:18px;align-items:center;margin:3px 0 22px;padding-bottom:18px;border-bottom:1px solid #b99a5e44}
+body[data-view=homepage] .registration-step-image{display:block;width:112px;height:112px;object-fit:cover;flex:none;border-radius:15px;border:1px solid #a5824b}
+body[data-view=homepage] .registration-step h3{font:27px/1.2 Georgia,serif;color:#edd1a0;margin:0 0 8px;outline-offset:5px}
+body[data-view=homepage] .registration-step-heading p{font:13px/1.65 system-ui;color:#b6c6d3;margin:0 0 9px}
+body[data-view=homepage] .registration-step-heading a{font:12px/1.5 system-ui;color:#edd1a0;text-decoration:underline;text-underline-offset:3px}
+body[data-view=homepage] .registration-actions{display:flex;align-items:center;gap:12px;flex:none;border-top:1px solid #b99a5e44;padding:15px 0;margin-top:8px}
+body[data-view=homepage] .registration-actions>span{flex:1;font:11px/1.5 system-ui;color:#99acbc;max-width:35ch}
+body[data-view=homepage] .registration-actions .btn{white-space:nowrap;padding:12px 20px;font-size:13px}
+body[data-view=homepage] .registration-actions .btn-primary{margin-left:auto}
+body[data-view=homepage] .registration-retry{color:#e8cb95;background:var(--panel-2);border:1px solid #8c764f;border-radius:8px;padding:9px}
+body[data-view=homepage] #registrationHelp:empty{display:none}
+body[data-view=homepage] .registration-review{padding:14px 16px;border:1px solid #52677a;border-radius:12px;background:var(--panel);margin:0 0 20px}
+body[data-view=homepage] .registration-review summary{color:#e7c88c;font:18px Georgia,serif;cursor:pointer}
+body[data-view=homepage] .registration-review dl{display:grid;gap:10px;font:12px/1.6 system-ui;margin:14px 0 0}
+body[data-view=homepage] .registration-review dl>div{min-width:0}
+body[data-view=homepage] .registration-review .registration-review-basics{grid-template-columns:1fr 1fr}
+body[data-view=homepage] .registration-review .registration-review-identity{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+body[data-view=homepage] .registration-review-identity>div{padding:10px 8px;background:var(--panel);border:1px solid #b99a5e40;border-radius:9px}
+body[data-view=homepage] .registration-review-identity dt{font-size:10px;margin-bottom:7px}
+body[data-view=homepage] .registration-review .registration-review-details{padding-top:12px;border-top:1px solid #b99a5e44}
+body[data-view=homepage] .registration-review-details>div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px}
+body[data-view=homepage] .registration-review dt{color:#95acbd;align-self:center}
+body[data-view=homepage] .registration-review dd{margin:0;color:#e1d5bb;overflow-wrap:anywhere}
+body[data-view=homepage] .registration-review-choice{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0}
+body[data-view=homepage] .registration-review-choice>span{min-width:0}
+body[data-view=homepage] .registration-review-icon{display:block;width:38px;height:38px;flex:none;object-fit:contain;border-radius:50%;box-sizing:border-box;background:var(--panel);border:1px solid #b99a5e77}
+body[data-view=homepage] .registration-review-icon.is-sex{padding:6px}
+body[data-view=homepage] .registration-step .creation-stat-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+body[data-view=homepage] .registration-step .creation-ability>label{display:flex;margin:0}
+body[data-view=homepage] .registration-step .creation-ability input[type=checkbox]{width:18px;height:18px;flex:none}
+body[data-view=homepage] .registration-step .creation-ability label>span{min-width:0}
+body[data-view=homepage] .registration-step .creation-ability label>span strong{font-size:16px}
+body[data-view=homepage] .registration-step .creation-stat input{min-height:40px;padding:7px;font-size:20px}
+@media(max-width:1000px){body[data-view=homepage] .home-auth.is-register[open]{grid-template-columns:180px minmax(0,1fr)}body[data-view=homepage] .registration-step .creation-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-view=homepage] .registration-review .registration-review-identity{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){body[data-view=homepage] .home-auth.is-register[open]{grid-template-columns:1fr;width:calc(100% - 16px);height:96dvh;max-height:96dvh}body[data-view=homepage] .home-auth.is-register .home-auth-content{padding:20px 18px 0}body[data-view=homepage] .registration-step-image{width:86px;height:86px}body[data-view=homepage] .registration-step h3{font-size:24px}}
+@media(max-width:540px){body[data-view=homepage] .home-auth.is-register h2{font-size:25px}body[data-view=homepage] .registration-step-heading{align-items:flex-start;gap:12px;margin-bottom:16px}body[data-view=homepage] .registration-step-image{width:68px;height:68px;border-radius:10px}body[data-view=homepage] .registration-step h3{font-size:22px}body[data-view=homepage] .registration-step-heading p{font-size:12px}body[data-view=homepage] .registration-steps small{display:none}body[data-view=homepage] .registration-steps{gap:3px}body[data-view=homepage] .registration-step-medallion{width:32px;height:32px}body[data-view=homepage] .registration-step-number{min-width:14px;height:14px;font-size:9px}body[data-view=homepage] .registration-steps button{padding-bottom:6px}body[data-view=homepage] .registration-caption{margin:8px 0 10px}body[data-view=homepage] .registration-actions>span{display:none}body[data-view=homepage] .registration-actions{padding:12px 0;margin:0}body[data-view=homepage] .registration-actions .btn{padding:12px 16px}body[data-view=homepage] .registration-review dl{grid-template-columns:1fr;gap:3px}body[data-view=homepage] .registration-review dd{margin-bottom:8px}}
+
+body[data-view=homepage] .registration-step .character-builder>section>h3{display:none}

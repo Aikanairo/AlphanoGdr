@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "author": "Alfano Gaetano",
+  "credit": "https://gothik.it/",
+  "license": "AGPL-3.0-only",
+  "assets": [
+    {
+      "path": "/assets/equipment/guanti.jpg",
+      "sha256": "cda8d6f5b9dc46daeb5b0895555ca6cf683fb4289363615e278855b7b2bfbb79",
+      "kind": "equipment",
+      "key": "guanti"
+    },
+    {
+      "path": "/assets/equipment/elmo.jpg",
+      "sha256": "a394d0922c56d4e032ae5e7b7fd6abe6f7a9322ebf3e065e3310c5bc7531d8ea",
+      "kind": "equipment",
+      "key": "elmo"
+    },
+    {
+      "path": "/assets/equipment/mantello.jpg",
+      "sha256": "6403b0403bb378a58ceb67c74538f2204f8d98ae6dded6e2d0b6be646c8205a2",
+      "kind": "equipment",
+      "key": "mantello"
+    },
+    {
+      "path": "/assets/equipment/veste.jpg",
+      "sha256": "2cb91aa3376d8aa903cf088bb93ca7e0d202388c287bcdf1948668fae40a3cf1",
+      "kind": "equipment",
+      "key": "veste"
+    },
+    {
+      "path": "/assets/equipment/armasx.jpg",
+      "sha256": "f6460e3b208cd71b247fd6204cfa676c0e8f8b8769283a2677432a07bc728809",
+      "kind": "equipment",
+      "key": "armasx"
+    },
+    {
+      "path": "/assets/equipment/armatura.jpg",
+      "sha256": "a995d6216062d3c5fe68c30a6caebb6c956a42e45a3c359d8e1bf9ba4112d278",
+      "kind": "equipment",
+      "key": "armatura"
+    },
+    {
+      "path": "/assets/equipment/armadx.jpg",
+      "sha256": "86a5027af55aea8ba806d0da0b8f8e55a23ffa3d1e918b694eee6ffed299e17b",
+      "kind": "equipment",
+      "key": "armadx"
+    },
+    {
+      "path": "/assets/equipment/bracciali.jpg",
+      "sha256": "936f1fc393efe46bf16fac5ecc5ecaed724d9cd3bcccf8c71cbbb993809a3bde",
+      "kind": "equipment",
+      "key": "bracciali"
+    },
+    {
+      "path": "/assets/equipment/faretra.jpg",
+      "sha256": "e5807b7c8c4d846425155faa6491237383a04b24cc7f550c22a4a0c8f6452555",
+      "kind": "equipment",
+      "key": "faretra"
+    },
+    {
+      "path": "/assets/equipment/stivali.jpg",
+      "sha256": "b0fa9a57faa5216c0887ea93977293fcf48fd04498ca21be9f205f8800272f79",
+      "kind": "equipment",
+      "key": "stivali"
+    },
+    {
+      "path": "/assets/equipment/scudo.jpg",
+      "sha256": "497f24966b5f0f4ff71ea109ef4fbc3f9262105606c451aefcddfc232fdcc0df",
+      "kind": "equipment",
+      "key": "scudo"
+    },
+    {
+      "path": "/assets/equipment/musica.jpg",
+      "sha256": "08ae9f283e81a212a34b19f562990cd64add9f65978491164f83abc2a8c2524a",
+      "kind": "equipment",
+      "key": "musica"
+    },
+    {
+      "path": "/assets/equipment/anellosx.jpg",
+      "sha256": "5cf5d048ce8d6addc8ef3b8db8c6a5789f1a289f311976623b9481ce4f651a63",
+      "kind": "equipment",
+      "key": "anellosx"
+    },
+    {
+      "path": "/assets/equipment/collana.jpg",
+      "sha256": "b11e405a2d9b9cddd2bf7de2596dff0486ddd144fd5a78cc0ba3625975da494e",
+      "kind": "equipment",
+      "key": "collana"
+    },
+    {
+      "path": "/assets/equipment/anellodx.jpg",
+      "sha256": "bd8ed656ff83088d93088e31c1a541d90cf83ade4ae5a99f935048f0c5b49267",
+      "kind": "equipment",
+      "key": "anellodx"
+    },
+    {
+      "path": "/assets/equipment/attrezzi.jpg",
+      "sha256": "c4059adb530392c41814e0ab7d965c83f6543036dad4adf8bc862a88d1b20dcd",
+      "kind": "equipment",
+      "key": "attrezzi"
+    },
+    {
+      "path": "/assets/materials/argento.webp",
+      "sha256": "2d5ee7a04859a4d41349691476b67763c1c4c83448396c6eb05888a96045e145",
+      "kind": "materials",
+      "key": "argento"
+    },
+    {
+      "path": "/assets/materials/canapa.webp",
+      "sha256": "a96cedf740a72cc0cbd63f2437121abb922be3be27c10ae555da4b759caa5790",
+      "kind": "materials",
+      "key": "canapa"
+    },
+    {
+      "path": "/assets/materials/carbone.webp",
+      "sha256": "28208a9c4c8e9fad06c9ef0128b9d6ad5a23d7909855b817d46c6f95de6a597e",
+      "kind": "materials",
+      "key": "carbone"
+    },
+    {
+      "path": "/assets/materials/cera.webp",
+      "sha256": "2f466665aac5f1c883608c1fb36c5e5efc6a9c287074dcf50555b4d22ca00d20",
+      "kind": "materials",
+      "key": "cera"
+    },
+    {
+      "path": "/assets/materials/cotone.webp",
+      "sha256": "90a48e732d07643016dee876a0929b2f67503dbcf161c88da072756796e6ecca",
+      "kind": "materials",
+      "key": "cotone"
+    },
+    {
+      "path": "/assets/materials/cuoio.webp",
+      "sha256": "5c95546fa79473d8534bb6b8d3fef9d31cddbe8564a0e50b38ff8d363bffdb2f",
+      "kind": "materials",
+      "key": "cuoio"
+    },
+    {
+      "path": "/assets/materials/diamante.webp",
+      "sha256": "634a13b3c58a97b557559832a4efd1d21e315d4bd94ddc701ad5e6f12d9ff195",
+      "kind": "materials",
+      "key": "diamante"
+    },
+    {
+      "path": "/assets/materials/erbe.webp",
+      "sha256": "3461f1d6fb3e3978d7e34cab62d045ba812c24dbe10786b88685eae595c3e9cf",
+      "kind": "materials",
+      "key": "erbe"
+    },
+    {
+      "path": "/assets/materials/ferro.webp",
+      "sha256": "d5ccde891782f65e38692a6efee4d32ad736f38278d96d4a84abdec134f78d98",
+      "kind": "materials",
+      "key": "ferro"
+    },
+    {
+      "path": "/assets/materials/legno.webp",
+      "sha256": "a009c6781b3373ba801fee91df59c56dc0b029637253c41155b435ec11eaf1c9",
+      "kind": "materials",
+      "key": "legno"
+    },
+    {
+      "path": "/assets/materials/oro.webp",
+      "sha256": "c3f2c640b313acd1010e6420436fd3709f360afdbd375aee7d2ef8884078863d",
+      "kind": "materials",
+      "key": "oro"
+    },
+    {
+      "path": "/assets/materials/piombo.webp",
+      "sha256": "da5cd852d2d7a61ed77b56f1a1bc4c7eeb6b70f341295613f74094597a38601e",
+      "kind": "materials",
+      "key": "piombo"
+    },
+    {
+      "path": "/assets/materials/platino.webp",
+      "sha256": "62c611adf344ea2ad5dec4f5c82af350fc4ceb12bf274f901cbfc9626d61a333",
+      "kind": "materials",
+      "key": "platino"
+    },
+    {
+      "path": "/assets/materials/rame.webp",
+      "sha256": "bae005d6852f283b3cb8192ac4aff0123c335c5ca39258bb5d628a89d97b4dba",
+      "kind": "materials",
+      "key": "rame"
+    },
+    {
+      "path": "/assets/materials/salnitro.webp",
+      "sha256": "3cb51b4fdfef87a84d23acf016e8ab6315386b1e7c4846eacd49cd2ab556f257",
+      "kind": "materials",
+      "key": "salnitro"
+    },
+    {
+      "path": "/assets/materials/seta.webp",
+      "sha256": "55abdf96763bd5415a88f489e545748a6ee2c9f1b93938072099beb7bd24373c",
+      "kind": "materials",
+      "key": "seta"
+    },
+    {
+      "path": "/assets/materials/silicio.webp",
+      "sha256": "fa33cf306a7d7321be02f1504f32b8b0e0f3ded3b1b41a24f6eecec85ad36bb1",
+      "kind": "materials",
+      "key": "silicio"
+    },
+    {
+      "path": "/assets/materials/zolfo.webp",
+      "sha256": "64cf02b5e9a682b4acbae0ede0c4c10c8160742575f2aa76abfca95f8ad7af8c",
+      "kind": "materials",
+      "key": "zolfo"
+    },
+    {
+      "path": "/assets/materials/acqua.webp",
+      "sha256": "69d0fd26525d9381a868538faef4d73983ddffdd4532047a9b19bc645b2ff8bb",
+      "kind": "materials",
+      "key": "acqua"
+    },
+    {
+      "path": "/assets/materials/vetro.webp",
+      "sha256": "e9c53b379db3889787e19ce14272eeab85e0e87c558eefe707bfe71e94dfd406",
+      "kind": "materials",
+      "key": "vetro"
+    },
+    {
+      "path": "/assets/materials/cereali.webp",
+      "sha256": "6bfcb24bd0070bb04db6aad3be9be603d97776c6532ec4240dbe7bdde340826c",
+      "kind": "materials",
+      "key": "cereali"
+    },
+    {
+      "path": "/assets/materials/carne.webp",
+      "sha256": "9b96baab07651ac6ffbadcceaa5d4a57cd62bb94b5cc55e9b8801ff3851ade73",
+      "kind": "materials",
+      "key": "carne"
+    },
+    {
+      "path": "/assets/materials/miele.webp",
+      "sha256": "1cc0958ac88f307c1562e8c10856c5e86d208f99d85cf13727f78127de6ac316",
+      "kind": "materials",
+      "key": "miele"
+    }
+  ]
+}

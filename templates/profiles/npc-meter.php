@@ -1,0 +1,3 @@
+<?php /** Shared zero-centred visual scale, independent of native browser meter styles. */
+$score=max((int)($meterMin??-100),min(100,(int)$meterValue));$point=50+$score/2; ?>
+<div class="npc-centered-meter" role="meter" aria-label="<?=$h($meterLabel)?>" aria-valuemin="<?=(int)($meterMin??-100)?>" aria-valuemax="100" aria-valuenow="<?=$score?>" aria-valuetext="<?=$score>0?'+':''?><?=$score?>" style="--meter-start:<?=min(50,$point)?>%;--meter-width:<?=abs($score)/2?>%;--meter-point:<?=$point?>%" data-signed-meter <?=$meterAttribute?>><span class="npc-centered-fill"></span><span class="npc-centered-origin"></span><span class="npc-centered-point"></span></div>

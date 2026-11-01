@@ -1,0 +1,770 @@
+[
+  [
+    "gioco",
+    "Mappa",
+    "/mappa.php",
+    "Mappa"
+  ],
+  [
+    "gioco",
+    "Profilo",
+    "/profili/",
+    "Profilo"
+  ],
+  [
+    "gioco",
+    "Equipaggiamento",
+    "/equip/equip.php",
+    "Equipaggiamento"
+  ],
+  [
+    "gioco",
+    "Trasformazione",
+    "/admin/ancestrali.php",
+    "Trasformazione"
+  ],
+  [
+    "gioco",
+    "Ruota della sorte",
+    "/fortuna/",
+    "Ruota della sorte"
+  ],
+  [
+    "gioco",
+    "Trasferimenti",
+    "/trasferimenti/",
+    "Trasferimenti"
+  ],
+  [
+    "gioco",
+    "Presenti",
+    "/presenti/",
+    "Presenti"
+  ],
+  [
+    "gioco",
+    "Manuali",
+    "/regole/",
+    "Manuali"
+  ],
+  [
+    "gioco",
+    "Ricerca",
+    "/ricerca/",
+    "Ricerca"
+  ],
+  [
+    "gioco",
+    "Sessioni",
+    "/sessione/viewlog.php",
+    "Sessioni"
+  ],
+  [
+    "razze",
+    "Razze",
+    "/razze/",
+    "Razze"
+  ],
+  [
+    "classifica",
+    "Classifica",
+    "/classifica/",
+    "Classifica"
+  ],
+  [
+    "bacheche",
+    "Bacheche",
+    "/bacheche/",
+    "Bacheche"
+  ],
+  [
+    "organizzazioni",
+    "Organizzazioni",
+    "/organizzazioni/",
+    "Organizzazioni"
+  ],
+  [
+    "organizzazioni",
+    "Bacheca Org",
+    "/discussioni/?tipo=Org",
+    "Bacheca Org"
+  ],
+  [
+    "organizzazioni",
+    "Abilità organizzazione",
+    "/organizzazioni/admin.php?panel=abilita",
+    "Abilità organizzazione"
+  ],
+  [
+    "organizzazioni",
+    "Tesoreria organizzazione",
+    "/governo/?scope=organizzazioni",
+    "Tesoreria organizzazione"
+  ],
+  [
+    "organizzazioni",
+    "Admin Org",
+    "/governo/?scope=organizzazioni",
+    "Admin Org"
+  ],
+  [
+    "corporazioni",
+    "Corporazioni",
+    "/corporazioni/",
+    "Corporazioni"
+  ],
+  [
+    "corporazioni",
+    "Bacheca Corp",
+    "/discussioni/?tipo=Corp",
+    "Bacheca Corp"
+  ],
+  [
+    "corporazioni",
+    "Tesoreria corporazione",
+    "/governo/?scope=corporazioni",
+    "Tesoreria corporazione"
+  ],
+  [
+    "corporazioni",
+    "Admin Corp",
+    "/governo/?scope=corporazioni",
+    "Admin Corp"
+  ],
+  [
+    "corporazioni",
+    "Catalogo",
+    "/corporazioni/catalogo.php",
+    "Catalogo"
+  ],
+  [
+    "corporazioni",
+    "Corporazione",
+    "/corporazioni/trasferimenti.php",
+    "Corporazione"
+  ],
+  [
+    "citta",
+    "Elenco città",
+    "/citta/",
+    "Elenco città"
+  ],
+  [
+    "citta",
+    "Elezioni pubbliche",
+    "/citta/elezioni.php",
+    "Elezioni pubbliche"
+  ],
+  [
+    "citta",
+    "Tesoreria cittadina",
+    "/governo/?scope=citta",
+    "Tesoreria cittadina"
+  ],
+  [
+    "citta",
+    "Admin Città",
+    "/governo/?scope=citta",
+    "Admin Città"
+  ],
+  [
+    "citta",
+    "Cittadinanze e richieste",
+    "/admin/city.php#richieste-cittadinanza",
+    "Cittadinanze e richieste"
+  ],
+  [
+    "citta",
+    "Admin Araldiche",
+    "/admin/cariche.php",
+    "Admin Araldiche"
+  ],
+  [
+    "citta",
+    "Admin Bacheche",
+    "/admin/bacheche.php",
+    "Admin Bacheche"
+  ],
+  [
+    "accademia",
+    "Accademia",
+    "/admin/accademia.php",
+    "Accademia"
+  ],
+  [
+    "accademia",
+    "Discus. Acc.",
+    "/discussioni/?tipo=A",
+    "Discus. Acc."
+  ],
+  [
+    "master",
+    "Regia sessione",
+    "/sessione/sessione.php",
+    "Regia sessione"
+  ],
+  [
+    "master",
+    "Vulnerabilità e condizioni",
+    "/admin/malus.php",
+    "Vulnerabilità e condizioni"
+  ],
+  [
+    "master",
+    "Admin Ferite",
+    "/admin/ferite.php",
+    "Admin Ferite"
+  ],
+  [
+    "master",
+    "Tracce Quest",
+    "/discussioni/?tipo=M",
+    "Tracce Quest"
+  ],
+  [
+    "master",
+    "Blocco Utenti",
+    "/admin/blocco.php",
+    "Blocco Utenti"
+  ],
+  [
+    "master",
+    "Master IA",
+    "/admin/master-ia.php",
+    "Master IA"
+  ],
+  [
+    "master",
+    "Relazioni dei PNG",
+    "/admin/png-relazioni.php",
+    "Relazioni dei PNG"
+  ],
+  [
+    "master",
+    "Admin Chat",
+    "/admin/chats.php",
+    "Admin Chat"
+  ],
+  [
+    "master",
+    "Infetta · Stirpe vampirica",
+    "/admin/vampiri.php",
+    "Infetta · Stirpe vampirica"
+  ],
+  [
+    "gestione",
+    "Configurazione del gioco",
+    "/admin/setup.php",
+    "Configurazione del gioco"
+  ],
+  [
+    "gestione",
+    "Impostazioni del gioco",
+    "/admin/settings.php",
+    "Impostazioni del gioco"
+  ],
+  [
+    "gestione",
+    "Template e homepage",
+    "/admin/appearance.php",
+    "Template e homepage"
+  ],
+  [
+    "gestione",
+    "Gestione del mondo",
+    "/admin/world.php",
+    "Gestione del mondo"
+  ],
+  [
+    "gestione",
+    "Assistenza Utenti",
+    "/admin/assistenza.php",
+    "Assistenza Utenti"
+  ],
+  [
+    "gestione",
+    "Giochi da tavolo",
+    "/admin/giochi.php",
+    "Giochi da tavolo"
+  ],
+  [
+    "gestione",
+    "Lavori e materie prime",
+    "/admin/lavori.php",
+    "Lavori e materie prime"
+  ],
+  [
+    "gestione",
+    "Messaggio di benvenuto",
+    "/admin/welcome.php",
+    "Messaggio di benvenuto"
+  ],
+  [
+    "gestione",
+    "Admin Mappe",
+    "/admin/mappe.php",
+    "Admin Mappe"
+  ],
+  [
+    "gestione",
+    "Razze, abilità ed esperienza",
+    "/admin/rpg.php",
+    "Razze, abilità ed esperienza"
+  ],
+  [
+    "gestione",
+    "Icone meteo e luna",
+    "/admin/weather-assets.php",
+    "Icone meteo e luna"
+  ],
+  [
+    "gestione",
+    "Admin Utenti",
+    "/admin/utenti.php",
+    "Admin Utenti"
+  ],
+  [
+    "gestione",
+    "Admin Stato Soc.",
+    "/admin/utenti.php",
+    "Admin Stato Soc."
+  ],
+  [
+    "gestione",
+    "Log Viewer",
+    "/admin/log.php",
+    "Log Viewer"
+  ],
+  [
+    "strumenti",
+    "Strumenti OFF",
+    "/vari/menuvarie.php",
+    "Strumenti OFF"
+  ],
+  [
+    "strumenti",
+    "Sondaggi",
+    "/sondaggi/sondaggi.php",
+    "Sondaggi"
+  ],
+  [
+    "strumenti",
+    "Statistiche",
+    "/statistiche/",
+    "Statistiche"
+  ],
+  [
+    "strumenti",
+    "Esci dal gioco",
+    "/logout.php",
+    "Esci dal gioco"
+  ],
+  [
+    "gioco",
+    "Cronaca e notifiche",
+    "/notifiche/?group=gioco",
+    "Cronaca e notifiche"
+  ],
+  [
+    "organizzazioni",
+    "Cronaca e notifiche",
+    "/notifiche/?group=organizzazioni",
+    "Cronaca e notifiche"
+  ],
+  [
+    "corporazioni",
+    "Cronaca e notifiche",
+    "/notifiche/?group=corporazioni",
+    "Cronaca e notifiche"
+  ],
+  [
+    "citta",
+    "Cronaca e notifiche",
+    "/notifiche/?group=citta",
+    "Cronaca e notifiche"
+  ],
+  [
+    "accademia",
+    "Cronaca e notifiche",
+    "/notifiche/?group=accademia",
+    "Cronaca e notifiche"
+  ],
+  [
+    "master",
+    "Cronaca e notifiche",
+    "/notifiche/?group=master",
+    "Cronaca e notifiche"
+  ],
+  [
+    "gestione",
+    "Cronaca e notifiche",
+    "/notifiche/?group=gestione",
+    "Cronaca e notifiche"
+  ],
+  [
+    "pubblico",
+    "Homepage",
+    "/",
+    ""
+  ],
+  [
+    "pubblico",
+    "Manuali pubblici",
+    "/manuali/",
+    ""
+  ],
+  [
+    "pubblico",
+    "Privacy e condizioni",
+    "/legal/",
+    ""
+  ],
+  [
+    "pubblico",
+    "Crediti e licenza del motore",
+    "/legal/?type=credits",
+    ""
+  ],
+  [
+    "pubblico",
+    "Condizioni di partecipazione",
+    "/legal/?type=terms",
+    ""
+  ],
+  [
+    "pubblico",
+    "Informativa privacy",
+    "/legal/?type=privacy",
+    ""
+  ],
+  [
+    "pubblico",
+    "Recupero password",
+    "/recuperopasswd.php",
+    ""
+  ],
+  [
+    "pubblico",
+    "Recupero personaggio",
+    "/recuperopg.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Cornice principale e navigazione",
+    "/main.php",
+    ""
+  ],
+  [
+    "chat",
+    "Chat · impostazione comune",
+    "/chat/",
+    ""
+  ],
+  [
+    "gioco",
+    "Posta",
+    "/posta/",
+    ""
+  ],
+  [
+    "gioco",
+    "Scrivi una missiva",
+    "/posta/writeto.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Nuovo messaggio",
+    "/posta/posta-new.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Leggi una missiva",
+    "/posta/showmsg.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Inoltra una missiva",
+    "/posta/forward.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Modifica profilo",
+    "/profili/modifyuser.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Progressione personaggio",
+    "/profili/progressione.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Preferenze del personaggio",
+    "/profili/impostazioni.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Profilo PNG",
+    "/profili/png.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Dettaglio equipaggiamento",
+    "/equip/showdetails.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Istruzioni equipaggiamento",
+    "/equip/istruzioni.php",
+    ""
+  ],
+  [
+    "razze",
+    "Stirpi e trasformazioni",
+    "/razze/stirpi.php",
+    ""
+  ],
+  [
+    "citta",
+    "Assemblea cittadina",
+    "/citta/assemblea.php",
+    ""
+  ],
+  [
+    "citta",
+    "Richiesta cittadinanza",
+    "/citta/richiedi.php",
+    ""
+  ],
+  [
+    "citta",
+    "Amministrazione cittadina storica",
+    "/admin/city.php",
+    ""
+  ],
+  [
+    "organizzazioni",
+    "Amministrazione organizzazione",
+    "/organizzazioni/admin.php",
+    ""
+  ],
+  [
+    "organizzazioni",
+    "Gerarchia organizzazione",
+    "/organizzazioni/gerarchia.php",
+    ""
+  ],
+  [
+    "organizzazioni",
+    "Proposta organizzazione",
+    "/organizzazioni/neworg.php",
+    ""
+  ],
+  [
+    "organizzazioni",
+    "Anteprima organizzazione",
+    "/organizzazioni/anteprima.php",
+    ""
+  ],
+  [
+    "organizzazioni",
+    "Statuto organizzazione",
+    "/organizzazioni/showstatuto.php",
+    ""
+  ],
+  [
+    "organizzazioni",
+    "Proposta statuto organizzazione",
+    "/organizzazioni/shownewstatuto.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Amministrazione corporazione",
+    "/corporazioni/admin.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Gerarchia corporazione",
+    "/corporazioni/gerarchia.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Proposta corporazione",
+    "/corporazioni/newcorp.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Anteprima corporazione",
+    "/corporazioni/anteprima.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Statuto corporazione",
+    "/corporazioni/showstatuto.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Proposta statuto corporazione",
+    "/corporazioni/shownewstatuto.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Anteprima oggetto",
+    "/corporazioni/showobj.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Scheda oggetto",
+    "/corporazioni/viewobj.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Proprietà degli oggetti",
+    "/corporazioni/oggetti-admin.php",
+    ""
+  ],
+  [
+    "corporazioni",
+    "Materie prime",
+    "/corporazioni/materie.php",
+    ""
+  ],
+  [
+    "gioco",
+    "Identità grafica dei gruppi",
+    "/gruppi/identita.php",
+    ""
+  ],
+  [
+    "master",
+    "Sessioni con IA",
+    "/sessione/master-ia.php",
+    ""
+  ],
+  [
+    "master",
+    "Dettaglio giocata",
+    "/admin/giocata.php",
+    ""
+  ],
+  [
+    "master",
+    "Motore del Master",
+    "/admin/master-engine.php",
+    ""
+  ],
+  [
+    "master",
+    "Trasformazioni speciali",
+    "/admin/lican.php",
+    ""
+  ],
+  [
+    "accademia",
+    "Pareri sulle giocate",
+    "/sessione/viewlog.php?azione=pareri",
+    ""
+  ],
+  [
+    "strumenti",
+    "Gestione sondaggi",
+    "/sondaggi/adminsondaggi.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Ricompense statistiche",
+    "/statistiche/ricompense.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Statistiche oggetti",
+    "/statistiche/obj.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Statistiche Master",
+    "/statistiche/master.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Galleria",
+    "/vari/galleria.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Visualizza giocata",
+    "/vari/visualizzagiocata.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Anteprima testo",
+    "/vari/anteprimagml.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Scacchi e dama",
+    "/giochi/",
+    ""
+  ],
+  [
+    "strumenti",
+    "Invita al tavolo",
+    "/giochi/invita.php",
+    ""
+  ],
+  [
+    "strumenti",
+    "Segnalazioni",
+    "/bug/",
+    ""
+  ],
+  [
+    "gioco",
+    "Cronaca generale",
+    "/notifiche/",
+    ""
+  ],
+  [
+    "gestione",
+    "Cookie e privacy",
+    "/admin/privacy.php",
+    "Cookie e privacy"
+  ],
+  [
+    "gestione",
+    "Mappa visiva",
+    "/admin/world-map.php",
+    "Mappa visiva"
+  ],
+  [
+    "strumenti",
+    "Informativa cookie",
+    "/legal/?type=cookies",
+    "Cookie"
+  ]
+]

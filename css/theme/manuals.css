@@ -1,0 +1,117 @@
+/* Biblioteca centrale: copertine, lettura, guide per ruolo e sezioni territoriali. */
+.manual-library { --manual-pad:clamp(18px,3vw,40px); }
+.manual-library [hidden] { display:none!important; }
+body.ui-page .manual-library-heading { gap:18px; padding:24px var(--manual-pad); }
+.manual-library-symbol { display:grid; place-items:center; flex:0 0 48px; width:48px; height:48px; color:var(--gold-2); background:color-mix(in srgb,var(--panel) 80.00%,transparent); border:1px solid var(--line); border-radius:12px; }
+.manual-library-symbol .ui-icon { width:25px; height:25px; margin:0; }
+.manual-library-intro { flex:1 1 540px; }
+.manual-eyebrow { display:block; color:var(--gold); font:700 .69rem/1.5 var(--font-ui); letter-spacing:.17em; }
+.manual-library-intro h1 { margin:10px 0 12px; color:var(--gold-2); font:400 clamp(1.8rem,3vw,2.8rem)/1.12 var(--font-body); }
+.manual-library-intro p { max-width:68ch; margin:0; color:var(--text); font:1rem/1.6 var(--font-ui); }
+.manual-library-tools { display:flex; flex-wrap:wrap; gap:8px; padding-right:48px; }
+.manual-filters { flex:1 0 100%; display:grid; grid-template-columns:minmax(200px,1.5fr) minmax(180px,1fr) minmax(180px,1fr) auto; align-items:end; gap:12px; margin:0; padding-top:18px; border-top:1px solid var(--line); }
+.manual-filters label { display:grid; gap:7px; min-width:0; font:.78rem/1.4 var(--font-ui); color:var(--muted); }
+body.ui-page .manual-library-heading .manual-filters :is(input,select) { width:100%; min-width:0; margin:0; height:44px; }
+body.ui-page .manual-library-heading .manual-filters button { min-height:44px; }
+body.ui-page .manual-library-heading>.ui-return-location { position:absolute; top:24px; right:var(--manual-pad); }
+.manual-result-count { padding:15px var(--manual-pad); border-bottom:1px solid var(--line); color:var(--muted); font:.8rem/1.5 var(--font-ui); }
+.manual-collection { padding:28px var(--manual-pad) 32px; border-bottom:1px solid var(--line); }
+.manual-collection>header { display:flex; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:20px; }
+.manual-collection h2 { margin:4px 0 0; color:var(--gold-2); font:400 clamp(1.35rem,2vw,1.8rem)/1.3 var(--font-body); }
+.manual-collection>header .ui-row-actions { margin-left:auto; }
+.manual-counter { border:1px solid var(--line); border-radius:25px; padding:7px 12px; font:.73rem/1.4 var(--font-ui); color:var(--gold-2); white-space:nowrap; background:color-mix(in srgb,var(--panel) 67.84%,transparent); }
+.manual-card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,285px),1fr)); gap:20px; }
+.manual-chapter-card { display:flex; flex-direction:column; overflow:hidden; min-width:0; border:1px solid var(--line); border-radius:14px; color:var(--text); background:linear-gradient(145deg,var(--panel),var(--panel)); text-decoration:none; transition:transform .18s,border-color .18s,box-shadow .18s; }
+.manual-chapter-card:hover { transform:translateY(-3px); border-color:var(--gold); box-shadow:0 12px 25px #0004; }
+.manual-chapter-card:focus-visible { outline:3px solid var(--gold-2); outline-offset:4px; }
+.manual-chapter-card>img { display:block; width:100%; height:clamp(150px,15vw,205px); object-fit:cover; border-bottom:1px solid var(--line); }
+.manual-card-copy { display:flex; flex:1; flex-direction:column; padding:22px; }
+.manual-card-copy h3 { margin:12px 0; color:var(--gold-2); font:400 1.35rem/1.3 var(--font-body); }
+.manual-card-copy p { margin:0 0 22px; color:#c1ccda; font:.86rem/1.65 var(--font-ui); }
+.manual-card-footer { display:flex; justify-content:space-between; gap:15px; margin-top:auto; padding-top:15px; border-top:1px solid var(--line); color:var(--gold-2); font:.8rem/1.4 var(--font-ui); }
+.manual-archive-note { color:var(--muted); font:.85rem/1.6 var(--font-ui); }
+.manual-reading-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:12px; padding:16px var(--manual-pad); border-bottom:1px solid var(--line); background:var(--panel); }
+.manual-reading-toolbar>span { flex:1; color:var(--muted); font:.8rem/1.4 var(--font-ui); }
+.manual-chapter-hero { position:relative; isolation:isolate; display:flex; align-items:end; min-height:320px; padding:var(--manual-pad); overflow:hidden; border-bottom:1px solid var(--line); }
+.manual-chapter-hero>img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
+.manual-chapter-hero::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,color-mix(in srgb,var(--bg) 94.90%,transparent) 15%,color-mix(in srgb,var(--bg) 57.25%,transparent) 75%),linear-gradient(0deg,color-mix(in srgb,var(--bg) 92.16%,transparent),transparent); z-index:-1; }
+.manual-chapter-hero>div { max-width:850px; }
+.manual-chapter-hero h1 { color:var(--gold-2); font:400 clamp(1.8rem,3.4vw,3rem)/1.16 var(--font-body); margin:14px 0; }
+.manual-chapter-hero p { color:#d3dce8; font:1rem/1.65 var(--font-ui); margin:0; max-width:70ch; }
+.manual-reading-layout { display:grid; grid-template-columns:240px minmax(0,1fr); align-items:start; }
+.manual-reading-nav { position:sticky; top:0; padding:28px 20px; }
+.manual-reading-nav h2 { color:var(--gold-2); font:1.1rem/1.4 var(--font-body); margin:0 0 14px; }
+.manual-reading-nav nav { display:grid; gap:4px; }
+.manual-reading-nav nav a { display:block; border-left:1px solid var(--line); padding:9px 12px; color:var(--muted); text-decoration:none; font:.8rem/1.5 var(--font-ui); }
+.manual-reading-nav nav a:hover { color:var(--gold-2); border-color:var(--gold); background:var(--hover); }
+.manual-reading-nav details { margin-top:24px; color:var(--muted); font:.8rem/1.5 var(--font-ui); }
+.manual-editor-actions { display:grid; gap:8px; margin-top:12px; }
+.manual-chapter-main { min-width:0; border-left:1px solid var(--line); }
+.manual-library #panel-content.manual-reading { padding:clamp(24px,3vw,48px); font:1.02rem/1.85 var(--font-body); }
+.manual-library .manual-reading h2 { margin:1.7em 0 .65em; font:700 1.45rem/1.3 var(--font-body); color:var(--reading-link); scroll-margin-top:20px; }
+.manual-library .manual-reading>h2:first-child { margin-top:0; }
+.manual-library .manual-reading p { max-width:90ch; }
+.manual-library .manual-reading li { padding-left:5px; margin-bottom:10px; }
+.manual-library .manual-reading .manual-callout,.manual-library .manual-reading .manual-note,.manual-library .manual-reading .manual-example,.manual-library .manual-reading blockquote { margin:24px 0; padding:18px 22px; border:1px solid var(--reading-line); border-left:4px solid #9a7136; border-radius:0 10px 10px 0; background:#fff4; }
+.manual-callout strong { display:block; }
+.manual-table-wrap { max-width:100%; overflow-x:auto; margin:22px 0; }
+.manual-library .manual-reading table { width:100%; border-collapse:collapse; font:.82rem/1.55 var(--font-ui); }
+.manual-library .manual-reading th { background:var(--panel-2); color:#f0d69d; text-align:left; }
+.manual-library .manual-reading :is(th,td) { padding:12px; border:1px solid var(--reading-line); min-width:110px; vertical-align:top; }
+.manual-library .manual-reading td { background:#fff2; }
+.manual-screens,.manual-next-steps { padding:28px var(--manual-pad); border-top:1px solid var(--line); }
+.manual-screens h2,.manual-next-steps h2 { color:var(--gold-2); margin:0 0 20px; font:400 1.5rem/1.3 var(--font-body); }
+.manual-screens figure { margin:0 0 20px; }
+.manual-screens img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:10px; }
+.manual-screens figcaption { padding:12px 0; color:var(--muted); font:.8rem/1.65 var(--font-ui); }
+.manual-next-steps .action-btn { display:inline-flex; margin:0 8px 8px 0; }
+.manual-chapter-paging { display:flex; justify-content:space-between; gap:15px; padding:24px var(--manual-pad); border-top:1px solid var(--line); }
+.manual-chapter-paging button { max-width:48%; text-align:left; }
+.manual-editor-fields { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.manual-editor-preview { width:100%; max-height:160px; object-fit:cover; border-radius:8px; }
+.manual-editor-note { font:.8rem/1.5 var(--font-ui); color:var(--muted); }
+.forum-directory-section { margin:0 0 24px; }
+.forum-section-heading { position:relative; isolation:isolate; min-height:145px; display:flex; align-items:center; flex-wrap:wrap; gap:20px; padding:28px 24px; border-block:1px solid var(--line); overflow:hidden; }
+.forum-section-heading>img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
+.forum-section-heading::before { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,color-mix(in srgb,var(--panel) 96.08%,transparent) 20%,color-mix(in srgb,var(--panel) 72.16%,transparent) 65%,color-mix(in srgb,var(--panel) 41.96%,transparent)); }
+.forum-section-heading>div { flex:1; }
+.forum-section-heading h2 { margin:5px 0 8px; color:var(--gold-2); font:400 1.8rem/1.2 var(--font-body); }
+.forum-section-heading p { margin:0; color:#c9d1dd; font:.85rem/1.5 var(--font-ui); }
+.forum-directory-section .forum-table td:first-child { width:24%; }
+.forum-directory-section .forum-table td:nth-child(2) { width:37%; }
+.forum-directory-section .forum-table td:nth-child(3) { width:13%; }
+.forum-directory-section .forum-table td:last-child { width:26%; }
+body.ui-page .forum-directory-section img.forum-board-thumbnail { display:block; max-width:160px; object-fit:cover; width:160px; height:78px; margin:0 0 12px; object-fit:cover; border:1px solid var(--reading-line); border-radius:8px; }
+.forum-board-unread td:first-child { box-shadow:inset 4px 0 #ae3047; }
+.forum-board-hero { min-height:170px; background:linear-gradient(90deg,color-mix(in srgb,var(--panel) 93.73%,transparent),color-mix(in srgb,var(--panel) 78.82%,transparent) 65%,color-mix(in srgb,var(--panel) 46.67%,transparent)),var(--board-cover) center/cover; }
+.forum-board-hero[data-mode=board] .forum-breadcrumb h2 { display:none; }
+.forum-board-hero h2 { font:400 1.7rem/1.3 var(--font-body); }
+.board-cover-preview { display:block; width:100%; max-height:200px; object-fit:cover; border-radius:9px; }
+@media(min-width:1600px) { .manual-card-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:1000px) { .manual-filters { grid-template-columns:1fr 1fr; }.manual-reading-layout { grid-template-columns:190px minmax(0,1fr); }.manual-reading-nav { padding:22px 14px; } }
+@media(max-width:650px) {
+ body.ui-page .manual-library-heading { padding:20px 16px; gap:14px; }.manual-library-symbol { flex-basis:40px; width:40px; height:40px; }body.ui-page .manual-library-heading>.manual-library-intro { flex-basis:calc(100% - 112px); }body.ui-page .manual-library-heading>.ui-return-location { top:20px; right:16px; }body.ui-page .manual-library-heading>.manual-library-intro { padding-right:30px; }.manual-library-tools { padding-right:0; }.manual-filters { padding-top:14px; }
+ .manual-filters { grid-template-columns:minmax(0,1fr); }.manual-library-tools { width:100%; }.manual-library-tools>* { flex:1; justify-content:center; }.manual-library-intro { flex-basis:100%; }.manual-reading-layout { display:block; }.manual-reading-nav { position:static; border-bottom:1px solid var(--line); padding:20px; }.manual-reading-nav nav { display:flex; flex-wrap:wrap; gap:6px; }.manual-reading-nav nav a { padding:6px 9px; border:1px solid var(--line); border-radius:7px; }.manual-chapter-main { border:0; }.manual-chapter-hero { min-height:275px; }.manual-reading-toolbar>span { flex:1 0 100%; order:4; }.manual-reading-toolbar .action-btn { padding:9px; font-size:.75rem; }.manual-card-grid { grid-template-columns:minmax(0,1fr); }.manual-chapter-card>img { height:180px; }.manual-editor-fields { grid-template-columns:1fr; }.manual-chapter-paging { flex-direction:column; }.manual-chapter-paging button { max-width:100%; }.forum-section-heading { padding:22px 18px; }.forum-directory-section .ui-table-scroll { overflow:visible; }.forum-directory-section .forum-table { display:block; min-width:0!important; }.forum-directory-section .forum-table :is(tbody,tr,td) { display:block; width:100%!important; }.forum-directory-section .forum-table thead { display:none; }.forum-directory-section .forum-table tr { padding:18px; border-bottom:1px solid var(--reading-line); background:var(--reading-background); }.forum-directory-section .forum-table td { border:0!important; padding:7px 0!important; }.forum-directory-section .forum-table td:first-child { min-height:86px; }body.ui-page .forum-directory-section img.forum-board-thumbnail { float:left; max-width:108px; width:108px; height:74px; margin:0 15px 4px 0; }.forum-directory-section .forum-table td:last-child { margin-top:6px; padding-top:14px!important; border-top:1px solid var(--reading-line)!important; }.forum-board-unread td:first-child { box-shadow:none; }.forum-directory-section .forum-board-unread { border-left:4px solid #ae3047; }
+}
+@media(prefers-reduced-motion:reduce) { .manual-chapter-card { transition:none; }.manual-chapter-card:hover { transform:none; } }
+
+/* The guest library uses the same chapter renderer without the game shell. */
+body.ui-page.manual-public-page{padding:0 24px 36px;max-width:1440px;margin:auto}
+.manual-public-nav{display:flex;justify-content:space-between;gap:20px;padding:22px 0;font:13px/1.5 var(--font-ui);color:var(--gold-2)}
+.manual-public-page .manual-library{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--bg)}
+.manual-public-page .manual-library-tools{padding-right:0}
+.manual-city-guide{display:flex;gap:20px;margin:24px 0;padding:22px;border:1px solid var(--reading-line);border-radius:12px;background:#fff2}
+.manual-city-guide>img{width:72px;height:72px;flex:0 0 72px;object-fit:cover;border-radius:50%;border:1px solid var(--reading-line)}
+.manual-city-guide>div{min-width:0}.manual-city-guide h3{margin:0;color:var(--reading-link)}.manual-city-guide details{font-size:.9rem}.manual-city-guide summary{cursor:pointer}
+@media(max-width:650px){body.ui-page.manual-public-page{padding:0 12px 20px}.manual-public-nav{padding:16px 0;font-size:12px}.manual-city-guide{padding:16px;gap:12px}.manual-city-guide>img{width:48px;height:48px;flex-basis:48px}}
+.manual-alignment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+.manual-alignment-guide{display:flex;align-items:flex-start;gap:14px;padding:20px;border:1px solid var(--reading-line);border-radius:12px;background:#fff2;min-width:0}
+.manual-alignment-guide>img{flex:0 0 56px;width:56px;height:56px;border-radius:50%;object-fit:contain}
+.manual-alignment-guide>div{min-width:0}.manual-alignment-guide h3{margin:0;color:var(--reading-link);font-size:1.05rem}
+.manual-library .manual-alignment-guide p{font:.85rem/1.75 var(--font-body);margin:10px 0}
+.manual-alignment-example{padding-top:12px;border-top:1px solid var(--reading-line)}
+@media(max-width:1050px){.manual-alignment-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:650px){.manual-alignment-guide{padding:16px;gap:12px}.manual-alignment-guide>img{flex-basis:44px;width:44px;height:44px}}
+
+/* Actual tabletop screenshots, shared by public and in-game readers. */
+img[src^="/uploads/manuals/games/"]{display:block;width:auto;max-width:100%;height:auto;max-height:780px;margin:18px auto;border:1px solid #ac925950;border-radius:12px;box-shadow:0 8px 30px #0004}.manual-game-screen{margin:24px 0}.manual-game-screen figcaption{font:12px/1.7 var(--font-ui);color:var(--muted);text-align:center}

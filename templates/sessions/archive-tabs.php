@@ -1,0 +1,1 @@
+<nav class="session-archive-tabs" aria-label="Tipo di archivio"><a href="/sessione/viewlog.php" <?=empty($historical)?'aria-current="page"':''?>>Sessioni attuali</a><a href="/sessione/viewlog.php?azione=storico" <?=!empty($historical)?'aria-current="page"':''?>>Archivio storico</a></nav>

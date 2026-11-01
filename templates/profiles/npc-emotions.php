@@ -1,0 +1,7 @@
+<?php /** The controller authorizes the own pair or a read-only staff dossier. */ $social=$sheet['npc_social'];$readOnly=!empty($sheet['relation_read_only']); ?>
+<details class="npc-emotions" open><summary><img src="<?=$h(alphano_profile_symbol('relationships'))?>" alt="" width="40" height="40">Emozioni e sfumature del rapporto</summary><p class="npc-emotions-help"><?=$readOnly?'Stai consultando il rapporto personale selezionato.':'Questi valori descrivono il rapporto personale di questo PNG con te.'?> Zero al centro: nessuna variazione. I valori positivi crescono verso destra, quelli negativi verso sinistra. Paura, affetto, attrazione, amore, gelosia e ostilità diminuiscono fino a zero. Ogni coppia giocatore–PNG ha una storia distinta.</p>
+<div class="npc-relations-grid">
+<?php foreach($social['metrics'] as $key=>$metric): $value=(int)$metric['value']; ?><div class="npc-relation-metric" data-npc-metric="<?=$h($key)?>" data-unknown="false" data-metric-sign="<?=$value<0?'negative':'positive'?>"><img class="npc-emotion-symbol" src="<?=$h(alphano_profile_symbol($key))?>" alt="" width="48" height="48"><label id="relation-label-<?=$h($key)?>"><?=$h($metric['label'])?></label><output><?=$value>0?'+':''?><?=$value?></output>
+<?php $meterValue=$value;$meterMin=(int)$metric['min'];$meterLabel=$metric['label'];$meterAttribute='';require __DIR__.'/npc-meter.php'; ?>
+<div class="npc-centered-legend"><span><?=$metric['min']<0?'−100':''?></span><span>0</span><span>+100</span></div></div><?php endforeach; ?>
+</div></details>

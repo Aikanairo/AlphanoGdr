@@ -1,0 +1,58 @@
+name: Verify and package
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.4.0', '8.4', '8.5']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: pdo_mysql, mbstring, fileinfo, openssl, gd, dom, curl
+          coverage: none
+          tools: composer:v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
+      - run: sudo apt-get update && sudo apt-get install -y mariadb-server mariadb-client
+      - run: find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l > /dev/null
+      - run: python3 tests/syntax.py
+      - run: php tests/http-context.php
+      - run: php tests/runtime-requirements.php
+      - run: php tests/board-engines.php
+      - run: php -d zend.assertions=1 -d assert.exception=1 tests/recording-format.php
+      - run: python3 tests/release_audit.py
+      - run: python3 bin/package.py --include-vendor
+      - run: python3 tests/package_install.py dist/AlphanoGdr-hosting.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AlphanoGdr-hosting-php-${{ matrix.php }}
+          path: dist/AlphanoGdr-V*-hosting.zip
+  mysql-schema:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: isolated-ci-password
+          MYSQL_DATABASE: alphano_compat
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -pisolated-ci-password"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - run: mysql --host=127.0.0.1 --user=root alphano_compat < database/schema.sql
+        env:
+          MYSQL_PWD: isolated-ci-password
