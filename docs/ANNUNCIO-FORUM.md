@@ -2,7 +2,7 @@
 
 Ciao a tutti, sono **Alfano Gaetano, Aikanairo su GitHub**, e vorrei presentare alla community **AlphanoGdr V1.0**.
 
-AlphanoGdr nasce a partire dalla **prima versione di Gothik.it, nata nel 2004 e programmata da Nappa (Dracula)**. Questa base è stata **completamente riscritta, aggiornata ed estesa nelle funzionalità da Alfano Gaetano (aik)**, dando origine al progetto attuale.
+AlphanoGdr nasce a partire dalla **prima versione di Gothik.it, nata nel 2004 e programmata da [Nappa (Dracula), @nappa85](https://github.com/nappa85)**. Questa base è stata **completamente riscritta, aggiornata ed estesa nelle funzionalità da Alfano Gaetano (aik)**, dando origine al progetto attuale.
 
 Il progetto nasce per offrire una struttura di GDR play by chat completa e personalizzabile, utilizzabile anche su un normale hosting condiviso come AlterVista. L’obiettivo è permettere a chi ha un’ambientazione in mente di concentrarsi sul gioco e sulla sua comunità, configurando i sistemi principali da un pannello di gestione, senza dover programmare per iniziare.
 
