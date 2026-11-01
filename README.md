@@ -19,6 +19,12 @@ AlphanoGdr nasce a partire dalla **prima versione di Gothik.it, nata nel 2004 e 
 - **[Nappa (Dracula), @nappa85](https://github.com/nappa85):** programmazione della prima versione di Gothik.it (2004).
 - **Alfano Gaetano (aik):** riscrittura completa, aggiornamento ed estensione delle funzionalità del motore da cui nasce AlphanoGdr.
 
+## Community ufficiale
+
+Il gruppo Telegram ufficiale del motore **AlphanoGDR** raccoglie **richieste, segnalazioni di bug e guide**: [t.me/alphanoGDR](https://t.me/alphanoGDR). Il collegamento con icona Telegram è integrato in modo discreto nella parte inferiore della homepage, anche nelle nuove installazioni dal pacchetto completo.
+
+Per segnalazioni riproducibili puoi usare anche le [issue della repository](https://github.com/Aikanairo/AlphanoGdr/issues). Non condividere password, chiavi o dati personali dei giocatori.
+
 ## Anteprima e demo
 
 [Apri la demo pubblica](https://alfanew.altervista.org/?preview=1) · [Presentazione e screenshot](docs/ANNUNCIO-FORUM.md) · [Post pronto in BBCode](docs/ANNUNCIO-FORUM.bbcode.txt)

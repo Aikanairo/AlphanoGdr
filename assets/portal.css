@@ -125,3 +125,16 @@ body.account-recovery-page .account-recovery-heading.ui-integrated-heading{displ
 @media(max-width:760px){.portal-homepage .portal-masthead>.portal-inner{min-height:56px;padding-block:7px}.portal-homepage .portal-brand .portal-brand-logo{width:36px;height:36px;max-width:36px;max-height:36px}.portal-homepage .portal-masthead nav{gap:15px}}
 
 .portal-demo{padding:12px 0;border-block:1px solid var(--line);background:var(--panel);color:var(--text);font:13px/1.6 var(--font-ui,sans-serif)}.portal-demo p{margin:0 0 8px}.portal-demo code{color:var(--gold-2);white-space:nowrap}.portal-demo nav{display:flex;flex-wrap:wrap;gap:7px}.portal-demo nav a{padding:5px 12px;border:1px solid var(--line);border-radius:20px;color:var(--text);text-decoration:none;background:var(--panel-2)}.portal-demo nav a[aria-current]{border-color:var(--gold);color:var(--gold-2)}
+
+/* Official engine community: a quiet, theme-aware footer link with no remote assets. */
+.portal-homepage .portal-community{border-top:1px solid var(--portal-rule);background:var(--bg)}
+.portal-homepage .portal-community-link{display:flex;align-items:center;gap:13px;max-width:650px;padding:20px 0;color:var(--muted);text-decoration:none;font-family:var(--font-ui,sans-serif)}
+.portal-homepage .portal-community-icon{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border:1px solid var(--portal-rule);border-radius:50%;background:var(--panel);color:var(--gold)}
+.portal-homepage .portal-community-icon svg{display:block;width:21px;height:21px}
+.portal-homepage .portal-community-copy{display:grid;gap:4px;min-width:0}
+.portal-homepage .portal-community-copy strong{color:var(--text);font:600 12px/1.5 var(--font-ui,sans-serif)}
+.portal-homepage .portal-community-copy small{font:400 11px/1.65 var(--font-ui,sans-serif);color:var(--muted)}
+.portal-homepage .portal-community-arrow{margin-left:auto;padding-left:12px;color:var(--gold);font-size:18px}
+.portal-homepage .portal-community-link:hover strong{color:var(--gold)}
+.portal-homepage .portal-community-link:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:8px}
+@media(max-width:540px){.portal-homepage .portal-community-link{padding-block:18px;gap:10px}.portal-homepage .portal-community-copy small{font-size:11px}}
